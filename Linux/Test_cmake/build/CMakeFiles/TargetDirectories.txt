@@ -1,0 +1,3 @@
+/home/leya_lutik/Desktop/leya/Linux/Test_cmake/build/CMakeFiles/rebuild_cache.dir
+/home/leya_lutik/Desktop/leya/Linux/Test_cmake/build/CMakeFiles/edit_cache.dir
+/home/leya_lutik/Desktop/leya/Linux/Test_cmake/build/CMakeFiles/Test_cmake.dir
