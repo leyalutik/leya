@@ -47,19 +47,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = C:\git\mingw\cmake\bin\cmake.exe
+CMAKE_COMMAND = C:\git32\cmake\bin\cmake.exe
 
 # The command to remove a file.
-RM = C:\git\mingw\cmake\bin\cmake.exe -E rm -f
+RM = C:\git32\cmake\bin\cmake.exe -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\git\leya\coursera\Yellow_belt\IV_iterators
+CMAKE_SOURCE_DIR = C:\git32\leya\coursera\Yellow_belt\IV_iterators
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\git\leya\coursera\Yellow_belt\IV_iterators\build
+CMAKE_BINARY_DIR = C:\git32\leya\coursera\Yellow_belt\IV_iterators\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -67,7 +67,7 @@ CMAKE_BINARY_DIR = C:\git\leya\coursera\Yellow_belt\IV_iterators\build
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	C:\git\mingw\cmake\bin\cmake-gui.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	C:\git32\cmake\bin\cmake-gui.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -77,7 +77,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	C:\git\mingw\cmake\bin\cmake.exe --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	C:\git32\cmake\bin\cmake.exe --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\git\leya\coursera\Yellow_belt\IV_iterators\build\CMakeFiles C:\git\leya\coursera\Yellow_belt\IV_iterators\build\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\git32\leya\coursera\Yellow_belt\IV_iterators\build\CMakeFiles C:\git32\leya\coursera\Yellow_belt\IV_iterators\build\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\git\leya\coursera\Yellow_belt\IV_iterators\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\git32\leya\coursera\Yellow_belt\IV_iterators\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -116,41 +116,65 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named IV_week
+# Target rules for targets named coursera
 
 # Build rule for target.
-IV_week: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 IV_week
-.PHONY : IV_week
+coursera: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 coursera
+.PHONY : coursera
 
 # fast build rule for target.
-IV_week/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\IV_week.dir\build.make CMakeFiles/IV_week.dir/build
-.PHONY : IV_week/fast
+coursera/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\coursera.dir\build.make CMakeFiles/coursera.dir/build
+.PHONY : coursera/fast
 
-main.obj: main.cpp.obj
-.PHONY : main.obj
+src/main.obj: src/main.cpp.obj
+.PHONY : src/main.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\IV_week.dir\build.make CMakeFiles/IV_week.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+src/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\coursera.dir\build.make CMakeFiles/coursera.dir/src/main.cpp.obj
+.PHONY : src/main.cpp.obj
 
-main.i: main.cpp.i
-.PHONY : main.i
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\IV_week.dir\build.make CMakeFiles/IV_week.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\coursera.dir\build.make CMakeFiles/coursera.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\IV_week.dir\build.make CMakeFiles/IV_week.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\coursera.dir\build.make CMakeFiles/coursera.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
+src/task1.obj: src/task1.cpp.obj
+.PHONY : src/task1.obj
+
+# target to build an object file
+src/task1.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\coursera.dir\build.make CMakeFiles/coursera.dir/src/task1.cpp.obj
+.PHONY : src/task1.cpp.obj
+
+src/task1.i: src/task1.cpp.i
+.PHONY : src/task1.i
+
+# target to preprocess a source file
+src/task1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\coursera.dir\build.make CMakeFiles/coursera.dir/src/task1.cpp.i
+.PHONY : src/task1.cpp.i
+
+src/task1.s: src/task1.cpp.s
+.PHONY : src/task1.s
+
+# target to generate assembly for a file
+src/task1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\coursera.dir\build.make CMakeFiles/coursera.dir/src/task1.cpp.s
+.PHONY : src/task1.cpp.s
 
 # Help Target
 help:
@@ -160,10 +184,13 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... IV_week
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... coursera
+	@echo ... src/main.obj
+	@echo ... src/main.i
+	@echo ... src/main.s
+	@echo ... src/task1.obj
+	@echo ... src/task1.i
+	@echo ... src/task1.s
 .PHONY : help
 
 

@@ -1,7 +1,11 @@
-cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.18 FATAL_ERROR)
 
-set(CMAKE_CXX_COMPILER C:/git/mingw/bin/g++.exe CACHE  PATH "" FORCE)
-set(CMAKE_C_COMPILER C:/git/mingw/bin/gcc.exe CACHE  PATH "" FORCE)
+#set(CMAKE_CXX_COMPILER C:/git/mingw/bin/g++.exe CACHE  PATH "" FORCE)
+#set(CMAKE_C_COMPILER C:/git/mingw/bin/gcc.exe CACHE  PATH "" FORCE)
 
 project(IV_week)
-add_executable(IV_week main.cpp)
+
+add_executable( coursera 
+	src/main.cpp
+	src/task1.cpp)
+

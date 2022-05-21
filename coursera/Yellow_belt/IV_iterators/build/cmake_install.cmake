@@ -1,8 +1,8 @@
-# Install script for directory: C:/git/leya/coursera/Yellow_belt/IV_iterators
+# Install script for directory: C:/git32/leya/coursera/Yellow_belt/IV_iterators
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/IV_week")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files/IV_week")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,7 +34,7 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/git/mingw/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "C:/git32/mingw/bin/objdump.exe")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/git/leya/coursera/Yellow_belt/IV_iterators/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/git32/leya/coursera/Yellow_belt/IV_iterators/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

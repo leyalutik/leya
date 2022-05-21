@@ -8,7 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/git/leya/coursera/Yellow_belt/IV_iterators/main.cpp" "CMakeFiles/IV_week.dir/main.cpp.obj" "gcc" "CMakeFiles/IV_week.dir/main.cpp.obj.d"
+  "C:/git32/leya/coursera/Yellow_belt/IV_iterators/src/main.cpp" "CMakeFiles/coursera.dir/src/main.cpp.obj" "gcc" "CMakeFiles/coursera.dir/src/main.cpp.obj.d"
+  "C:/git32/leya/coursera/Yellow_belt/IV_iterators/src/task1.cpp" "CMakeFiles/coursera.dir/src/task1.cpp.obj" "gcc" "CMakeFiles/coursera.dir/src/task1.cpp.obj.d"
   )
 
 # Targets to which this target links.
