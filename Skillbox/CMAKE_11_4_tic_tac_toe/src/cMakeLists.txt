@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 3.17)
+
+add_compile_definitions(TESTS)
+add_compile_definitions(TEST_FRAMEWORK)
+
+add_executable(Tic_tac_toe 
+main.cpp main_functions.cpp input_output.cpp tic_tac_toe.cpp tests.cpp test_framework.cpp
+${CMAKE_SOURCE_DIR}/include/main_functions.h 
+${CMAKE_SOURCE_DIR}/include/tic_tac_toe.h 
+${CMAKE_SOURCE_DIR}/include/tests.h 
+${CMAKE_SOURCE_DIR}/include/test_framework.h 
+${CMAKE_SOURCE_DIR}/include/input_output.h 
+)
+target_include_directories(Tic_tac_toe PUBLIC ${CMAKE_SOURCE_DIR}/include )

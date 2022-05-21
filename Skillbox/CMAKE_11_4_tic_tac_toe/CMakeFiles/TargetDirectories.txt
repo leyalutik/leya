@@ -1,0 +1,5 @@
+C:/git/leya/Skillbox/CMAKE_11_4_tic_tac_toe/CMakeFiles/edit_cache.dir
+C:/git/leya/Skillbox/CMAKE_11_4_tic_tac_toe/CMakeFiles/rebuild_cache.dir
+C:/git/leya/Skillbox/CMAKE_11_4_tic_tac_toe/src/CMakeFiles/Tic_tac_toe.dir
+C:/git/leya/Skillbox/CMAKE_11_4_tic_tac_toe/src/CMakeFiles/edit_cache.dir
+C:/git/leya/Skillbox/CMAKE_11_4_tic_tac_toe/src/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,60 @@
+Создание проекта cmake
+
+cMakeLists.txt
+{
+cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+set(CMAKE_CXX_COMPILER C:/git/mingw/bin/g++.exe CACHE  PATH "" FORCE)
+set(CMAKE_C_COMPILER C:/git/mingw/bin/gcc.exe CACHE  PATH "" FORCE)
+project(Name_project)
+add_executable(Name_project main.cpp)
+}
+
+Команды
+mkdir build
+cd build
+cmake -G "MinGW Makefiles" -S ..  //построим build проект где исходные файлы на уровень выше
+cmake --build .		        //строим проект в текущей папке	
+
+
+//Перемемещаем папку git
+system("xcopy %USERPROFILE%\Desktop\Китай\git C:\");
+system("cd C:\git");
+std::cout << "To continue press a number : \n";
+getchar();
+//Скачиваем нужные папки mingw и leya
+system("git clone https://github.com/leyalutik/mingw.git");
+getchar();
+system("git clone https://github.com/leyalutik/leya.git");
+std::cout << "To continue press a number : \n";
+getchar();
+
+//Настраиваем ssh доступ
+
+
+Добавляем переменные среды
+cmd
+echo Open Control Panel
+control /name Microsoft.System
+echo Go to Enviroment Variables
+pause
+echo Paste Your Paths
+echo C:\git\mingw\bin | clip
+pause
+echo C:\git\bin | clip
+pause
+echo C:\git\mingw\vim82 | clip
+pause
+echo C:\git\leya\notion_set | clip
+pause
+
+
+
+
+
+
+//Сначала копируем путь переменной среды в файл
+cd C:\git
+C:\git>set Path > current_system_path.txt & type  current_system_path.txt
+Добавляем наши пути
+SETX Path "%PATH%"
+

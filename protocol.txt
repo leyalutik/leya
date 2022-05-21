@@ -1,0 +1,251 @@
+Английский
+сделать домашку
+
+Желтый пояс 4 неделя итераторы
+
+Скиллбокс  лекции по git
+
+
+
+Скачать itunes 12.6.5 на Виндоус
+
+Хорошо побалдеть в хороших наушниках под Димаша
+compile
+
+
+аушники
+
+ankiweb
+
+
+compile
+
+Anki web один пункт
+Одно домашнее задание в skyeng
+Выучить фразы из жизни
+Toeffl перевести текст speaking
+
+Как собрать простую програмку на С++? (Страуструпп)
+
+Курсера Желтый пояс + красный пояс
+
+
+Гитарный перебор на пианино Белый танец
+
+Не открывается файл из другой папки data_work.txt в программе work.exe
+
+cmake посмотреть как добавлять файлы без include в main file
+Посмотреть надпись в Skillbox
+
+
+
+
+Столяров Глава книги
+
+Хирьянов Лекция по алгоритмам С++
+
+Изучить cmake
+
+
+доделать Ravesli
+
+Подумать как писать для поиска в Notion_set
+
+Тревожность Лекции
+
+Лекции по git Skillbox
+
+
+
+
+
+??Itunes  на компьютер. скачать программу для фотографий
+
+
+Курс по столярству и шитью
+
+mind_sharp
+Арзитектура
+Создать режимы
+'x' + 'xx'
+'x' * 'x'
+'xx' + 'x'
+'xx' + 'xx'
+'xx' * 'x'
+'xxx' + 'x'
+'x' * 'xx'
+'xx' + 'xxx'
+'xx' * 'xx'
+'xxx' + 'xxx'
+Создать совокупность режимов
+
+
+
+Курсера Желтый пояс Неделя 4 Итераторы
+Курсера Красный пояс Неделя 1 Начало ознакомиться
+
+---------------------------------------------------------------------------------------------------------
+
+Хирьянов Алгоритмы С++
+
+
+В течении программы создавая новые переменные на выходе перекомпилируем файл добавляя новые переменные
+const std::string Leetcode_url 
+
+struct Command{
+std::string description; //краткое описание
+std::string name;	// имя команды для запуска
+std::string script;	// код запуска
+}
+
+
+class Commands
+{
+public:
+	Commands(){
+		N = 10;
+		commands.reserve(N);
+		commands[0].name = Leetcode; commands[0].script = 				
+	}
+
+private:
+	int N;
+	vector<Command> commands;
+		
+
+}; 
+
+Создание проверки занята ли переменная?
+
+if not %var%=="" echo  
+
+bat файл по поиску и созданию пути к firefox.exe (в идеале создать символьную ссылку с нужной информацией)
+
+вывод поиска пути в файл  (cd , dir) ??
+считать файл
+положить путь в переменную %pf% (path_firefox)
+пользоваться этой переменной в консоли
+
+
+
+Заказать руслан и людмила
+Скачать программу запись телефонные звонки
+
+Английский
+
+
+Команды		10
+Список		l
+Выход		Esc
+
+Команды:
+Вывод таблицы
+-------------------------------------------------------------------
+Краткое описание команды1	Имя команды             Код команды1
+Краткое описание команды2	Имя команды2		Код команды2
+...
+Открыть список		list			system(.OS(\/) list)
+Редактировать команду	'edit   <имя команды>'
+Добавить команду		'add  < имя команды>'
+Удалить команду		'del  <имя команды>'
+-----------------------------------------------------------------------
+Введите команду: ...
+class Commands
+{
+public:
+	Commands("input.file");
+
+private:
+	int N;
+	
+
+}
+Обработка текстовой строки  parse(input)
+struct command{
+std::string description; 
+std::string name;
+std::string code;
+}
+Хранить в текстовом файле  
+1 строка  - N количество команд
+2 строка - name0_description0_code0
+3 строка - name1_description1_code1
+
+N строка - nameN-1_descriptionN-1_codeN-1
+
+
+
+Создать словарик из Toeffl книги
+
+Toeffl книга 
+"https://docs.yandex.ru/docs/view?url=ya-disk:///disk/1.Становимся лучше/English/18 fi red.pdf&name fi red.pdf&uidR7729788&nosw=1"
+Toeffl аудио
+"https://disk.yandex.ru/client/disk/1.Становимся лучше/English"
+anki web
+https://ankiweb.net/account/login
+
+Яндекс переводчик
+firefox.lnk https://translate.yandex.ru/translator/en-ru
+
+CxxTest 
+http://cxxtest.com/guide.pdf
+
+Leetcode
+https://leetcode.com/accounts/login/
+
+Белый пояс
+https://www.coursera.org/learn/c-plus-plus-white
+Желтый пояс
+https://www.coursera.org/learn/c-plus-plus-yellow
+Красный пояс
+https://www.coursera.org/learn/c-plus-plus-red
+
+Skillbox
+https://skillbox.ru/
+
+Столяров
+http://stolyarov.info/books
+Книга
+cd C:\git\leya\START_WORK
+start progintro_dmkv1.pdf
+
+firefox.lnk "http://www.stolyarov.info/books/pdf/progintro_dmkv1.pdf"
+
+Баурн
+firefox.lnk "https://docviewer.yandex.ru/view/527729788/?page=1&*=IOMDyU%2BZFnodVszGAa5GgMzXgAR7InVybCI6InlhLWRpc2s6Ly8vZGlzay8xLtCh0YLQsNC90L7QstC40LzRgdGPINC70YPRh9GI0LUvYmF1cm5fc19vcGVyYXRzaW9ubmFpYV9zaXN0ZW1hX3VuaXguZGp2dSIsInRpdGxlIjoiYmF1cm5fc19vcGVyYXRzaW9ubmFpYV9zaXN0ZW1hX3VuaXguZGp2dSIsIm5vaWZyYW1lIjpmYWxzZSwidWlkIjoiNTI3NzI5Nzg4IiwidHMiOjE2NDMyOTEwNDg5OTksInl1IjoiODE2NTg5NzY2MTYzNDYzNzM2NiJ9"
+
+Страуструпп
+cd C:\git\leya\START_WORK
+start "Stroustrup B. - Programming. Principles and Practice Using C++. Second Edition - 2014.pdf"
+
+firefox.link "https://disk.yandex.ru/i/xg_bOhq1iL8Upw"
+
+
+Декодер
+https://www.artlebedev.ru/decoder/advanced/
+
+Создать макет стола
+Наличники по шагам
+чем разровнять поверхность
+
+аудиокнига детские
+художественный текст детские книги
+
+Шаблон тестовой функции
+
+
+void test_function(auto& f)
+bool test_passed = 1;
+stack<std::string> error_lines;
+if( f(value) != correct_answer) 
+{
+	error_lines.push(__LINE__);
+	test_passed = 0;
+}
+...
+if(!test_passed)
+{
+	std::cout << Tests haven't passed in function f \n";
+	std:: cout << error : error_lines.back();
+	error_lines.pop();
+	....
