@@ -1,7 +1,3 @@
-X..OXOOOO	Incorrect
-X...X.OO.		Nobody
-XXOOOXXOX	Nobody
-XO.XO.X.O	Incorrect
-OX.XOXX.O	Incorrect
-..XOX.X.O	Petya_won.
-O........		Incorrect
+cat      dog
+   enot   dingo
+kashalot	muravied

@@ -1,1 +1,1 @@
-
+ AssertEqual(test( muravied ),"muravied","1");
