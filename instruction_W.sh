@@ -39,5 +39,6 @@ git add .
 git commit -m "date hehehe"
 git push -u -f  origin master
 
-
+# if smth was wrong try command
+# ssh -Tv git@github.com 
 
