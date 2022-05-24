@@ -21,6 +21,8 @@
 
 const std::string Baurn_book_url ="https://docviewer.yandex.ru/view/527729788/?page=1^&*=IOMDyU^%2BZFnodVszGAa5GgMzXgAR7InVybCI6InlhLWRpc2s6Ly8vZGlzay8xLtCh0YLQsNC90L7QstC40LzRgdGPINC70YPRh9GI0LUvYmF1cm5fc19vcGVyYXRzaW9ubmFpYV9zaXN0ZW1hX3VuaXguZGp2dSIsInRpdGxlIjoiYmF1cm5fc19vcGVyYXRzaW9ubmFpYV9zaXN0ZW1hX3VuaXguZGp2dSIsIm5vaWZyYW1lIjpmYWxzZSwidWlkIjoiNTI3NzI5Nzg4IiwidHMiOjE2NDMyOTEwNDg5OTksInl1IjoiODE2NTg5NzY2MTYzNDYzNzM2NiJ9%22";
 
+const std::string  data_work_path_W = "C:/git/leya/WORK/data_work.txt"; 
+const std::string  data_work_path_L = "/home/leya_lutik/Desktop/leya/WORK/data_work.txt"; 
 const std::string firefox = "Firefox.lnk";
 const std::string firefox_86 = "Firefox_86";
 
@@ -120,15 +122,37 @@ std::string display_russian(const std::string& rus_string);
 void display_main_menu();
 void display_option_commands(const std::vector<Command>& command_set);
 
-void handle_option_list();
+void handle_option_list(const std::string& command);
 void handle_option_commands(const std::vector<Command>& command_set);
 
 //-----------------------------------------------------------------
 
 int main()
 {
+	char OS  = 'W';
+	{
+		std::cout << "Is your Operating system Windows? Y/n \n";
+		char answer;
+		while(answer != '\n' && answer != 'Y' && answer != 'y' && answer != 'n' && answer != 'N')
+		{
+			answer = getchar();
+			if(answer != '\n')
+			{
+				getchar();
+			}
+		}
+		if(answer == 'n' || answer == 'N')
+		{
+			OS = 'L';
+		}
+		else
+		{
+			OS = 'W';
+		}
+	}
+
 	std::string browser_input;
-	std::ifstream ist("C:\\git\\leya\\WORK\\data_work.txt", std::ios::in);
+	std::ifstream ist((OS == 'L' ? "/home/leya_lutik/Desktop/leya/WORK/data_work.txt" : "C:/git/leya/WORK/data_work.txt"), std::ios::in);
 	if(!ist)
 	{
 		std::cout << "Can't open file \"data_work.txt\". \n";
@@ -157,13 +181,12 @@ int main()
 			     )
 			{
 				getline(std::cin,browser_input);
-				std::cout << "\nYou wrote command : \'" << browser_input << "\'\n" 				
-					<< "is it correct? Y/n";
+				std::cout << "\nYou wrote command : \'" << browser_input << "\'\n" << "is it correct? Y/n";
 				correct_browser_input = getchar();
 			}
 
 	}
-	std::ofstream ost("C:/git/leya/WORK/data_work.txt");
+	std::ofstream ost((OS == 'L' ? data_work_path_L : data_work_path_W));
 	if(!ost)
 	{
 		std::cout << "Can't open file \"data_work.txt\".\n";
@@ -177,11 +200,11 @@ int main()
 
 		{{Name("Keybord training"),
 		Short_description("Train fingers "),
-		Script("start \"\" " + browser_input + " https://www.ratatype.ua/ru/")}},
+		Script((OS == 'L' ? (browser_input + " https://www.ratatype.ua/ru/"): ("start \"\" " + browser_input + " https://www.ratatype.ua/ru/")))}},
 
 		{{Name("Learn programming words"),
 		Short_description("site Anki Web "),
-		Script("start \"\" " + browser_input + " https://ankiweb.net/account/login")}},
+		Script((OS == 'L' ? (browser_input + " https://ankiweb.net/account/login") : "start \"\" " + browser_input + " https://ankiweb.net/account/login"))}},
 
 		{{Name("TOEFL"),
 		Short_description("Open book TOEFL and text document "),
@@ -227,7 +250,11 @@ int main()
 		option = getchar();
 		switch(option)
 		{
-			case 10	:	handle_option_list();
+			case '\n'	:	
+				{
+					std::string command = (OS == 'L' ? "gedit ~/Desktop/leya/protocol.txt &" : "start "" notepad.exe C:\\git\\leya\\protocol.txt ");
+					handle_option_list(command);
+				}
 					break;
 			case 'c':	handle_option_commands(command_set);
 					break;
@@ -302,9 +329,9 @@ void display_option_commands(const std::vector<Command>& command_set)
 
 }
 
-void handle_option_list()
+void handle_option_list(const std::string& command)
 {
-	system("start "" notepad.exe C:\\git\\leya\\protocol.txt ");
+	SYSTEM(command);
 	return;
 }
 

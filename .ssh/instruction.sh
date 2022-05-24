@@ -5,8 +5,11 @@
 # Open GIT-BASH
 
 echo 'Generate a SSH key pair (private/public):'
- 
-cd ~/leya/.ssh
+echo 'Be sure you are in leya directory'
+read -p "Press enter to continue"
+
+cd ..
+mkdir .ssh
 ssh-keygen -t ed25519 -C "ludapevek@gmail.com"
 eval "$(ssh-agent -s)"
 	
@@ -29,7 +32,8 @@ read -p "Press enter to continue"
 echo 'Push file to your remote repository leyalutik/leya.git'
 read -p "Press enter to continue"
 cd ..
+cd leya
 git remote set-url origin git@github.com:leyalutik/leya.git
 git add .
-git commit -m "date /T hehehe"
+git commit -m "date hehehe"
 git push -u -f  origin master
