@@ -1,6 +1,8 @@
 ##!/bin/bash
 #chmod +x ./myscript
 
+HOME=C:\git\leya\git_home
+
 echo 'Test the SSH key:'
 eval "$(ssh-agent -s)"
 ssh-add id_ed25519

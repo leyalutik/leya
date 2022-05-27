@@ -118,11 +118,13 @@ pause
 cd C:\git
 echo @Echo off > ADD_REPOSITORIES.bat
 echo chcp 65001 >> ADD_REPOSITORIES.bat
-
+echo if not defined HOME ( set HOME=C:\git\leya\git_home)  else  ( echo variable HOME is already defined by %HOME% ) >> ADD_REPOSITORIES.bat
+echo echo HOME=%HOME%>>ADD_REPOSITORIES.bat
 echo echo Исполняемый файл ADD_REPOSITORIES.bat >> ADD_REPOSITORIES.bat
 echo echo Копирования репозитория leya. >> ADD_REPOSITORIES.bat
 echo pause >> ADD_REPOSITORIES.bat
 echo cd C:\git >> ADD_REPOSITORIES.bat
+echo 
 echo git clone https://github.com/leyalutik/leya.git >> ADD_REPOSITORIES.bat
 echo pause >> ADD_REPOSITORIES.bat
 
