@@ -8,6 +8,96 @@ echo Start working!
 echo Be sure the name of executable file is START_DAY.bat
 
 
+::Если переменной X нет то установить X=Kitay
+if not defined X ( set X=Kitay)  else  ( echo variable X is already defined by %X% )
+if not defined XX (set XX="%USERPROFILE%\Desktop\Kitay"  ) else ( echo variable XX is already defined by %XX% )
+
+
+rem Связанное с браузером Firefox
+
+::if not defined pf (set pf="%ProgramFiles%\Mozilla Firefox\firefox.exe" ) else ( echo variable pf is already defined by %pf% )
+::pause
+::if exist "%ProgramFiles%\Mozilla Firefox\firefox.exe" 
+
+set pf="%ProgramFiles%\Mozilla Firefox\firefox.exe" else 
+
+set pf="%ProgramFiles(x86)%\Mozilla Firefox\firefox.exe" 
+
+ 
+::echo Создание папки Китай в %USERPROFILE%\Desktop
+echo Creating the Kitay directory on Desktop
+pause
+cd  %USERPROFILE%\Desktop
+mkdir %X%
+
+
+::echo Переход на сайт www.github.com, где нужно  скачать репозиторий git.zip в ::папку Загрузки
+echo Opening site https://hithub.com/leyalutik/git.git 
+echo where you should download the repository git.zip in Downloads directory
+pause
+if exist  "%ProgramFiles%\Mozilla Firefox\firefox.exe"  set resF=true
+if exist  "%ProgramFiles(x86)%\Mozilla Firefox\firefox.exe" set resF=true
+if %resF% == true start "" firefox.exe  "https://github.com/leyalutik/git.git" else start "" "https://github.com/leyalutik/git.git" 
+::Open with browser chrome
+::else if exist  "%ProgramFiles%\Google\Chrome\Application\chrome.exe"  set resCh=true
+::else if exist  "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"  set resCh=true
+::if %resCh% == true start "" chrome.exe  "https://github.com/leyalutik/git.git" else start ""  "https://github.com/leyalutik/git.git"
+
+::echo Переименование скачанного файла git-master.zip в git.zip
+echo Rename downloaded file git-master.zip to git.zip
+pause
+cd %USERPROFILE%\Downloads
+RENAME git-master.zip git.zip
+
+::echo Распакование файлов git.zip в папке Загрузки
+echo Unzipping file git.zip in Downloads directory.
+pause
+cd %USERPROFILE%\Downloads
+tar -xf  git.zip || echo In directory Downloads Unzip file git.zip by hand.
+pause
+
+::echo Переименование папки git-master в git
+echo Rename git_master directory to  git directory
+pause
+cd %USERPROFILE%\Downloads
+RENAME git-master git
+
+::echo Копирование папки git в C:\git
+echo Coping git directory from Downloads to C:\
+pause
+cd %USERPROFILE%\Downloads
+XCOPY  git C:\git\ /E
+
+
+::echo Добавление переменных среды в переменную Path
+::echo Сохраним переменную в файле "current_system_path.txt"
+echo Adding path variables and save current in file system-path.txt
+cd C:\git
+set Path > current_system_path.txt
+pause
+
+::echo Открываем "Панель управления.Система".
+echo Opening Control System. Add system path variable.
+pause
+
+control /name Microsoft.System
+echo C:\git\bin;C:\git\mingw\bin;C:\git\mingw\cmake\bin;C:\git\mingw\vim82;C:\git\leya\notion_set;C:\git\leya;C:\git\leya\WORK;| clip
+::echo Перейдите в окно "О системе" -^> "Дополнительные параметры" -^> "Переменные среды"
+::echo В верхнем окне переменные пользователя выберите ::Path и нажмите кнопку "Изменить".Потом нажмите 'Enter'.
+::echo Добавление переменных в переменную Путь.
+
+::echo Скопирован в буфер Путь:"C:\git\bin"
+::echo Нажмите кнопку "Создать" и добавьте эту переменную ::через ctrl+v. Потом нажмите Enter.
+::echo Copy in buffer path variable : "C:\git\bin"
+::echo C:\git\bin| clip
+::pause
+
+
+::echo Нажимайте ОК на всех окнах.
+::pause
+
+
+
 echo Deleting directory git from directory Downloads
 ::Удаление папки git из папки Загрузки
 pause
@@ -96,7 +186,7 @@ copy START_DAY.bat "%X%\START_DAY.bat"
 
 echo Задания на вечер, создание файла.
 cd C:\git\leya
-copy evening_tasks.txt "%USERPROFILE%\Desktop\Китай\evening_tasks.txt"
+copy evening_tasks.txt "%USERPROFILE%\Desktop\Kitay\evening_tasks.txt"
 pause
 cd "%XX%"
 start  evening_tasks.txt

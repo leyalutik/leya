@@ -1,0 +1,132 @@
+# Этот файл viminfo автоматически создан Vim 8.2.
+# Его можно (осторожно!) редактировать.
+
+# Viminfo version
+|1,4
+
+# Значение опции 'encoding' в момент записи файла
+*encoding=cp1251
+
+
+# hlsearch on (H) or off (h):
+~h
+# Последний Шаблон поиска:
+~MSle0~/home
+
+# Командная строка, история (начиная от свежего к старому):
+:wq
+|2,0,1653665770,,"wq"
+:q
+|2,0,1653647921,,"q"
+
+# Строка поиска, история (начиная от свежего к старому):
+?/home
+|2,1,1653647915,47,"home"
+
+# Выражение, история (начиная от свежего к старому):
+
+# Строка ввода, история (начиная от свежего к старому):
+
+# Строка отладки, история (начиная от свежего к старому):
+
+# Регистры:
+
+# Глобальные отметки:
+'0  1  28  C:\git\leya\bash_config.sh
+|4,48,1,28,1653665770,"C:\\git\\leya\\bash_config.sh"
+'1  1  0  C:\git\leya\.git\config
+|4,49,1,0,1653648483,"C:\\git\\leya\\.git\\config"
+'2  1  0  C:\git\leya\.git\HEAD
+|4,50,1,0,1653648446,"C:\\git\\leya\\.git\\HEAD"
+'3  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,51,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+'4  1  0  ~\.gitconfig
+|4,52,1,0,1653647648,"~\\.gitconfig"
+
+# Список прыжков (сначала более свежие):
+-'  1  28  C:\git\leya\bash_config.sh
+|4,39,1,28,1653665770,"C:\\git\\leya\\bash_config.sh"
+-'  1  0  C:\git\leya\.git\config
+|4,39,1,0,1653648483,"C:\\git\\leya\\.git\\config"
+-'  1  0  C:\git\leya\.git\config
+|4,39,1,0,1653648483,"C:\\git\\leya\\.git\\config"
+-'  1  0  C:\git\leya\.git\HEAD
+|4,39,1,0,1653648446,"C:\\git\\leya\\.git\\HEAD"
+-'  1  0  C:\git\leya\.git\HEAD
+|4,39,1,0,1653648446,"C:\\git\\leya\\.git\\HEAD"
+-'  1  0  C:\git\leya\.git\HEAD
+|4,39,1,0,1653648446,"C:\\git\\leya\\.git\\HEAD"
+-'  1  0  C:\git\leya\.git\HEAD
+|4,39,1,0,1653648446,"C:\\git\\leya\\.git\\HEAD"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+
+# История местных отметок (от более свежих к старым):
+
+> C:\git\leya\bash_config.sh
+	*	1653665768	0
+	"	1	28
+	.	1	0
+	+	1	0
+
+> C:\git\leya\.git\config
+	*	1653648478	0
+	"	1	0
+
+> C:\git\leya\.git\HEAD
+	*	1653648443	0
+	"	1	0
+
+> C:\git\usr\etc\profile.d\gawk.sh
+	*	1653647919	0
+	"	1	0
+
+> ~\.gitconfig
+	*	1653647643	0
+	"	1	0

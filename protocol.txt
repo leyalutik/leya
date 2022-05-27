@@ -1,25 +1,31 @@
-﻿как изменить файл через bash строку
+﻿Убрать из контроля все пути
+посмотреть что будет только с cmd_config
+
+Создание cmd со всеми настройками
+
+git настройка
+
+set HOME=C:\git\leya
+
+путь к Kitay
+path = path
+
+
+$XDG_CONFIG_HOME что это такое
+Как сделать постоянным путь настроек git в C:\git
+
+как изменить файл через bash строку
 изменить файлы     
 
 You have to generate the ssh public/private keys in your desired directory instead of the default /home/$USER/. ...
     
-echo Edit the property IdentityFile in /etc/ssh/ssh_config to point to the new id_rsa .
-cd /etc/ssh
-gvim ssh_config
-read -p "press Enter."
-    
-echo Edit the property AuthorizedKeysFile in /etc/ssh/sshd_config to point to the desired path.
-gvim sshd_config
-read -p "press Enter."
-   
-echo Check connection.
 
 Restart the ssh daemon.
 
 
 Найти все моменты артонов из сезонов в замедленной паузе
 скачать все моменты от метатезы
-
+от golden@no_boobs_
 
 Установить Itunes 12.6.5
 Установить программу Найти в твиттере по поиску Апология (или Ипровизация) Фильтр
