@@ -15,7 +15,9 @@
 
 # Командная строка, история (начиная от свежего к старому):
 :wq
-|2,0,1653665770,,"wq"
+|2,0,1653667706,,"wq"
+:w
+|2,0,1653667524,,"w"
 :q
 |2,0,1653647921,,"q"
 
@@ -30,26 +32,90 @@
 # Строка отладки, история (начиная от свежего к старому):
 
 # Регистры:
+""0	CHAR	0
+	C:/git
+|3,1,0,0,1,0,1653667486,"C:/git"
+"-	CHAR	0
+	..
+|3,0,36,0,1,0,1653667457,".."
 
 # Глобальные отметки:
-'0  1  28  C:\git\leya\bash_config.sh
-|4,48,1,28,1653665770,"C:\\git\\leya\\bash_config.sh"
-'1  1  0  C:\git\leya\.git\config
-|4,49,1,0,1653648483,"C:\\git\\leya\\.git\\config"
-'2  1  0  C:\git\leya\.git\HEAD
-|4,50,1,0,1653648446,"C:\\git\\leya\\.git\\HEAD"
-'3  1  0  C:\git\usr\etc\profile.d\gawk.sh
-|4,51,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
-'4  1  0  ~\.gitconfig
-|4,52,1,0,1653647648,"~\\.gitconfig"
+'0  35  19  C:\git\etc\ssh\ssh_config
+|4,48,35,19,1653667706,"C:\\git\\etc\\ssh\\ssh_config"
+'1  14  2  C:\git\etc\ssh\ssh_config
+|4,49,14,2,1653667544,"C:\\git\\etc\\ssh\\ssh_config"
+'2  14  2  C:\git\etc\ssh\ssh_config
+|4,50,14,2,1653667544,"C:\\git\\etc\\ssh\\ssh_config"
+'3  1  28  C:\git\leya\bash_config.sh
+|4,51,1,28,1653665770,"C:\\git\\leya\\bash_config.sh"
+'4  1  0  C:\git\leya\.git\config
+|4,52,1,0,1653648483,"C:\\git\\leya\\.git\\config"
+'5  1  0  C:\git\leya\.git\HEAD
+|4,53,1,0,1653648446,"C:\\git\\leya\\.git\\HEAD"
+'6  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,54,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+'7  1  0  ~\.gitconfig
+|4,55,1,0,1653647648,"~\\.gitconfig"
 
 # Список прыжков (сначала более свежие):
+-'  35  19  C:\git\etc\ssh\ssh_config
+|4,39,35,19,1653667706,"C:\\git\\etc\\ssh\\ssh_config"
+-'  14  2  C:\git\etc\ssh\ssh_config
+|4,39,14,2,1653667668,"C:\\git\\etc\\ssh\\ssh_config"
+-'  14  2  C:\git\etc\ssh\ssh_config
+|4,39,14,2,1653667544,"C:\\git\\etc\\ssh\\ssh_config"
+-'  1  0  C:\git\etc\ssh\ssh_config
+|4,39,1,0,1653667431,"C:\\git\\etc\\ssh\\ssh_config"
+-'  1  0  C:\git\etc\ssh\ssh_config
+|4,39,1,0,1653667431,"C:\\git\\etc\\ssh\\ssh_config"
+-'  1  28  C:\git\leya\bash_config.sh
+|4,39,1,28,1653665770,"C:\\git\\leya\\bash_config.sh"
+-'  1  28  C:\git\leya\bash_config.sh
+|4,39,1,28,1653665770,"C:\\git\\leya\\bash_config.sh"
+-'  1  28  C:\git\leya\bash_config.sh
+|4,39,1,28,1653665770,"C:\\git\\leya\\bash_config.sh"
 -'  1  28  C:\git\leya\bash_config.sh
 |4,39,1,28,1653665770,"C:\\git\\leya\\bash_config.sh"
 -'  1  0  C:\git\leya\.git\config
 |4,39,1,0,1653648483,"C:\\git\\leya\\.git\\config"
 -'  1  0  C:\git\leya\.git\config
 |4,39,1,0,1653648483,"C:\\git\\leya\\.git\\config"
+-'  1  0  C:\git\leya\.git\config
+|4,39,1,0,1653648483,"C:\\git\\leya\\.git\\config"
+-'  1  0  C:\git\leya\.git\config
+|4,39,1,0,1653648483,"C:\\git\\leya\\.git\\config"
+-'  1  0  C:\git\leya\.git\config
+|4,39,1,0,1653648483,"C:\\git\\leya\\.git\\config"
+-'  1  0  C:\git\leya\.git\config
+|4,39,1,0,1653648483,"C:\\git\\leya\\.git\\config"
+-'  1  0  C:\git\leya\.git\config
+|4,39,1,0,1653648483,"C:\\git\\leya\\.git\\config"
+-'  1  0  C:\git\leya\.git\config
+|4,39,1,0,1653648483,"C:\\git\\leya\\.git\\config"
+-'  1  0  C:\git\leya\.git\HEAD
+|4,39,1,0,1653648446,"C:\\git\\leya\\.git\\HEAD"
+-'  1  0  C:\git\leya\.git\HEAD
+|4,39,1,0,1653648446,"C:\\git\\leya\\.git\\HEAD"
+-'  1  0  C:\git\leya\.git\HEAD
+|4,39,1,0,1653648446,"C:\\git\\leya\\.git\\HEAD"
+-'  1  0  C:\git\leya\.git\HEAD
+|4,39,1,0,1653648446,"C:\\git\\leya\\.git\\HEAD"
+-'  1  0  C:\git\leya\.git\HEAD
+|4,39,1,0,1653648446,"C:\\git\\leya\\.git\\HEAD"
+-'  1  0  C:\git\leya\.git\HEAD
+|4,39,1,0,1653648446,"C:\\git\\leya\\.git\\HEAD"
+-'  1  0  C:\git\leya\.git\HEAD
+|4,39,1,0,1653648446,"C:\\git\\leya\\.git\\HEAD"
+-'  1  0  C:\git\leya\.git\HEAD
+|4,39,1,0,1653648446,"C:\\git\\leya\\.git\\HEAD"
+-'  1  0  C:\git\leya\.git\HEAD
+|4,39,1,0,1653648446,"C:\\git\\leya\\.git\\HEAD"
+-'  1  0  C:\git\leya\.git\HEAD
+|4,39,1,0,1653648446,"C:\\git\\leya\\.git\\HEAD"
+-'  1  0  C:\git\leya\.git\HEAD
+|4,39,1,0,1653648446,"C:\\git\\leya\\.git\\HEAD"
+-'  1  0  C:\git\leya\.git\HEAD
+|4,39,1,0,1653648446,"C:\\git\\leya\\.git\\HEAD"
 -'  1  0  C:\git\leya\.git\HEAD
 |4,39,1,0,1653648446,"C:\\git\\leya\\.git\\HEAD"
 -'  1  0  C:\git\leya\.git\HEAD
@@ -74,6 +140,92 @@
 |4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
 -'  1  0  C:\git\usr\etc\profile.d\gawk.sh
 |4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  C:\git\usr\etc\profile.d\gawk.sh
+|4,39,1,0,1653647921,"C:\\git\\usr\\etc\\profile.d\\gawk.sh"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
+-'  1  0  ~\.gitconfig
+|4,39,1,0,1653647648,"~\\.gitconfig"
 -'  1  0  ~\.gitconfig
 |4,39,1,0,1653647648,"~\\.gitconfig"
 -'  1  0  ~\.gitconfig
@@ -108,6 +260,25 @@
 |4,39,1,0,1653647648,"~\\.gitconfig"
 
 # История местных отметок (от более свежих к старым):
+
+> C:\git\etc\ssh\ssh_config
+	*	1653667705	0
+	"	35	19
+	^	35	20
+	.	35	19
+	+	34	17
+	+	33	17
+	+	34	23
+	+	32	17
+	+	33	24
+	+	34	0
+	+	33	0
+	+	32	0
+	+	35	3
+	+	32	30
+	+	33	19
+	+	34	30
+	+	35	19
 
 > C:\git\leya\bash_config.sh
 	*	1653665768	0
