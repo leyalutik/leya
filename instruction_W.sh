@@ -53,6 +53,8 @@ git add .
 git commit -m "date"
 git push -u -f  origin master
 
+eval "$(ssh-agent –k)"
+
 # if smth was wrong try command
 # ssh -Tv git@github.com 
 
