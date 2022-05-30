@@ -14,43 +14,33 @@ chcp 65001
 echo Очищение рабочего места от всех моих папок.
 pause
 echo Копирование evening tasks в папку leya
+
+::Если переменной X нет то установить X=Kitay
+if not defined X ( set X=Kitay)  else  ( echo variable X is already defined by %X% )
+if not defined XX (set XX="%USERPROFILE%\Desktop\Kitay"  ) else ( echo variable XX is already defined by %XX% )
  
-cd "%USERPROFILE%\Desktop\Китай"
-copy evening_tasks.txt C:\git\leya\\evening_tasks.txt
+cd "%USERPROFILE%\Desktop\X"
+copy evening_tasks.txt C:\git\leya\evening_tasks.txt
 echo Отправление изменённых файлов leya на github
 pause
+cd C:\git
+start "" git-bash.exe "leya\git_push_files.sh"
 
-cd C:\git\leya
-
-git config --global user.email "ludapevek@gmail.com"
-git config --global user.name "leyalutik"
-git config --global  core.autocrlf true
-git config --global --list
-
-git init
-git add .
-pause
-git commit
-pause
-git remote add origin  https://github.com/leyalutik/leya.git
-pause
-git push -u -f origin master 
-
-cd "%USERPROFILE%\DESKTOP\Китай"
+cd "%USERPROFILE%\DESKTOP\X"
 copy evening_tasks.txt  "%USERPROFILE%\DESKTOP\evening_tasks.txt"
 cd  "%USERPROFILE%\DESKTOP\"
 
-echo Удаление папки "%USERPROFILE%\DESKTOP\Китай"
+echo Удаление папки "%USERPROFILE%\DESKTOP\Kitay"
 pause
-RD "%USERPROFILE%\DESKTOP\Китай" /Q /S
+RD "%USERPROFILE%\DESKTOP\X" /Q /S
 
-echo Удалить переменные окружения из Пути.
-pause
-control /name Microsoft.System
-echo Перейдите в окно "О системе" -^> "Дополнительные параметры" -^> "Переменные среды"
-echo В верхнем окне переменные пользователя выберите Path и нажмите кнопку "Изменить".
-echo Потом нажмите 'Enter'.
-pause
+::echo Удалить переменные окружения из Пути.
+;;pause
+;;control /name Microsoft.System
+;;echo Перейдите в окно "О системе" -^> "Дополнительные параметры" -^> "Переменные среды"
+;;echo В верхнем окне переменные пользователя выберите Path и нажмите кнопку "Изменить".
+;;echo Потом нажмите 'Enter'.
+;;pause
 
 echo Запустить  браузер  и очистить историю.
 echo Потом нажмите 'Enter'.

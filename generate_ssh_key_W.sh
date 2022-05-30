@@ -21,6 +21,13 @@ eval "$(ssh-agent -s)"
 	
 ssh-add id_ed25519
 
+echo 'Coping the SSH public key to your clipboard.'
+	
+clip < id_ed25519.pub
+
+echo 'Add SSH key to Setting of github account'
+read -p "Press enter to continue"
+
 echo 'Test the SSH key:'
 eval "$(ssh-agent -s)"
 ssh-add id_ed25519

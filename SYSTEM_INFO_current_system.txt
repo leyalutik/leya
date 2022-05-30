@@ -9,12 +9,12 @@ Registered Owner:          HP
 Registered Organization:   HP
 Product ID:                00327-30000-00000-AAOEM
 Original Install Date:     27.10.2019, 0:37:12
-System Boot Time:          27.05.2022, 9:52:01
+System Boot Time:          30.05.2022, 9:47:43
 System Manufacturer:       HP
 System Model:              HP Slimline Desktop PC 260-a120ur
 System Type:               x64-based PC
 Processor(s):              1 Processor(s) Installed.
-                           [01]: Intel64 Family 6 Model 76 Stepping 4 GenuineIntel ~1600 Mhz
+                           [01]: Intel64 Family 6 Model 76 Stepping 4 GenuineIntel ~1360 Mhz
 BIOS Version:              AMI F.32, 01.12.2017
 Windows Directory:         C:\WINDOWS
 System Directory:          C:\WINDOWS\system32
@@ -23,10 +23,10 @@ System Locale:             ru;Russian
 Input Locale:              ru;Russian
 Time Zone:                 (UTC+03:00) Moscow, St. Petersburg
 Total Physical Memory:     3 997 MB
-Available Physical Memory: 1 976 MB
+Available Physical Memory: 971 MB
 Virtual Memory: Max Size:  7 453 MB
-Virtual Memory: Available: 5 061 MB
-Virtual Memory: In Use:    2 392 MB
+Virtual Memory: Available: 2 857 MB
+Virtual Memory: In Use:    4 596 MB
 Page File Location(s):     C:\pagefile.sys
 Domain:                    WORKGROUP
 Logon Server:              \\DESKTOP-ATJQ3VG
