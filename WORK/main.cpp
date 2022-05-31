@@ -130,7 +130,7 @@ void handle_option_commands(const std::vector<Command>& command_set);
 int main()
 {
 	char OS  = 'W';
-	{
+	{	
 		std::cout << "Is your Operating system Windows? Y/n \n";
 		char answer;
 		while(answer != '\n' && answer != 'Y' && answer != 'y' && answer != 'n' && answer != 'N')

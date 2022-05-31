@@ -3,3 +3,5 @@
 	email = ludapevek@gmail.com
 [core]
 	autocrlf = true
+[credential "helperselector"]
+	selected = manager-core
