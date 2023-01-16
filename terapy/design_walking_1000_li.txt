@@ -1,0 +1,169 @@
+
+Механизм работы
+
+Открываем программу
+рассчитываем сегодняшнее число
+если оно совпадает с переменной current_date; то ничего не делаем
+иначе
+1.current_date присваиваем сегодняшнее число
+Добавляем его в файл Done.txt
+2.открываем файл в режиме 
+fstream log;
+if(f.is_open())
+{
+log.open("log.txt", fstream::app);
+f << "----------------------------------\n"
+  << "          " << current_date << "        \n"
+  << "----------------------------------\n";	 
+}
+else
+{
+std::cout << "Opening file " << filename << " is faled. \n";
+}
+
+
+class File
+{
+	private:
+		std::string name;
+		std::string buffer_file;
+		std::string buffer_line;
+		std::string buffer_word;
+
+
+	public:
+		File(const std::string& name_new);
+
+		std::string get_buffer_word();
+		std::string get_buffer_line();
+		std::string get_buffer_file();
+		std::string get_name();
+		
+		void display_line(const int32_t number);//number line [0:N]
+		void display_line(); //display current line
+		void display_file(); // display current file
+		void display_buffer();//display current buffer
+		
+
+		bool find_word(const std::string& word); // 1 - найдена 0 - нет
+		int32_t count_lines(const std::string& word); //Подсчет строк, в которых находится слово
+		
+		int32_t count_words(const std::string& word); //Подсчет слов, в которых находится слово
+		void find_line_by_word(const std::string& word);
+		void find_line_by_word_number(const std::string& word
+				, const int32_t word_number );//Найти строку
+		//		, в котором находится повторяющееся слово под номером [0,N] 
+		void write_line();// open for writing Prompt для записи текста до Enter
+		void extract_file();// extract file in  buffer_file
+		void clear_file(); //clear file with current name and clear buffer variables;
+		void extract_last_line();//extract to buffer_line
+		void extract_line(const int32_t number_line); //number=[0,N] extract to buffer_line
+		void input_line_to_the_end(const std::string& line);
+		void replace_line(const std::string& line, const int32_t number); //number [0:N]
+
+};
+
+
+menu
+
+
+
+   ---------------   open "Plans"   ----------------   (1)
+   ---------------   open "Done"    ----------------   (2)
+   ---------------   Exit           ----------------   (3)
+
+class Option
+{
+private:
+	std::string source_file;//source_file_option.txt
+	std::vector<std::string> commands;
+public:
+	Option(std::string source_file_value);
+	void launch();
+
+};
+
+class Command
+{
+std::string 
+};
+
+Собираем таблицу
+из двух колонок из двух файлов
+
+Обновляется вектор lines из файла
+Работаем только с ним
+
+
+Выводим на экран через дисплей
+
+Обновляется source_file
+при уничтожении класса
+
+class menu_column
+{
+column Var;
+
+void display_menu
+{
+view all lines
+add_line
+delete_line
+view line
+exit
+}
+
+void launch()
+Вывести меню
+Вывести выбор опций
+
+}
+
+class column
+{
+
+private:
+
+int32_t width = 40;
+std::vector<std::string>> lines;
+source_file;
+current_line;
+public:
+
+column()
+{
+source_file = 
+lines заполнить 
+}
+
+column(std::string name_file)
+{
+source_file = name_file;
+lines заполнить из source file
+}
+
+
+
+void add_line()
+{
+add to file
+add to vector
+}
+void delete_line(const int number_line); //From 0
+{
+delete from file
+delete from vector
+
+}
+
+void display_all()
+{
+вывести на экран весь вектор lines
+}
+
+void display(const int i)
+{
+вывести i-ый элемент вектора lines
+}
+
+}

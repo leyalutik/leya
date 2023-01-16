@@ -1,0 +1,66 @@
+
+Host Name:                 DESKTOP-DV9S09E
+OS Name:                   Майкрософт Windows 10 Домашняя для одного языка
+OS Version:                10.0.19045 N/A Build 19045
+OS Manufacturer:           Microsoft Corporation
+OS Configuration:          Standalone Workstation
+OS Build Type:             Multiprocessor Free
+Registered Owner:          HP
+Registered Organization:   
+Product ID:                00327-30560-68115-AAOEM
+Original Install Date:     03.09.2021, 18:07:18
+System Boot Time:          12.01.2023, 9:33:44
+System Manufacturer:       HP
+System Model:              260-a110ur
+System Type:               x64-based PC
+Processor(s):              1 Processor(s) Installed.
+                           [01]: Intel64 Family 6 Model 76 Stepping 4 GenuineIntel ~1601 Mhz
+BIOS Version:              AMI F.50, 05.05.2019
+Windows Directory:         C:\Windows
+System Directory:          C:\Windows\system32
+Boot Device:               \Device\HarddiskVolume1
+System Locale:             ru;Russian
+Input Locale:              ru;Russian
+Time Zone:                 (UTC+03:00) Moscow, St. Petersburg
+Total Physical Memory:     3 991 MB
+Available Physical Memory: 745 MB
+Virtual Memory: Max Size:  5 176 MB
+Virtual Memory: Available: 819 MB
+Virtual Memory: In Use:    4 357 MB
+Page File Location(s):     C:\pagefile.sys
+Domain:                    WORKGROUP
+Logon Server:              \\DESKTOP-DV9S09E
+Hotfix(s):                 18 Hotfix(s) Installed.
+                           [01]: KB5020872
+                           [02]: KB5000736
+                           [03]: KB5003791
+                           [04]: KB5012170
+                           [05]: KB5015684
+                           [06]: KB5022282
+                           [07]: KB5006753
+                           [08]: KB5007273
+                           [09]: KB5011352
+                           [10]: KB5011651
+                           [11]: KB5014032
+                           [12]: KB5014035
+                           [13]: KB5014671
+                           [14]: KB5015895
+                           [15]: KB5016705
+                           [16]: KB5018506
+                           [17]: KB5020372
+                           [18]: KB5005699
+Network Card(s):           2 NIC(s) Installed.
+                           [01]: Realtek RTL8723BE 802.11 bgn Wi-Fi Adapter
+                                 Connection Name: Беспроводная сеть
+                                 Status:          Media disconnected
+                           [02]: Realtek PCIe GbE Family Controller
+                                 Connection Name: Ethernet
+                                 DHCP Enabled:    Yes
+                                 DHCP Server:     192.168.1.1
+                                 IP address(es)
+                                 [01]: 192.168.1.52
+                                 [02]: fe80::f44c:a1f:1d13:fd1a
+Hyper-V Requirements:      VM Monitor Mode Extensions: Yes
+                           Virtualization Enabled In Firmware: No
+                           Second Level Address Translation: Yes
+                           Data Execution Prevention Available: Yes

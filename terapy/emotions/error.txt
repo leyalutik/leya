@@ -1,0 +1,410 @@
+main.cpp: In function 'void parse_line(const string&, std::vector<std::__cxx11::basic_string<char> >&, int)':
+main.cpp:76:68: error: no match for 'operator+' (operand types are 'const string' {aka 'const std::__cxx11::basic_string<char>'} and 'int32_t' {aka 'int'})
+   76 |                         grid_rows.push_back(std::string(given_line + index_start_new_line
+      |                                                         ~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~
+      |                                                         |            |
+      |                                                         |            int32_t {aka int}
+      |                                                         const string {aka const std::__cxx11::basic_string<char>}
+In file included from c:\git\mingw\include\c++\11.2.0\bits\stl_algobase.h:67,
+                 from c:\git\mingw\include\c++\11.2.0\vector:60,
+                 from main.cpp:1:
+c:\git\mingw\include\c++\11.2.0\bits\stl_iterator.h:1242:5: note: candidate: 'template<class _Iterator, class _Container> __gnu_cxx::__normal_iterator<_Iterator, _Container> __gnu_cxx::operator+(typename __gnu_cxx::__normal_iterator<_Iterator, _Container>::difference_type, const __gnu_cxx::__normal_iterator<_Iterator, _Container>&)'
+ 1242 |     operator+(typename __normal_iterator<_Iterator, _Container>::difference_type
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\stl_iterator.h:1242:5: note:   template argument deduction/substitution failed:
+main.cpp:76:70: note:   mismatched types 'const __gnu_cxx::__normal_iterator<_Iterator, _Container>' and 'int32_t' {aka 'int'}
+   76 |                         grid_rows.push_back(std::string(given_line + index_start_new_line
+      |                                                                      ^~~~~~~~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\bits\stl_algobase.h:67,
+                 from c:\git\mingw\include\c++\11.2.0\vector:60,
+                 from main.cpp:1:
+c:\git\mingw\include\c++\11.2.0\bits\stl_iterator.h:568:5: note: candidate: 'template<class _Iterator> constexpr std::reverse_iterator<_Iterator> std::operator+(typename std::reverse_iterator<_Iterator>::difference_type, const std::reverse_iterator<_Iterator>&)'
+  568 |     operator+(typename reverse_iterator<_Iterator>::difference_type __n,
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\stl_iterator.h:568:5: note:   template argument deduction/substitution failed:
+main.cpp:76:70: note:   mismatched types 'const std::reverse_iterator<_Iterator>' and 'int32_t' {aka 'int'}
+   76 |                         grid_rows.push_back(std::string(given_line + index_start_new_line
+      |                                                                      ^~~~~~~~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\bits\stl_algobase.h:67,
+                 from c:\git\mingw\include\c++\11.2.0\vector:60,
+                 from main.cpp:1:
+c:\git\mingw\include\c++\11.2.0\bits\stl_iterator.h:1646:5: note: candidate: 'template<class _Iterator> constexpr std::move_iterator<_IteratorL> std::operator+(typename std::move_iterator<_IteratorL>::difference_type, const std::move_iterator<_IteratorL>&)'
+ 1646 |     operator+(typename move_iterator<_Iterator>::difference_type __n,
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\stl_iterator.h:1646:5: note:   template argument deduction/substitution failed:
+main.cpp:76:70: note:   mismatched types 'const std::move_iterator<_IteratorL>' and 'int32_t' {aka 'int'}
+   76 |                         grid_rows.push_back(std::string(given_line + index_start_new_line
+      |                                                                      ^~~~~~~~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\string:55,
+                 from c:\git\mingw\include\c++\11.2.0\bits\locale_classes.h:40,
+                 from c:\git\mingw\include\c++\11.2.0\bits\ios_base.h:41,
+                 from c:\git\mingw\include\c++\11.2.0\ios:42,
+                 from c:\git\mingw\include\c++\11.2.0\ostream:38,
+                 from c:\git\mingw\include\c++\11.2.0\iostream:39,
+                 from main.cpp:2:
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6094:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&, const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 6094 |     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6094:5: note:   template argument deduction/substitution failed:
+main.cpp:76:70: note:   mismatched types 'const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'int32_t' {aka 'int'}
+   76 |                         grid_rows.push_back(std::string(given_line + index_start_new_line
+      |                                                                      ^~~~~~~~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\string:56,
+                 from c:\git\mingw\include\c++\11.2.0\bits\locale_classes.h:40,
+                 from c:\git\mingw\include\c++\11.2.0\bits\ios_base.h:41,
+                 from c:\git\mingw\include\c++\11.2.0\ios:42,
+                 from c:\git\mingw\include\c++\11.2.0\ostream:38,
+                 from c:\git\mingw\include\c++\11.2.0\iostream:39,
+                 from main.cpp:2:
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.tcc:1169:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 1169 |     operator+(const _CharT* __lhs,
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.tcc:1169:5: note:   template argument deduction/substitution failed:
+main.cpp:76:70: note:   mismatched types 'const _CharT*' and 'std::__cxx11::basic_string<char>'
+   76 |                         grid_rows.push_back(std::string(given_line + index_start_new_line
+      |                                                                      ^~~~~~~~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\string:56,
+                 from c:\git\mingw\include\c++\11.2.0\bits\locale_classes.h:40,
+                 from c:\git\mingw\include\c++\11.2.0\bits\ios_base.h:41,
+                 from c:\git\mingw\include\c++\11.2.0\ios:42,
+                 from c:\git\mingw\include\c++\11.2.0\ostream:38,
+                 from c:\git\mingw\include\c++\11.2.0\iostream:39,
+                 from main.cpp:2:
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.tcc:1189:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(_CharT, const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 1189 |     operator+(_CharT __lhs, const basic_string<_CharT, _Traits, _Alloc>& __rhs)
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.tcc:1189:5: note:   template argument deduction/substitution failed:
+main.cpp:76:70: note:   mismatched types 'const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'int32_t' {aka 'int'}
+   76 |                         grid_rows.push_back(std::string(given_line + index_start_new_line
+      |                                                                      ^~~~~~~~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\string:55,
+                 from c:\git\mingw\include\c++\11.2.0\bits\locale_classes.h:40,
+                 from c:\git\mingw\include\c++\11.2.0\bits\ios_base.h:41,
+                 from c:\git\mingw\include\c++\11.2.0\ios:42,
+                 from c:\git\mingw\include\c++\11.2.0\ostream:38,
+                 from c:\git\mingw\include\c++\11.2.0\iostream:39,
+                 from main.cpp:2:
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6131:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&, const _CharT*)'
+ 6131 |     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6131:5: note:   template argument deduction/substitution failed:
+main.cpp:76:70: note:   mismatched types 'const _CharT*' and 'int'
+   76 |                         grid_rows.push_back(std::string(given_line + index_start_new_line
+      |                                                                      ^~~~~~~~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\string:55,
+                 from c:\git\mingw\include\c++\11.2.0\bits\locale_classes.h:40,
+                 from c:\git\mingw\include\c++\11.2.0\bits\ios_base.h:41,
+                 from c:\git\mingw\include\c++\11.2.0\ios:42,
+                 from c:\git\mingw\include\c++\11.2.0\ostream:38,
+                 from c:\git\mingw\include\c++\11.2.0\iostream:39,
+                 from main.cpp:2:
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6147:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&, _CharT)'
+ 6147 |     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs, _CharT __rhs)
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6147:5: note:   template argument deduction/substitution failed:
+main.cpp:76:70: note:   deduced conflicting types for parameter '_CharT' ('char' and 'int')
+   76 |                         grid_rows.push_back(std::string(given_line + index_start_new_line
+      |                                                                      ^~~~~~~~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\string:55,
+                 from c:\git\mingw\include\c++\11.2.0\bits\locale_classes.h:40,
+                 from c:\git\mingw\include\c++\11.2.0\bits\ios_base.h:41,
+                 from c:\git\mingw\include\c++\11.2.0\ios:42,
+                 from c:\git\mingw\include\c++\11.2.0\ostream:38,
+                 from c:\git\mingw\include\c++\11.2.0\iostream:39,
+                 from main.cpp:2:
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6159:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&&, const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 6159 |     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6159:5: note:   template argument deduction/substitution failed:
+main.cpp:76:70: note:   types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'const string' {aka 'const std::__cxx11::basic_string<char>'} have incompatible cv-qualifiers
+   76 |                         grid_rows.push_back(std::string(given_line + index_start_new_line
+      |                                                                      ^~~~~~~~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\string:55,
+                 from c:\git\mingw\include\c++\11.2.0\bits\locale_classes.h:40,
+                 from c:\git\mingw\include\c++\11.2.0\bits\ios_base.h:41,
+                 from c:\git\mingw\include\c++\11.2.0\ios:42,
+                 from c:\git\mingw\include\c++\11.2.0\ostream:38,
+                 from c:\git\mingw\include\c++\11.2.0\iostream:39,
+                 from main.cpp:2:
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6165:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&, std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&&)'
+ 6165 |     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6165:5: note:   template argument deduction/substitution failed:
+main.cpp:76:70: note:   mismatched types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'int32_t' {aka 'int'}
+   76 |                         grid_rows.push_back(std::string(given_line + index_start_new_line
+      |                                                                      ^~~~~~~~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\string:55,
+                 from c:\git\mingw\include\c++\11.2.0\bits\locale_classes.h:40,
+                 from c:\git\mingw\include\c++\11.2.0\bits\ios_base.h:41,
+                 from c:\git\mingw\include\c++\11.2.0\ios:42,
+                 from c:\git\mingw\include\c++\11.2.0\ostream:38,
+                 from c:\git\mingw\include\c++\11.2.0\iostream:39,
+                 from main.cpp:2:
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6171:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&&, std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&&)'
+ 6171 |     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6171:5: note:   template argument deduction/substitution failed:
+main.cpp:76:70: note:   types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'const string' {aka 'const std::__cxx11::basic_string<char>'} have incompatible cv-qualifiers
+   76 |                         grid_rows.push_back(std::string(given_line + index_start_new_line
+      |                                                                      ^~~~~~~~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\string:55,
+                 from c:\git\mingw\include\c++\11.2.0\bits\locale_classes.h:40,
+                 from c:\git\mingw\include\c++\11.2.0\bits\ios_base.h:41,
+                 from c:\git\mingw\include\c++\11.2.0\ios:42,
+                 from c:\git\mingw\include\c++\11.2.0\ostream:38,
+                 from c:\git\mingw\include\c++\11.2.0\iostream:39,
+                 from main.cpp:2:
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6193:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(const _CharT*, std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&&)'
+ 6193 |     operator+(const _CharT* __lhs,
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6193:5: note:   template argument deduction/substitution failed:
+main.cpp:76:70: note:   mismatched types 'const _CharT*' and 'std::__cxx11::basic_string<char>'
+   76 |                         grid_rows.push_back(std::string(given_line + index_start_new_line
+      |                                                                      ^~~~~~~~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\string:55,
+                 from c:\git\mingw\include\c++\11.2.0\bits\locale_classes.h:40,
+                 from c:\git\mingw\include\c++\11.2.0\bits\ios_base.h:41,
+                 from c:\git\mingw\include\c++\11.2.0\ios:42,
+                 from c:\git\mingw\include\c++\11.2.0\ostream:38,
+                 from c:\git\mingw\include\c++\11.2.0\iostream:39,
+                 from main.cpp:2:
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6199:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(_CharT, std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&&)'
+ 6199 |     operator+(_CharT __lhs,
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6199:5: note:   template argument deduction/substitution failed:
+main.cpp:76:70: note:   mismatched types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'int32_t' {aka 'int'}
+   76 |                         grid_rows.push_back(std::string(given_line + index_start_new_line
+      |                                                                      ^~~~~~~~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\string:55,
+                 from c:\git\mingw\include\c++\11.2.0\bits\locale_classes.h:40,
+                 from c:\git\mingw\include\c++\11.2.0\bits\ios_base.h:41,
+                 from c:\git\mingw\include\c++\11.2.0\ios:42,
+                 from c:\git\mingw\include\c++\11.2.0\ostream:38,
+                 from c:\git\mingw\include\c++\11.2.0\iostream:39,
+                 from main.cpp:2:
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6205:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&&, const _CharT*)'
+ 6205 |     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6205:5: note:   template argument deduction/substitution failed:
+main.cpp:76:70: note:   types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'const string' {aka 'const std::__cxx11::basic_string<char>'} have incompatible cv-qualifiers
+   76 |                         grid_rows.push_back(std::string(given_line + index_start_new_line
+      |                                                                      ^~~~~~~~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\string:55,
+                 from c:\git\mingw\include\c++\11.2.0\bits\locale_classes.h:40,
+                 from c:\git\mingw\include\c++\11.2.0\bits\ios_base.h:41,
+                 from c:\git\mingw\include\c++\11.2.0\ios:42,
+                 from c:\git\mingw\include\c++\11.2.0\ostream:38,
+                 from c:\git\mingw\include\c++\11.2.0\iostream:39,
+                 from main.cpp:2:
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6211:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&&, _CharT)'
+ 6211 |     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6211:5: note:   template argument deduction/substitution failed:
+main.cpp:76:70: note:   types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'const string' {aka 'const std::__cxx11::basic_string<char>'} have incompatible cv-qualifiers
+   76 |                         grid_rows.push_back(std::string(given_line + index_start_new_line
+      |                                                                      ^~~~~~~~~~~~~~~~~~~~
+main.cpp:77:61: error: no match for 'operator+' (operand types are 'const string' {aka 'const std::__cxx11::basic_string<char>'} and 'int32_t' {aka 'int'})
+   77 |                                                 ,given_line + counter0_space));
+      |                                                  ~~~~~~~~~~ ^ ~~~~~~~~~~~~~~
+      |                                                  |            |
+      |                                                  |            int32_t {aka int}
+      |                                                  const string {aka const std::__cxx11::basic_string<char>}
+In file included from c:\git\mingw\include\c++\11.2.0\bits\stl_algobase.h:67,
+                 from c:\git\mingw\include\c++\11.2.0\vector:60,
+                 from main.cpp:1:
+c:\git\mingw\include\c++\11.2.0\bits\stl_iterator.h:1242:5: note: candidate: 'template<class _Iterator, class _Container> __gnu_cxx::__normal_iterator<_Iterator, _Container> __gnu_cxx::operator+(typename __gnu_cxx::__normal_iterator<_Iterator, _Container>::difference_type, const __gnu_cxx::__normal_iterator<_Iterator, _Container>&)'
+ 1242 |     operator+(typename __normal_iterator<_Iterator, _Container>::difference_type
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\stl_iterator.h:1242:5: note:   template argument deduction/substitution failed:
+main.cpp:77:63: note:   mismatched types 'const __gnu_cxx::__normal_iterator<_Iterator, _Container>' and 'int32_t' {aka 'int'}
+   77 |                                                 ,given_line + counter0_space));
+      |                                                               ^~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\bits\stl_algobase.h:67,
+                 from c:\git\mingw\include\c++\11.2.0\vector:60,
+                 from main.cpp:1:
+c:\git\mingw\include\c++\11.2.0\bits\stl_iterator.h:568:5: note: candidate: 'template<class _Iterator> constexpr std::reverse_iterator<_Iterator> std::operator+(typename std::reverse_iterator<_Iterator>::difference_type, const std::reverse_iterator<_Iterator>&)'
+  568 |     operator+(typename reverse_iterator<_Iterator>::difference_type __n,
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\stl_iterator.h:568:5: note:   template argument deduction/substitution failed:
+main.cpp:77:63: note:   mismatched types 'const std::reverse_iterator<_Iterator>' and 'int32_t' {aka 'int'}
+   77 |                                                 ,given_line + counter0_space));
+      |                                                               ^~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\bits\stl_algobase.h:67,
+                 from c:\git\mingw\include\c++\11.2.0\vector:60,
+                 from main.cpp:1:
+c:\git\mingw\include\c++\11.2.0\bits\stl_iterator.h:1646:5: note: candidate: 'template<class _Iterator> constexpr std::move_iterator<_IteratorL> std::operator+(typename std::move_iterator<_IteratorL>::difference_type, const std::move_iterator<_IteratorL>&)'
+ 1646 |     operator+(typename move_iterator<_Iterator>::difference_type __n,
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\stl_iterator.h:1646:5: note:   template argument deduction/substitution failed:
+main.cpp:77:63: note:   mismatched types 'const std::move_iterator<_IteratorL>' and 'int32_t' {aka 'int'}
+   77 |                                                 ,given_line + counter0_space));
+      |                                                               ^~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\string:55,
+                 from c:\git\mingw\include\c++\11.2.0\bits\locale_classes.h:40,
+                 from c:\git\mingw\include\c++\11.2.0\bits\ios_base.h:41,
+                 from c:\git\mingw\include\c++\11.2.0\ios:42,
+                 from c:\git\mingw\include\c++\11.2.0\ostream:38,
+                 from c:\git\mingw\include\c++\11.2.0\iostream:39,
+                 from main.cpp:2:
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6094:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&, const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 6094 |     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6094:5: note:   template argument deduction/substitution failed:
+main.cpp:77:63: note:   mismatched types 'const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'int32_t' {aka 'int'}
+   77 |                                                 ,given_line + counter0_space));
+      |                                                               ^~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\string:56,
+                 from c:\git\mingw\include\c++\11.2.0\bits\locale_classes.h:40,
+                 from c:\git\mingw\include\c++\11.2.0\bits\ios_base.h:41,
+                 from c:\git\mingw\include\c++\11.2.0\ios:42,
+                 from c:\git\mingw\include\c++\11.2.0\ostream:38,
+                 from c:\git\mingw\include\c++\11.2.0\iostream:39,
+                 from main.cpp:2:
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.tcc:1169:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 1169 |     operator+(const _CharT* __lhs,
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.tcc:1169:5: note:   template argument deduction/substitution failed:
+main.cpp:77:63: note:   mismatched types 'const _CharT*' and 'std::__cxx11::basic_string<char>'
+   77 |                                                 ,given_line + counter0_space));
+      |                                                               ^~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\string:56,
+                 from c:\git\mingw\include\c++\11.2.0\bits\locale_classes.h:40,
+                 from c:\git\mingw\include\c++\11.2.0\bits\ios_base.h:41,
+                 from c:\git\mingw\include\c++\11.2.0\ios:42,
+                 from c:\git\mingw\include\c++\11.2.0\ostream:38,
+                 from c:\git\mingw\include\c++\11.2.0\iostream:39,
+                 from main.cpp:2:
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.tcc:1189:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(_CharT, const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 1189 |     operator+(_CharT __lhs, const basic_string<_CharT, _Traits, _Alloc>& __rhs)
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.tcc:1189:5: note:   template argument deduction/substitution failed:
+main.cpp:77:63: note:   mismatched types 'const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'int32_t' {aka 'int'}
+   77 |                                                 ,given_line + counter0_space));
+      |                                                               ^~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\string:55,
+                 from c:\git\mingw\include\c++\11.2.0\bits\locale_classes.h:40,
+                 from c:\git\mingw\include\c++\11.2.0\bits\ios_base.h:41,
+                 from c:\git\mingw\include\c++\11.2.0\ios:42,
+                 from c:\git\mingw\include\c++\11.2.0\ostream:38,
+                 from c:\git\mingw\include\c++\11.2.0\iostream:39,
+                 from main.cpp:2:
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6131:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&, const _CharT*)'
+ 6131 |     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6131:5: note:   template argument deduction/substitution failed:
+main.cpp:77:63: note:   mismatched types 'const _CharT*' and 'int'
+   77 |                                                 ,given_line + counter0_space));
+      |                                                               ^~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\string:55,
+                 from c:\git\mingw\include\c++\11.2.0\bits\locale_classes.h:40,
+                 from c:\git\mingw\include\c++\11.2.0\bits\ios_base.h:41,
+                 from c:\git\mingw\include\c++\11.2.0\ios:42,
+                 from c:\git\mingw\include\c++\11.2.0\ostream:38,
+                 from c:\git\mingw\include\c++\11.2.0\iostream:39,
+                 from main.cpp:2:
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6147:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&, _CharT)'
+ 6147 |     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs, _CharT __rhs)
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6147:5: note:   template argument deduction/substitution failed:
+main.cpp:77:63: note:   deduced conflicting types for parameter '_CharT' ('char' and 'int')
+   77 |                                                 ,given_line + counter0_space));
+      |                                                               ^~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\string:55,
+                 from c:\git\mingw\include\c++\11.2.0\bits\locale_classes.h:40,
+                 from c:\git\mingw\include\c++\11.2.0\bits\ios_base.h:41,
+                 from c:\git\mingw\include\c++\11.2.0\ios:42,
+                 from c:\git\mingw\include\c++\11.2.0\ostream:38,
+                 from c:\git\mingw\include\c++\11.2.0\iostream:39,
+                 from main.cpp:2:
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6159:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&&, const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 6159 |     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6159:5: note:   template argument deduction/substitution failed:
+main.cpp:77:63: note:   types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'const string' {aka 'const std::__cxx11::basic_string<char>'} have incompatible cv-qualifiers
+   77 |                                                 ,given_line + counter0_space));
+      |                                                               ^~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\string:55,
+                 from c:\git\mingw\include\c++\11.2.0\bits\locale_classes.h:40,
+                 from c:\git\mingw\include\c++\11.2.0\bits\ios_base.h:41,
+                 from c:\git\mingw\include\c++\11.2.0\ios:42,
+                 from c:\git\mingw\include\c++\11.2.0\ostream:38,
+                 from c:\git\mingw\include\c++\11.2.0\iostream:39,
+                 from main.cpp:2:
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6165:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&, std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&&)'
+ 6165 |     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6165:5: note:   template argument deduction/substitution failed:
+main.cpp:77:63: note:   mismatched types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'int32_t' {aka 'int'}
+   77 |                                                 ,given_line + counter0_space));
+      |                                                               ^~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\string:55,
+                 from c:\git\mingw\include\c++\11.2.0\bits\locale_classes.h:40,
+                 from c:\git\mingw\include\c++\11.2.0\bits\ios_base.h:41,
+                 from c:\git\mingw\include\c++\11.2.0\ios:42,
+                 from c:\git\mingw\include\c++\11.2.0\ostream:38,
+                 from c:\git\mingw\include\c++\11.2.0\iostream:39,
+                 from main.cpp:2:
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6171:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&&, std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&&)'
+ 6171 |     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6171:5: note:   template argument deduction/substitution failed:
+main.cpp:77:63: note:   types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'const string' {aka 'const std::__cxx11::basic_string<char>'} have incompatible cv-qualifiers
+   77 |                                                 ,given_line + counter0_space));
+      |                                                               ^~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\string:55,
+                 from c:\git\mingw\include\c++\11.2.0\bits\locale_classes.h:40,
+                 from c:\git\mingw\include\c++\11.2.0\bits\ios_base.h:41,
+                 from c:\git\mingw\include\c++\11.2.0\ios:42,
+                 from c:\git\mingw\include\c++\11.2.0\ostream:38,
+                 from c:\git\mingw\include\c++\11.2.0\iostream:39,
+                 from main.cpp:2:
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6193:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(const _CharT*, std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&&)'
+ 6193 |     operator+(const _CharT* __lhs,
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6193:5: note:   template argument deduction/substitution failed:
+main.cpp:77:63: note:   mismatched types 'const _CharT*' and 'std::__cxx11::basic_string<char>'
+   77 |                                                 ,given_line + counter0_space));
+      |                                                               ^~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\string:55,
+                 from c:\git\mingw\include\c++\11.2.0\bits\locale_classes.h:40,
+                 from c:\git\mingw\include\c++\11.2.0\bits\ios_base.h:41,
+                 from c:\git\mingw\include\c++\11.2.0\ios:42,
+                 from c:\git\mingw\include\c++\11.2.0\ostream:38,
+                 from c:\git\mingw\include\c++\11.2.0\iostream:39,
+                 from main.cpp:2:
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6199:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(_CharT, std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&&)'
+ 6199 |     operator+(_CharT __lhs,
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6199:5: note:   template argument deduction/substitution failed:
+main.cpp:77:63: note:   mismatched types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'int32_t' {aka 'int'}
+   77 |                                                 ,given_line + counter0_space));
+      |                                                               ^~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\string:55,
+                 from c:\git\mingw\include\c++\11.2.0\bits\locale_classes.h:40,
+                 from c:\git\mingw\include\c++\11.2.0\bits\ios_base.h:41,
+                 from c:\git\mingw\include\c++\11.2.0\ios:42,
+                 from c:\git\mingw\include\c++\11.2.0\ostream:38,
+                 from c:\git\mingw\include\c++\11.2.0\iostream:39,
+                 from main.cpp:2:
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6205:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&&, const _CharT*)'
+ 6205 |     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6205:5: note:   template argument deduction/substitution failed:
+main.cpp:77:63: note:   types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'const string' {aka 'const std::__cxx11::basic_string<char>'} have incompatible cv-qualifiers
+   77 |                                                 ,given_line + counter0_space));
+      |                                                               ^~~~~~~~~~~~~~
+In file included from c:\git\mingw\include\c++\11.2.0\string:55,
+                 from c:\git\mingw\include\c++\11.2.0\bits\locale_classes.h:40,
+                 from c:\git\mingw\include\c++\11.2.0\bits\ios_base.h:41,
+                 from c:\git\mingw\include\c++\11.2.0\ios:42,
+                 from c:\git\mingw\include\c++\11.2.0\ostream:38,
+                 from c:\git\mingw\include\c++\11.2.0\iostream:39,
+                 from main.cpp:2:
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6211:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&&, _CharT)'
+ 6211 |     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+      |     ^~~~~~~~
+c:\git\mingw\include\c++\11.2.0\bits\basic_string.h:6211:5: note:   template argument deduction/substitution failed:
+main.cpp:77:63: note:   types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'const string' {aka 'const std::__cxx11::basic_string<char>'} have incompatible cv-qualifiers
+   77 |                                                 ,given_line + counter0_space));
+      |                                                               ^~~~~~~~~~~~~~
+mingw32-make: *** [makefile:12: main] Error 1

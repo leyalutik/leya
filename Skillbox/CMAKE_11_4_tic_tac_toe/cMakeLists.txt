@@ -1,0 +1,13 @@
+
+
+cmake_minimum_required(VERSION 3.17)
+project(Tic_tac_toe)
+
+enable_language ( C CXX )
+
+set(CMAKE_CXX_COMPILER C:/git/mingw/bin/g++.exe CACHE  PATH "" FORCE)
+
+set(CMAKE_C_COMPILER C:/git/mingw/bin/gcc.exe CACHE  PATH "" FORCE)
+
+
+add_subdirectory(src)

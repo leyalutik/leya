@@ -1,0 +1,18 @@
+
+ * Хороший туторил https://githowto.com/ru/
+
+ * Если при запуске git не могут найти библиотеку, запустите git-cmd.exe
+
+
+ * Если git push не работает по ssh протоколу (для репозитория leya)
+	1) git remote add origin https://github.com/leyalutik/leya.git
+	2) ЗАйдите в свой аккаунт github.com
+		откройте: Settings -> Developer setting -> Personal access tokens
+		В правом верхнем углу "Generate new token"
+		Запомните пароль
+	3) В папке leya  команды:
+				git add .
+				git commit -m "текущая дата" 
+				git push
+		заполните username: leyalutik
+			  password: <your token>

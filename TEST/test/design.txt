@@ -1,0 +1,107 @@
+Как программа должна работать
+
+Отдельно программа create_test_cases.exe function_name output_file.txt , которая создаёт модуль с набором тестовых кейсов 
+
+
+=========     test_cases_function_name.cpp    ===================
+#include "test_function_test.h"
+
+function_name_test
+AssertEqual(function(1,2,3, "dfs"), 1,
+    const string& hint);
+
+или
+
+some_type z;
+function(1,2,z);
+AssertEqual(z, 1,
+    const string& hint);
+z обнулить.   //функция загруженная clear(some_type& z);
+
+====================================================
+
+Как создать файл через основную программу
+
+std::basic_streambuf 
+что такое
+Класс std::basic_streambuf управляет потоком ввода/вывода последовательности символов.
+Этот класс содержит в себе и обеспечивает доступ к этой последовательности.
+Последовательность символов:
+	1)Управляемая цепочка символов.(Буфер)
+		1) Входная последовательность  (область получения, get area)
+		2) Последовательность вывода (область ввода, put area)
+	2)Связанная последовательность символов, или ресурс (для входного потока)
+		или поглотитель (для потока вывода).
+			This may be an entity that is accessed through OS API (file, TCP socket, serial
+ 			port, other character device), or it may be an object (std::vector, array, string 
+			literal), that can be interpreted as a character source or sink.
+
+Классы std::basic istream,std::basic ostream и их производные std::istream std::stringstream std::ostream
+реализованы в рамках basic_streambuf.
+Управляемая посл-ть - это массив символов, и является часть связанной последовательности. 
+Ее состояние характеризуется 3-мя указателями:
+	1)beginning pointer. Начальный указатель, всегда показывает самый нижний элемент буфера.
+	2)Next pointer. Указывает на последующий элемент для чтения и записи.
+	3)End pointer. Указывает на 1 элемент дальше конца буфера.
+
+Управляемая
+зачем нужна
+что интересного
+
+test_function_name.cpp
+
+Которые потом программа test добавляет к себе и выполняет ????
+
+
+
+test function_file_name, output_file_name
+//function_file_name - файл где находится функция
+//output_file_name
+//first line number_of_arguments in function
+//second line: number_of_target_answers N1_target_argument N2_target_argument ...
+//rest lines: arg1 arg2 arg3 : answer1 answer2
+
+Хочу просто использовать имя функции, чтобы оно автоматически нашлось, среди
+приложенных модулей.
+
+основная программа test
+
+
+Запуск модуля преобразования "test_function.h" "test_function.cpp" 
+create_test_function_cpp.exe   output_file_name
+//Создаёт 
+файл test_function.cpp
+
+#include "test_function.h"
+
+test_function()
+{
+	AssertEqual(function(, const U& u,
+    const string& hint)	
+
+
+};
+
+Запуск test.exe
+
+1) программа test создаёт новый модуль test_function.cpp и также test_function.h
+он уже заранее включен в #include "test_function.h"
+2) Программа создаёт test_function.h
+	в ней
+#pragma once
+
+#include <vector>
+#include <map>
+#include <set>
+#include<exception>
+#include <cassert>
+#include<cstdlib>
+#include<iostream>
+#include<string>
+#include <sstream>
+#include <fstream>
+#include <chrono>
+
+test_function();
+
+3) Программа преобразовывает test_function.cpp

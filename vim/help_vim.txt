@@ -1,0 +1,18 @@
+Запуск справки vim
+:help
+ Search for help:  Type ":help word", then hit CTRL-D to see matching help entries for "word".
+		    Or use ":helpgrep word". |:helpgrep
+		    or :help word... <tab>
+учебного ввода
+:help tutor
+:help 
+
+Новое окно
+ctrl+w+n
+Переход на следующее окно
+ctrl+w
+Закрыть окно 
+:close
+
+
+Выравнивание текста shift+v потом =

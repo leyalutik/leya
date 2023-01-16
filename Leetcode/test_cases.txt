@@ -1,0 +1,4 @@
+ AssertEqual(convert_to_binary(0),"0","0");
+ AssertEqual(convert_to_binary(1),"1","1");
+ AssertEqual(convert_to_binary(5),"101","2");
+ AssertEqual(convert_to_binary(9),"1001","3");

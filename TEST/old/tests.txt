@@ -1,0 +1,15 @@
+ AssertEqual(test( muravied ),"muravied","1");
+cat
+dog
+enot
+dingo
+kashalot
+muravied
+kashalot
+cat
+dog
+enot
+dingo
+kashalot
+muravied
+kashalot

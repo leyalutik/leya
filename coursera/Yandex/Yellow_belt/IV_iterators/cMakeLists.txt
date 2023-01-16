@@ -1,0 +1,25 @@
+cmake_minimum_required(VERSION 3.18 FATAL_ERROR)
+
+#set(CMAKE_CXX_COMPILER C:/git/mingw/bin/g++.exe CACHE  PATH "" FORCE)
+#set(CMAKE_C_COMPILER C:/git/mingw/bin/gcc.exe CACHE  PATH "" FORCE)
+
+project(IV_week)
+
+add_executable( coursera 
+	src/main.cpp
+	src/task1.cpp)
+
+#add_library(archive archive.cpp zip.cpp lzma.cpp)
+#add_executable(zipapp zipapp.cpp)
+#target_link_libraries(zipapp archive)
+
+#target_include_directories()
+
+ target_include_directories(mylib PUBLIC
+   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/mylib>
+   $<INSTALL_INTERFACE:include/mylib>  # <prefix>/include/mylib
+ )
+
+add_subdirectory(source_dir [binary_dir] [EXCLUDE_FROM_ALL])
+
+#add_subdirectory() (with own CMakeLists.txt)

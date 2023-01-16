@@ -1,0 +1,14 @@
+1 hello3!
+2 hello2
+3 Privet
+4 This is good
+5 YraYra
+6 Lyuda
+7 Lyuda Lyuda
+8 Hello
+
+Test
+Test
+test
+Test 4-th time the function write_line()
+123

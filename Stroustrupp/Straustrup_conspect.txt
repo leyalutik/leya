@@ -1,0 +1,1248 @@
+﻿======================={{{Errors}}}============================
+Сделать свой фреймворк
+
+Key words
+	error
+	type error
+	logic error
+	compile-time error
+	run-time error
+	link-time error 
+	argument error - 
+	syntax error
+	range error 
+	
+	
+	assertion - 
+	invariant -
+	container 
+
+	requirement - 
+	testing
+	debugging
+	 
+	
+	exception - object thrown by a throw-statement and (potentially) caught by an exception handler associated by a try-block.-
+	throw
+	catch
+	 
+	pre-condition 
+	post-condition 
+	 
+	
+
+
+Uknown words
+	unavoidable 				неизбежный
+	yet 					однако
+	It is tempting 				это заманчиво
+	that it 				то есть
+	unlikely				врядли
+	it is prudent				разумно
+	non-terminated character		незавершенный символ
+	Such messages tend to be cryptic	эти сообщения, как правило, загадочны
+	tend to be				склонны быть, как правило
+	to dodge				уклоняться
+	Note that				обратите внимание
+	to violate				нарушать
+	to ensure				обеспечить
+	something sensible			что-то разумное
+	brittle					хрупкий
+	error-prone				подверженный ошибкам
+
+Key words:
+	correctness of programs (правильность программы)
+	errors			(ошибки)	
+	error handling		(обработка ошибок)
+
+Chapter 5 Errors
+5.1 Introduction
+5.2 Sources of errors
+5.3 Compile-time errors
+5.4 Link-time errors
+5.5 Run-time errors
+5.6 Exceptions
+5.7 Logic errors
+5.8 Estimation
+5.9 Debugging
+5.10 Pre- and post-conditions
+5.11 Testing
+
+----------------------------
+{{5.1 Вступление}}
+----------------------------
+Errors
+--------Compile-time errors  (ошибки, которые находит компилятор)
+	--------Syntax errors (опечатки)
+	--------Type errors (mismatches between the types you declared)
+
+--------Link-time errors  (ошибки, которые накодятся компоновщиком при сборке программы)
+
+--------Runtime-errors (ошибки, возникающие в работающей программе)
+	--------Errors detected by the computer (hardware and/or operating system
+	--------Errors detected by a library (e.g., the standard library)
+	--------Errors detected by user code
+
+--------Logic errors ( внутренние логические ошибки программы,
+			 которые приводят к неправильному конечному результату программы)
+
+Программист не может предсказать ВСЕ ошибки. Например, пользователь выдернул шнур питания во время
+работы программы, это естественно приведет к ошибке. Но эта ошибка не относится к зоне контроля ошибок самой программы. 
+Есть специфичные программы, программа медицинского наблюдения, программа управления телефонными линиями,
+	где разрыв провода не допустим, и что делать в таком случае?
+	Здесь мы предполагаем, что Система, частью которой является наша программа,
+	умеет обрабатывать такие ошибки. 
+И поэтому ключевой вопрос к каждой ошибке нашей программы:
+Должна моя программа обнаружить эту ошибку?
+	И пока мы не проектируем ту самую Систему, мы допускаем в нашей программе
+	следующие положения:
+1. Should produce the desired results for all legal inputs. (На все допустимые данные - верные результаты)
+2. Should give reasonable error messages for all illegal inputs (На все недопустимые данные - соответствующие сообщения об ошибке)
+3. Need not worry about misbehaving hardware ( не обнаруживаем ошибки работы компьютерного оборудования)
+4. Need not worry about misbehaving system software (не обнаруживаем ошибки работы программного обеспечения)
+5. Is allowed to terminate after finding an error (Допускается завершить программу при обнаружении ошибки)
+
+Пункты 1 и 2 являются началом нашего профессионализма, а профессионализм это то, к чему мы стремимся.
+90% занимает гестирование программы.
+
+3 похода к составлению программы:
+	• Organize software to minimize errors. (правильно струтуру программу)
+	• Eliminate most of the errors we made through debugging and testing.(убрать большинство ошибок 									через тестирование и отладку)
+	• Make sure the remaining errors are not serious. (Убедиться, что оставшиемся ошибки не будут 										иметь серьезных последствий)
+---------------------------------
+{{{5.2 Источники ошибок}}}
+---------------------------------
+
+----------  Poor specification: (не точная инструкция). Для всех случаев нужно чёткое описание, что программа должна делать.
+
+----------  Incomplete programs: Когда программа не завершена, то не все случаи в ней учтены.
+				Наша цель: точно знать, когда мы обработаем все случаи.
+
+----------  Unexpected arguments: неожидаемые аргументы для функции.
+					Вместо цифр буквы, или вместо нужного 
+						положительного числа отрицательное число.
+
+----------  Unexpected input: неожиданные взодные данные для программы.
+
+----------  Unexpected state: Most programs keep a lot of data (“state”) around for use
+		by different parts of the system. Examples are address lists, phone directories, and 		vectors of temperature readings. What if such data is incomplete
+		or wrong? The various parts of the program must still manage. §26.3.5
+		discusses this kind of problem.
+		???Не поняла, ошибка в выборе типа хранения данных?
+
+----------  Logical errors: Нарушена внутренняя логическая цепочка выполняемых программой инструкций.
+				Код показывает не тот результат, что мы ожидаес.
+
+Это полезный список возможных источников ошибок,
+который лучше держать в голове в начале создания программы.
+В дальнейшем это поможет избежать ошибок и полной перезаписи программы.
+
+---------------------------
+{{{ 5.3 Compile-time errors }}}
+----------------------------
+Компилятор - первая стена, которая защищает от ошибок.
+Только, когда программа полностью соотвествует набору инструкций языка С++, 
+компилятор позволит вам продолжить.
+Компилятор незаменим для поиска ошибок в выражениях(простые ошибки)
+			или ошибок взаимодействия частей программы.
+Компилятор помогает вам в правильной работе 
+		языковых средств и системе типов для выражения ваших идей.
+
+------------------------------
+{{{ 5.4 Link-time errors }}}
+------------------------------
+
+Программа состоит(может состоять) из множества частей (самостоятельных успешно компилируемых единиц).
+Важные правила: (эти правила также касаются переменных и типов) 
+	
+	1)Каждую функцию нужно ОБЪЯВИТЬ (тип функция;) точно с таким же ТИПОМ
+		в каждой компилируемой ЕДИНИЦЕ кода,
+		где она используется.
+		Мы используем файлы-.h чтобы гарантировать это.
+	2)Каждую функцию нужно ОПРЕДЕЛИТЬ(тип функция{})  только один раз в ПРОГРАММЕ.
+		
+The linkage rules for functions, as stated above, also hold for all other entities
+		of a program, such as variables and types: there has to be exactly one definition
+		of an entity with a given name, but there can be many declarations, and all have
+		to agree exactly on its type 
+
+
+Если эти правила нарушены, компоновщик выдаст link-time error.
+
+-----------------------------
+{{{ 5.5 Run-time errors }}}
+-----------------------------
+Ошибки, возникающие после запуска программы.
+	Недопустимые входные данные.
+	Недопустимые результаты вычислений
+	Деление на ноль    ---> a hardware-detected error (ошибка, обнаруженная аппаратным обеспечением)
+				с аварийным завершением программы с загадочным сообщением.
+	Выход за пределы массива
+
+Ключевые вопросы:
+	Кто должен обнаружить эти ошибки внутри функции, тот кто вызывает функцию или сама функция.
+	А как следует отображать эти ошибки?
+
+---------------------------------------------------------------
+				{{{ 5.6 Exceptions }}}
+----------------------------------------------------------------
+Uknown words
+	to postpone				откладывать
+	
+Специальный механизм для обработки ошибок - Исключения.
+Ключевая идея: разделить 2 действия : 	обнаружение ошибки ( внутренней функцией на месте),
+					и обработка ошибки (внешней функцией).
+Метод Exception
+	Если функция находит ошибку и не может с ней справиться,
+	она останавливает свою работу и "выбрасывает" исключение <throw> с описанием ошибки. 		Внешняя функция ловит это исключение, если оно соответствует нужному типу в <catch>
+	через блок 
+		try
+		{
+			return 0;
+		}
+		catch(Exception& e)
+		{
+			return 1;
+		}
+		catch(Runtime_exception& r)
+		{
+			return 1;
+		}  
+	Если "выброшенное" исключение не соответствует ни одному типу <catch>,
+		программа аварийно завершается.
+---------------------------------
+{{Создание своего "типа" ошибок}}
+---------------------------------
+---class Bad_area { };
+
+Применение:
+	type function()
+	{
+		...
+		throw Bad_area{};  // “Make an object of type Bad_area with the default value
+		return type value;
+	}
+
+	main()
+	{
+		try
+			{
+				type function()
+				return 0;
+			}
+			catch(Bad_area&)
+			{
+				...
+				return 1;
+			}
+	}
+
+---------------------
+{{ Range errors }}
+---------------------
+Выход за границу любого массива
+Специальный тип out_of_range( const std::string& what_arg ); (один из видов конструктора)
+	,который выбрасывает вектор, при 
+Применение:
+	try
+	{
+		std::vector<int> v = {1,2,3};
+		v.at(3); //обязательно использовать метод at(i), 								он 100% выполнит выброс исключения
+		return 0;
+	}
+	catch(std::out_of_range&)
+	{
+		std::cerr << "Hello! I'm a bug of type out_of_range.\n";
+		return 1;
+	}
+
+
+------------------------------------
+{{ Runtime_Error }} 
+ {{ Bad input }}  		//более подробно в главе 10.6
+-----------------------------------------
+Ошибки при вводе значений
+------------------
+Пример такой ошибки:
+	double d = 0;
+	std::cin >> d;
+	ввели не число. Поток ввода std::cin вернул значение false.
+
+Решение:
+	Нужно зафискировать ошибку. Выдать сообщение c информацией об ошибке. Завершить программу.
+	Здесь используют тип исключения {{{ runtime_error }}}
+			which is pretty ideal for our
+			needs because it holds a string("") 			that can be used by an error handler
+Конструктор:
+	(1)runtime_error( const std::string& what_arg );(1)	
+	(2)runtime_error( const char* what_arg );(2)		
+	(3)runtime_error( const runtime_error& other );(until C++11)
+runtime_error( const runtime_error& other ) noexcept;(since C++11)
+	1) Constructs the exception object with what_arg as 		explanatory string. After construction, 			std::strcmp(what(), what_arg.c_str()) == 0.
+	2) Constructs the exception object with what_arg as 			explanatory string. After construction, 			std::strcmp(what(), what_arg) == 0.
+	3) Copy constructor. If *this and other both have 		dynamic type std::runtime_error then 		std::strcmp(what(), other.what()) == 0. No 		exception can be thrown from the copy 		constructor. (until C++11)
+
+Способы решения:
+	Завернем Ввод данных в функцию input_double,
+		которая будет выбрасывать ошибку
+		при неправильном вводе данных.
+В ней:
+	void input_double()
+	{
+		double d = 0;
+		std::cin >> d;
+		if(!(std::cin))
+		{
+			throw runtime_error(
+				"In function \"input_doubl()\" 					illegal input)");
+			//информация об ошибке
+		} 
+	}
+
+int main()
+try 
+{
+ 	// . . . 
+	input_double() 
+	//. . .
+ 	return 0; // 0 indicates success
+}
+catch (runtime_error& e) \
+{
+	std::cerr << "runtime error: " << e.what() << '\n';
+	std::getchar();
+	return 1; // 1 indicates failure
+}
+
+std::cerr более эластичный для вывода ошибок (нет оптимизация, как для std::cout)???
+
+-------------------------------
+Замечание: out_of_range , runtime_error разные типы ошибок 			каждый тип должен ловиться отдельно, либо
+		использоваться общий тип 
+		std::exception или "..."
+			try
+			{
+			}
+			catch(std::exception& e)
+			{}
+			catch(...) //такой catch всегда в конце
+			{}
+Если вы не поймаете исключение, то получите  
+default system error (an “uncaught exception” error).
+
+--------------------------
+{{ Narrowing errors }}   	//более подробно в главе 10.6
+------------------------------
+Ошибка при неявном "обрезании" значения переменной при присвоении переменной определённого типа.
+------------------
+Пример:
+	int x = 2.9;
+	char c = 1066;
+В местах, где мы подозреваем неявное усечение значения.
+Мы создадим такой оператор
+	Type1 var = narrow_cast<Type2>(value);
+
+где narrow_cast это созданный нами оператор,
+	который контролирует усечение значения при присвоении 		значений разных типов.
+	
+	////A - type we have, R - type we want. 
+	template<class R, class A> 
+	R narrow_cast(const A& a)
+	{
+		R r = R(a);//приведение к типу R
+		if (A(r) != a) //обратное приведение к типу A
+		{
+			throw runtime_error(string("info loss"));
+		}
+		return r;
+	}
+		if truncation happens statement will throw 			runtime_error()
+Примеры:
+	int x1 = narrow_cast<int>(2.9); // throws
+	int x2 = narrow_cast<int>(2.0); // OK
+	char c1 = narrow_cast<char>(1066); // throws
+	char c2 = narrow_cast<char>(85); // OK
+
+	
+====================  5.7  ==============================
+	             {{{ Logic Errors }}}======================================================
+---------------------------------------------------------------------------------------------
+Логические ошибки  - программа работает, но выдаёт неправильный результат.
+
+Interesting phrases:
+	 	underlying program logic is flawed
+		 a computer is a very fast moron
+		These errors are fairly typical;				Эти ошибки довольно типичны
+
+Unknown words:
+	moron							идиот
+	expected unqualified before the word				предполагается, что-то не
+ 									соответствующее перед словом
+	reasonable							разумный
+
+	
+==================================================
+==============5.8 Estimation Оценивание =================
+==================================================
+Единтсвенный верный способ убедиться, что вывод программы разумный.
+	Знать примерный (разумный) ответ на соотв.входные данные через грубые упрощения реализованной модели.
+
+2 вопроса к работающей программе.
+	1. Is this answer to this particular problem plausible?
+	2. How would I recognize a plausible result?
+
+=================================================
+=============  5.9 Debugging  Отладка  ==================
+=================================================
+Отладка - процесс поиска и нахождения ошибок.
+Debugging
+Errors называют bugs
+
+---------------------------
+Interesting phrases:
+----------------------------
+	a poor craftsman curses his tools.
+
+	bug is evocative and ubiquitous
+	
+	most likely your users are in for some frustration		
+		более вероятно пользователей посетит некоторое разачарование		
+
+-------------------------
+Unknown words:
+-------------------------
+
+
+Debugging works roughly like this:
+ 1. Get the program to compile.
+ 2. Get the program to link.
+ 3. Get the program to do what it is supposed to do.				
+
+Для уменьшения самого долгого этапа в создании программы,
+	лучше приложить все усилия во время проектирования программы.
+
+Ключевой вопрос:
+Когда мы можем сказать, что программа работает правильно.
+	Нужно опеределить критерии правильной работы программы.
+
+{{{ 5.9.1 }}}
+Практические советы по отладке:
+1)Начинать думать об отладке с первой строчки кода.
+2)Опеределить как сообщать об ошибках (use throw and catch - хороший вариант)
+3)Сделать программу удобной для чтения
+	• The name of the program
+		(имя программы)
+	• The purpose of the program
+		(назначение программы)
+	• Who wrote this code and when
+		(кто написал этот код и когда)
+	• Version numbers
+		(Номер версии)
+	• What complicated code fragments are supposed to do
+		(сложный кусок кода, что он делает)
+	• What the general design ideas are
+		(основные идеи архитектуры программы)
+	• How the source code is organized
+		(Как организован код)
+	• What assumptions are made about inputs
+		(Какие допущения для входных данных)
+	• What parts of the code are still missing and what cases are still not
+handled
+		(Какие части кода всё еще пропущены и какие случаи еще не обработаны)
+
+• Use meaningful names. (Использовать смысловые имена)
+	• That doesn’t simply mean “Use long names.”(Длинные имена не обязательны)
+• Use a consistent layout of code. (Использовать постоянный порядок в коде)
+	• Your IDE tries to help, but it can’t do everything and you are the
+one responsible.
+	• The style used in this book is a reasonable starting point.
+	     (Стиль, представленный в книге, можно принять за пример
+• Break code into small functions, each expressing a logical action.
+	(Разделяй код на маленькие функции, которые будут отвечать за одно логическое действие)
+	• Try to avoid functions longer than a page or two; most functions will
+be much shorter.
+	     (Функция должна быть на странице или двух)
+• Avoid complicated code sequences.
+	• Try to avoid nested loops, nested if-statements, complicated conditions, etc. Unfortunately, you sometimes need those, but remember
+that complicated code is where bugs can most easily hide.
+		(Постараться избегать вложенных if-условий, сложных условий и т.д. (Это место множества ошибок)
+		• Use library facilities rather than your own code when you can.			(Больше используюй библиотечные функции чем свои)
+		• A library is likely to be better thought out and better tested than what you could produce as an alternative while busily solving your
+main problem.  (Библиотечные функции больше продуманы и протестированы)
+
+Ошибки, которые видит компилятор.
+	- Каждая ли строка завершена кавычками?
+	- Каждый ли символ завершен кавычками?
+	- Каждый ли блок завершен фигурной скобкой?
+	- Каждая ли пара скобок окончена?
+	- Каждое ли переменная, функция объявлены?
+	- Каждое ли имя объявлено до того, как будет использовано?
+	- Все ли названия записаны верно?
+	- Завершается ли каждое выражение символом ";"
+
+=========================================================	
+============ 5.10 Pre- and post-conditions ========================
+======= Предварительное условие и постусловие ===================
+=========================================================
+Unknown words:
+	grief			огорчения
+
+		ПРЕДУСЛОВИЕ
+Предусловие - это требование функции к её аргументам.
+Дана функция f(x,y,z); // x,y,z - positive and x>y>z
+
+В комментах перед функцией описываются допустимые аргументы
+	(если их нет , то по умолчанию считаются все допустимые значения)
+Предусловие проверяется  внутри самой функцией,
+	Или нет(
+		• Nobody would give bad arguments. 
+			(Например другая наша функция)
+		• It would slow down my code. 
+			(Ошибка преждевременной оптимищации)
+		• It is too complicated to check. 
+			(Например, условие, что список отсортирован)
+		)
+
+Записанные предусловия признак хорошего программиста.
+Если вы не можете сформулировать условие в паре строк, значит, вы неясно 
+	понимаете, что делаете.
+
+		int my_complicated_function(int a, int b, int c)
+		// the arguments are positive and a < b < c
+		{
+			if (!(0<a && a<b && b<c)) // ! means “not” and && 			means “and”
+			throw runtime_error("bad arguments for mcf");
+			// . . .
+		}
+
+Явное указание предварительных условий помогает избежать ошибок проектирования, а также выявить место ошибки на ранней стадии	
+
+This saves you time and grief
+		
+		ПОСТУСЛОВИЕ
+
+Постусловие - проверка возвращаемого значения функции
+Это также важное условие корректности кода
+
+	- В комментах описание требований к возвращаему значению
+	- Постусловие проверяется внутри функции
+
+int area(int length, int width)
+// calculate area of a rectangle;
+// pre-conditions: length and width are positive
+// post-condition: returns a positive value that is the area
+{
+if (length<=0 || width <=0) error("area() pre-condition");
+int a = length*width;
+if (a<=0) throw runrime_error("area() post-condition");
+return a;
+}
+
+Pre- and post-conditions provide basic sanity checks in code. As such they are
+closely connected to the notion of invariants (§9.4.3), correctness (§4.2, §5.2), and
+testing (Chapter 26)
+
+====================================================
+============ 5.11 Testing ===============================
+=========== Тестирование ==============================
+====================================================
+
+
+Где окончание проверки на правильность нашей программы?
+Его нет.Это бесконечный поиск ошибок.
+
+Тестирование(в отличие от отладки) - систематический способ проверки ошибок.
+Тестирование - это запуск программы с огромным и отобранным по специальной системе набором входных значений
+
+A run with a given set of inputs is called a test case.
+(Запуск с определенным запуском данных - тестовой сценарий (пример))
+
+Паттерн обработки ввода (функция);
+
+===========================================
+===========================================
+============  	    {{10}}	          ==============	
+============      Input and Output        ==========
+===========================================
+===========================================
+
+345-379 стр
+
+Главы:
+- {10.1} Input and Output
+- {10.2} The I/O stream model
+- {10.3} Files
+- {10.4} Opening a file
+- {10.5} Reading and writing a file
+- {10.6} I/O error handling
+- {10.7} Reading a single value
+- {10.8} User-defined output operators
+- {10.9} User-defined input operators
+- {10.10} A standart input loop
+- {10.11} Reading a structured file
+
+====================================================================
+=========================   {10.1} Input and Output  ========================
+====================================================================
+IPh:
+	specialized expertise		специальные знания
+
+UW:
+	to watch out			остерегаться, напряженно ожидать
+	to set up				настроить
+	appropriaate			соответствующий
+	classification fits our tools		соответствует нашим инструментам
+	framework			платформа
+Termins:
+
+Поток (stream) — это абстракция, которая представляет устройство с операциями ввода и вывода. Таким образом, поток можно понимать как источник и/или приёмник бесконечного количества символов.
+
+Потоки обычно привязываются к физическому источнику/приёмнику символов, например, файлу, клавиатуре или консоли. При этом символы, читаемые из или записываемые в поток действительно физически вводятся или выводятся на устройство. Например, файловые потоки в C++ являются объектами для манипуляций с файлами: после того, как файловый поток открывает файл, любая операция ввода/вывода на этом потоке физически отображается в файле.
+
+iostream - (1) standard library flexible, extensible, type-safe input and output framework. (1) stream that can be used for both input and output. 
+
+standard library - The library defined in the C++ standard. Contains strings, stream I/O, a framework of containers and algorithms, support for numerical computation, support for internationalization, the C standard library, and some language support facilities.
+
+string stream - stream attached to a string.
+
+file stream - stream attached to a file.
+
+Для большинства программ является ключевым умение обрабатывать входящую информацию из разнообразных источников данных и выводить в определенном формате в назначенное место.
+
+Источники данных : 
+	Монитор, компоненты компьюетра, наша программа.
+Место для вывода данных : 
+	Монитор, компоненты кмпьютера, наша программа.
+
+Способ передачи и приёма данных у каждого устройства разный, и сами данные тоже разные. 
+Поэтому наша программа обрабатывает данные  не с устройствами напрямую, а через библиотечные функции,
+которые обрабатывает и предоставляет данные , полученные с операционной системы, которая получила их от соответствующих драйверов устройств.
+			
+		АБСТРАКТНАЯ МОДЕЛЬ ВВОДА/ВЫВОДА ДАННЫХ
+(Вводимые символы с клавиатуры)
+Data source:
+	Input device -> Device driver -> input library -> our program 
+(Экран монитора компьютера)
+Data Destination:
+	our program -> Output library -> Device driver -> Output device 
+
+В нашей модели вводимые данные представляются как последовательности(потоки) символов(байтов),
+которые обрабатывается библиотеками ввода/вывода. Более сложные данные не рассматриваются в этой книге.
+
+Мы должны в каждой программе:
+1) Настроить и установить правильно потоки ввода/вывода к источнику ввода и к месту назначения.
+2) Считывать и вписывать информацию в эти потоки.
+
+Как реализован Ввод/Вывод,
+	который состоит из потоков форматированных данных,
+		покажем через стандартную библиотеку С++.
+
+			КЛАССИФИКАЦИЯ ДАННЫХ I/O:
+• Streams of (many) data items
+   Потоки (множества) единиц данных 
+	(usually to/from files, network connections,
+	recording devices, or display devices)
+• Interactions with a user at a keyboard
+   Взаимодействие с пользователем через клавиатуру
+• Interactions with a user through a graphical interface (outputting objects,
+receiving mouse clicks, etc.)
+   Взаимодействия с пользователем через графический интерфейс
+	
+
+Граница между пунктами условная. Вывод текстовых символов, обращенных к браузеру,
+покажет нам результат, в котором скорее всего будет организовано взаимодействие с пользователем,
+и возможно, выдаст нам графические элементы.
+С другой стороны взаимодействие с графической системой возможно представить в виде цепочки символов.
+
+Но эта классификация соответствует нашему оснащению.
+Первые 2 типа данных представляются  абстракциями (потоки ввода/вывода) из стандартной библиотеке С++ 
+и  поддерживаются  практически всеми операционными системами.
+
+
+=================================================================
+=======================           {10.2}                  ========================
+=======================  The I/O stream model  =========================
+================  МОДЕЛЬ ПОТОКОВ ВВОДА/ВЫВОДА  =================
+==================== в стандартной библиотеке С++  ====================
+================================================================
+UW:
+
+
+IPH:
+	feature			функция
+
+Termins:
+
+Buffer - структура данных, которую использует class ostream и istream, для хранения информации,
+	которую вы хотите передать в назначенное место.
+	С помощью этой структуры классы взаимодействует с операционной системой. 
+	(поток взаимодействует с ОС, ОС с драйвером, драйвер с устройством).
+
+
+
+Стандартная библиотека C++ предоставляет 
+тип istream для работы с потоками ввода
+
+и тип ostream для работы с потоками вывода.
+
+Поток ввода из класса (типа) istream называется cin.
+Поток вывода из класса (типа) ostream называется cout.
+
+Класс ostream 
+1) Преобразует данные разных типов в цепочку символов
+2) Отправляет эту последовательность символов в заданное место 
+	(консоль, файл, операционную память, другой компьютер)
+
+			МОДЕЛЬ ВЫВОДА
+Values of various types      ----------------------------------->   character sequences
+'c'			->
+(12,34)			-> ostream	-> Buffer		-> somewhere		
+123			->
+
+
+
+Класс istream
+1)Преобразует цепочку символов в значения разных типов
+2)Получает эту последовательность из какого-то источника данных.
+	(консоль, файл, ОС, другой компьютер)
+
+
+			МОДЕЛЬ ВВОДА
+Character sequences      ----------------------------------->   values of various types
+						<- 'c'
+somewhere	<-istream		<-Buffer		<- (12,34)
+						<- 123
+
+Класс istream также использует буффер для взаимодействия с операционной системой.
+Когда вы используете класс istream, который подключён к клавиатуре,
+	всё, что вы вводите, сохраняется в буффере до тех пор, пока не нажмёте <Enter>.
+
+Одно из главных назначений вывода ostream обеспечить данные, пригодные для чтения человеком.
+	Веб-страницы, научные статьи, емейлы.
+Таким образом ostream имеет много функций для настройки вывода текста.
+
+И также, большая часть входных данных пишутся людьми
+	или приводятся к специальному виду для удобства чтения.
+
+Таким образом класс istream предоставляет функции 
+	для считывания выходных данных,создаваемых ostream.
+
+We’ll discuss formatting in §11.2 
+how to read non-character input in §11.3.2. 
+
+Самая большая сложность - это обработка ошибок, связанных со вводом.
+
+
+
+
+
+=============================================================================
+================================== { 10.3 } =====================================
+===================================  Files  =====================================
+==================================  Файлы =====================================
+=============================================================================
+		
+Unknown Words:
+	so far					до сих пор
+Interesting Phrases:
+	The format serves the same role			Формат выполняет ту же роль
+	We can make sense of the bits in a file		Мы можем понять смысл битов в файле
+	we can get an awfully long way			Мы можем пройти ужасно долгий путь
+		with that assumption				с таким допущением
+	large-capacity storage device			устройство хранения большой ёмкости
+	ostream attached to a file			ostream прикрепляется к файлу
+Termins:
+	Object 	(1) a contiguous region of memory holding a value of some type. 
+		(2) a named or unnamed variable of some type; an object of a type with a constructor is not considered an 			object before the constructor has completed and is no longer considered an object once a
+			destructor has started executing for it. Objects can be allocated in static memory, on the stack,
+			on on the free store.
+	file - a sequence of bytes or words holding information in a computer. 
+		The term "file" is usually reserved to information placed on disk or elsewhere outside the main memory. 
+		The iostream part of the C++ standard library provides ifstream, ofstream,
+			and fstream as abstraction for accessing files.
+
+
+----------------------------
+Мы не можем хранить всю информацию в операционной системе,
+	она маленькая по размеру и информацию хранит недолго.
+	
+Мы храним её на дисках или устройствах большой ёмкости.
+Такое хранение позволяет сохранять данные надолго и сохранять большое количество.
+
+Информация хранится в файлах.
+Самая базовая модель файла - последовательность байтов с нумерацией от нуля и выше.
+Файл имеет формат, т.е. набор правил, который определяет как преобразовать каждый байт. (для вывода на экран или ещё куда).
+Например в текстовом файле, первые 4 байта будут 4-мя символами.
+On the other hand, if we have a file that uses a binary representation of integers,
+those very same first 4 bytes will be taken to be the (binary) representation of
+the first integer (see §11.3.2). (Пояснения в 11-ой главе. Пойду туда.)
+С другой стороны, если мы имеем файл, который использует двоичное представление целых числел,
+	то те же первые 4 байта будут расшифрованы как двоичного представление первого целого числа.
+
+Формат для файла выполняет ту же роль, что и тип объекта для операционной системы.
+Мы можем расшифровать  последовательность байтов в файле, только если знает файла формат.
+
+Для файла:
+класс (фреймворк, платформа) ostream преобразует объекты в цепочку символов в операционной памяти,
+	создаёт поток (абстракция),
+	и через этот поток записывает эту последовательность символов в любой файл.   
+класс istream создаёт поток от любого файла,
+	извлекает оттуда цепочку символов и преобразует их в объекты. 
+
+				ПРОСТАЯ МОДЕЛЬ
+
+	ДИСК                      < ------------------------------------ >                     MAIN MEMORY
+				I/O system
+ 
+	файлы			iostreams				Objects			
+    (последовательность байтов) 					         (of various types)
+
+Мы берем допущения, что последовательность байтов - это последовательность символов,
+	в нашем обычном представлении.(это не так, на самом деле)
+Также предполагаем, что все файлы записаны на дисках.
+	 (не в интернет-пространстве, не в Операционной Памяти и т.д.,
+	а на вращающихся магнитных накопителях (флэшки входят в эту категорию))
+
+Для чтения файла:
+	1) Знать имя файла.
+	2) Открыть файл (для чтения).
+	3) Считать последовательность символов.
+	4) Закрыть файл. (хотя обычно это делается неявно)
+
+Для записи файла:
+	1) Обозначить имя файла.
+	2) Открыть файл (для записи) или создать новый файл с этим именем.
+	3) Записать туда объекты из главной памяти.
+	4) Закрыть файл. (обычно делается неявно)
+ 
+====================================================================
+============================== { 10.4 } ================================
+============================= Opening a file. =============================
+============================ Открытие файла ============================
+=====================================================================
+
+Unknown words:
+	flush				смыть,очистить,вспыхнуть,покраснеть
+					
+
+Interesting phrases:
+
+Termins:
+
+класс ifstream это istream для считывания с файла. (аналогично оператору std::cin для чтения из консоли)
+класс ofstream это ostream для записи в файл.    (аналогично оператору std::cout для записи в консоль)
+класс fstream (аналогично iostream) запускает одновременно 2 потока: для записи и для чтения.
+
+Перед использованием файловых потоков (ifstream,ofstream,fstream), они должны быть привязаны к определенному файлу.
+
+Открытие файла в классе ifstream
+Пример:
+	std::cout << "Please, enter input file:\n";
+	std::string iname;
+	std::cin >> iname;
+	std::ifstream ist{iname};    // open file for reading
+	if(!ist)
+	{
+		throw std::runtime_error("Can't open input file " + iname);
+	}
+Определение ifstream c именем iname, открывает файл с этим именем для чтения.
+
+Условие  if(!ist)  проверяет, что файл был открыт должным образом.
+После этого мы можем читать из файла точно также как,
+	если бы мы считывали из консоли из потока std::cin класса istream.
+
+Открытие файла в классе ofstream
+Пример:
+	std::cout << "Please, enter file name:\n";
+	std::string name;
+	std::cin >> name;
+	
+	std::ofstream ost{name};
+	if(!ost)
+	{
+		throw std::runtime_error("Can't open output file");
+	}
+	std::cout << "File " << name << " is able for writing.\n";
+
+}
+Определение файлового потока ostream именем файла oname,
+	открывает файл oname для записи через поток ost
+Условие (!ost) проверяет, что файл открылся успешно.
+И мы можем вносить записи в файл тем же образом, что и std::cout в консоль.
+Пример:
+	for (Point p: points)
+	{
+ 		ost << '(' << p.x << ',' << p.y << ")\n";
+	}
+
+Когда файл выходит за пределы области видимости,
+	файл автоматически закрывается.
+Когда файл закрыт, его связанный с ним буффер очищается,
+	т.е. всё содержимое буффера (последовательность символов)
+	записывается в файл.
+Совет:
+	1)Лучше всего открывать файлы в начале программы до того,
+		как будут выполнены какие-либо серьезные вычисления. 
+	2)Самый лучший способ закрыть файл - выйти за область видимости потока.
+		(При создание потока-объекта класса ostream или istream
+			происходит неявное открытие файла с заданным именем.)
+
+
+void interesting_function()
+{	
+	std::ostream ost{"namefile.txt"}; //OPENING FILE  
+	if(!ost) 
+	{ 
+		throw std::ruuntime_error("Mistake!");
+	}
+	ost << "Hello!\n";
+} //CLOSING FILE
+
+//Можно использовать явные функции open() close().
+/.Но будет трудно найти, где начинается поток,
+	где заканчивается, что приведет к ошибкам.
+//И будет больше вероятность, 
+	что кто-то воспользуется потоком до открытия или после закрытия.
+
+
+
+ ===========================================================================
+============================ { 10.5 } =========================================
+=======================  Reading and writing a file.  =================================
+======================== Чтение и запись файла  ==================================
+============================================================================
+
+Unknown words:				
+	once a stream is initialized			Как только поток инициализирован.
+	In particular, we can use ...			В частности мы можем использовать ....
+Interesting phrases:
+	No further formatting is			Никакого большего редактирования текста
+		assumed					не предполагается.
+	This is a typical input loop.			Стандартный цикл считывания данных.	 
+	The temperature readings from a
+		weather station	
+Termins:
+
+ 				ЧТЕНИЕ ФАЙЛА
+Дан файл с данными в таком простом формате:
+	0 60.7
+	1 60.6
+	2 60.3
+	3 59.22
+	. . .
+Эти данные последовательности пары значений (час-температура).
+
+Создадим тип считывания этой пары
+	struct Reading 	//temperature reading
+	{
+		int hour;    //[0,23]
+		double temperature;   farenheit
+	}
+Инициализируем поток :
+	std::istream ist{iname};
+
+Алгоритм считывания данных:
+
+	std::vector<Reading> elements;
+	int hour;
+	double temperature;
+	std::vector
+	if(!ist)
+	{
+		throw error("Can't open file.\n");
+	}
+	//стандартный цикл считывания		
+	while(ist >> hour >> temperature)
+	{
+		if(hour > 23 || hour <0)
+		{
+			throw std::runtime_error("Out of range" + std::to_string(__LINE__);
+		elements.push_back(Reading{hour,temperature});
+	}
+Вот такой алгоритм ввода.
+
+Этой части кода не важно откуда считываются данные.
+
+Программе важно, чтобы использовалься поток ввода типа istream
+	и считанные данные имели ожидаемый формат. 
+
+			ЗАПИСЬ ДАННЫХ В ФАЙЛ
+
+Запись в файл проходит аналогично записи в консоли потока ostream через оператор cout.
+Не нужно специально смотреть какой тип потока вывода мы используем, все обозначения одинаковы.
+
+Пример использования:
+	for (int i=0; i<temps.size(); ++i)
+	{
+ 		ost << '(' << temps[i].hour << ',' << temps[i].temperature << ")\n";
+	}
+
+Поток ost внесёт в файл эту запись. (Если файла не существует, то сначала его создаст).
+
+
+===========================================================================
+==================================  { 10.6 }  ==================================
+==============================   I/O error handling  ===============================
+=============================  Обработка ошибок  ===============================
+============================================================================
+
+Unknown words:
+
+Interesting phares:
+
+Termins:
+Тип int  - набор целых чисел.
+Тип BitmaskType - набор постоянных значений или комбинаций из них. 
+		(Реализуется обычно либо через всевозможные типы целых чисел,
+			std::bitset или перечисления (enumeration) 
+			с дополнительными нагрузками на оператор.
+		Этот тип обычно использует Конечное число
+			Ненулевых Различных элементов типа BitmaskType.
+		Значение 0 обычно используется для пустой битовой маски,
+			в которой не заданы значения.
+		Каждый представимый элемент битовой маски определяется 
+			как встроенное (начиная с C++17) значение constexpr типа битовой маски. 
+		Устойчивые равенства:
+		X |= Y	задаёт значение Y в объекте X
+		X &= ~Y	очищает (обнуляет) значение Y из объекта X.
+		X & Y	ненулевой результат показывает, что Y часть объекта X
+		
+Enumeration declaration -  C++ C++ language Declarations 
+			An enumeration is a distinct type whose value is restricted to a range of values
+				 (see below for details), which may include several explicitly
+				named constants ("enumerators"). 
+			The values of the constants are values of an integral type
+				known as the underlying type of the enumeration.
+			Ex1. 
+				enum Color { red, green, blue };
+				Color r = red;
+ 
+				switch(r)
+				{
+    					case red  : std::cout << "red\n";   break;
+    					case green: std::cout << "green\n"; break;
+    					case blue : std::cout << "blue\n";  break;
+				}
+			Ex2.
+				enum Foo { a, b, c = 10, d, e = 1, f, g = f + c };
+				//a = 0, b = 1, c = 10, d = 11, e = 1, f = 2, g = 12
+			Ex3.
+				enum color { red, yellow, green = 20, blue };
+				color col = red;
+				int n = blue; // n == 21
+			Ex4.
+				enum class Color { red, green = 20, blue };
+				Color r = Color::blue;
+ 
+				switch(r)
+				{
+   					case Color::red  : std::cout << "red\n";   break;
+    					case Color::green: std::cout << "green\n"; break;
+   					case Color::blue : std::cout << "blue\n";  break;
+				}
+				int n = static_cast<int>(r); // OK, n = 21
+
+rdbuf()    -		специальная фукнция по управлению буфером потока.
+	Объявление первого варианта функции :
+		std::basic_streambuf<CharT, Traits>* rdbuf() const;	
+	Назначение
+		1)Возвращает связанный буфер потока. Если его нет, то нулевой указатель. (null pointer)
+	Объявление второго варианта функции:
+		std::basic_streambuf<CharT, Traits>* rdbuf( std::basic_streambuf<CharT, Traits>* sb );
+	Назначение:
+		1)Устанавливает для связанного потока значение sb. Ошибочное состояиие исправляется clear().
+		2)Возвращает связанный буфер потока или нулевой указатель.
+	
+	Пример использования:
+		#include <iostream>
+		#include <sstream>
+ 
+		int main()
+		{
+    			std::ostringstream local;
+    			auto cout_buff = std::cout.rdbuf(); // save pointer to std::cout buffer
+ 
+    			std::cout.rdbuf(local.rdbuf()); // substitute internal std::cout buffer with
+        			// buffer of 'local' object
+ 
+    			// now std::cout work with 'local' buffer
+    			// you don't see this message
+    			std::cout << "some message";
+ 
+   			 // go back to old buffer
+   			 std::cout.rdbuf(cout_buff);
+ 
+   			 // you will see this message
+    			std::cout << "back to default buffer\n";
+ 
+    			// print 'local' content
+   			 std::cout << "local content: " << local.str() << "\n";
+		}
+
+std::numeric_limits<T>::max
+	Defined in header <limits>
+	static T max() throw();
+	static constexpr T max() noexcept;
+	Returns the maximum finite value representable by the numeric type T. Meaningful for all bounded types.
+	
+	Return value
+	T	std::numeric_limits<T>::max()
+		/* non-specialized */	T()
+		bool	true
+		char	CHAR_MAX
+		signed char	SCHAR_MAX
+		unsigned char	UCHAR_MAX
+		wchar_t	WCHAR_MAX
+		char8_t (C++20)	UCHAR_MAX
+		char16_t (C++11)	UINT_LEAST16_MAX
+		char32_t (C++11)	UINT_LEAST32_MAX
+		short	SHRT_MAX
+		unsigned short	USHRT_MAX
+		int	INT_MAX
+		unsigned int	UINT_MAX
+		long	LONG_MAX
+		unsigned long	ULONG_MAX
+		long long (C++11)	LLONG_MAX
+		unsigned long long (C++11)	ULLONG_MAX
+		float	FLT_MAX
+		double	DBL_MAX
+		long double	LDBL_MAX	
+
+	Example:
+	
+		#include <limits>
+		#include <cstddef>
+		#include <iostream>
+		int main()
+		{
+			std::cout << "short: " << std::dec << std::numeric_limits<short>::max()
+              				<< " or " << std::hex << std::showbase << std::numeric_limits<short>::max() << '\n'
+		              	<< "int: " << std::dec << std::numeric_limits<int>::max()
+             			<< " or " << std::hex << std::numeric_limits<int>::max() << '\n'
+ 			<< std::dec << "streamsize: " << std::dec << std::numeric_limits<std::streamsize>::max()
+             			<< " or " << std::hex << std::numeric_limits<std::streamsize>::max() << '\n'
+             			<< "size_t: " << std::dec << std::numeric_limits<std::size_t>::max()
+              			<< " or " << std::hex << std::numeric_limits<std::size_t>::max() << '\n"
+             			<< "float: " << std::numeric_limits<float>::max()
+            			<< " or " << std::hexfloat << std::numeric_limits<float>::max() << '\n'
+             			<< "double: " << std::defaultfloat << std::numeric_limits<double>::max()
+             			<< " or " << std::hexfloat << std::numeric_limits<double>::max() << '\n';
+}
+
+=======================================================================
+К главе 10.6 Обработка ошибок
+=======================================================================
+
+Ошибки при вводе могут быть разные, опечатки, ввели не тот формат данных,
+				неправильно поняли инструкцию и т.д.
+Результат ввода приводит к определённому состоянию потока (stream state).
+Поток istream имеет 4 состояния.
+	good()   - 	Операция ввода прошла успешно    	(Пр. istream ist{...}; ist >> var;  if(ist.good()) {cout << Good!;} )
+	eof()     -  	Мы достигли конца файла 		(Пр. istream ist{...};	while (!ist.eof) { ist >> var;} )
+	fail()     -	При вводе случилось что-то неожиданное (Пример: ждём число, а ввели символ)
+	bad()    - 	Что-то неожиданное и серьёзное случилось. (Пр.Проблема считывания с диска.)
+	
+	К сожалению нет четкого разделения между fail() и bad(). 
+	И при составлении новых операций ввода/вывода новых типов данных, 
+		каждый программист может использовать bad() и fail()  в разных случаях  по-разному.  
+	Но, в основе:
+Использование состояния потока istream:
+	FAIL() 
+		1) Неверный формат ввода простых типов
+		2) Возможность ввод повторить заново
+	BAD()
+		1)Невозможно повторить ввод заново. 
+			(Завершить попытку получить вводные данные)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+===================  Алгоритм ввода данных с обработкой ошибок  ============================
+
+int i;
+std::std::cin >> i;
+if(!std::cin)
+{
+	if(std::cin.bad())  //поток повреждён; Отправляем отчет об ошибке внешней программе
+	{
+		throw std::runtime_error ("In function stream cin was corrupted");
+	}
+	if(std::cin.eof())
+	{
+		//Больше никаких входных данных
+		//Последовательность символов правильно должна оканчиваться именно так
+	}
+	if(std::cin.fail()) // поток столкнулся с чем-то неожиданным
+	{
+		std::cin.clear();// make ready for more input
+		std::cin.ignore(32767, '\n'); // очищаем поток от мусора
+		//somehow recover
+	}
+
+}
+std::cin.ignore(32767, '\n'); // очищаем весь мусор, который остался в потоке после извлечения
+
+
+
+ДОПОЛНИТЕЛЬНО:
+ФЛАГИ СОСТОЯНИЯ ПОТОКА:
+std::ios_base::iostate     Тип BitmaskType   (enumeration?)
+Определяет флаг состояния потока. (stream state flag)  
+Константы
+goodbit	no error
+badbit	irrecoverable stream error
+failbit	input/output operation failed (formatting or extraction error)
+eofbit	associated input sequence has reached end-of-file
+static constexpr iostate goodbit = 0;
+static constexpr iostate badbit = /*implementation defined*/
+static constexpr iostate failbit = /*implementation defined*/
+static constexpr iostate eofbit = /*implementation defined*/
+Пример использования
+	void clear( std::ios_base::iostate state = std::ios_base::goodbit );
+		Sets the stream error state flags by assigning them the value of state.
+		By default, assigns std::ios_base::goodbit which has the effect of clearing all error state flags.
+Еще пример использования clear():
+	clear() without arguments can be used to unset the failbit after unexpected input; for std::cin.putback(c) see ungetc.
+
+Установка своего флага состояния потока:
+	void setstate( iostate state );
+		Sets the stream error flags state in addition to currently set flags.
+		Essentially calls clear(rdstate() | state). May throw an exception.
+	Ex.
+		stream.setstate(std::ios_base::failbit);
+Показывает текущее состояние потока
+	iostate rdstate() const;
+		Returns the current stream error state.
+	Пример использования:
+		std::ostringstream stream;
+ 
+  		if (stream.rdstate() == std::ios_base::goodbit) 
+		{
+   			 std::cout << "stream state is goodbit\n";
+  		}
+
+Пример ввода с консоли:
+while( std::cout << "Please, enter a number: " && ! (std::cin >> n) )
+    {
+        std::cin.clear();
+        std::string line;
+        std::getline(std::cin, line);
+        std::cout << line << "\nI am sorry, but '" << line << "' is not a number\n";
+    }
+
+Input : ctrl+Z
+Stream state :
+The input is fail.
+The program's reached the end of input.
+
+Input : sdfds
+Stream state :
+The input is good.
+
+Посмотреть длину буффера в cin в скиллбох есть очищение потока и в равесли notion set. надо посмотреть.
+
+
+
+
+
+Переписываем пункты 
+
+Посмотреть главу 19

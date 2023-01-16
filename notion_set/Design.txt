@@ -1,0 +1,570 @@
+﻿===========================
+Папки
+основная notion_set
+папка dictionary хранится словарик
+папка Yandex_coursera
+папка Ravesli
+файл start_data.txt с записью команды от предыдущей программы
+
+Модули
+	menu_main, menu_course, там классы и их функции
+	configure_preparation (создание команды запуска ) string command_browser внутренний source file
+	main_functions  (мелкие повторяющиеся функции во всех классах)
+==========================================================================
+модуль Главные функции main_functions.cpp
+	 
+** Функция Нужно проверить функцию нахождения слов 
+void find_words(const string key, vector<string> words);
+
+** Функция вывода Слова и Опеределения в форматированном виде	
+void format_text(const string WORD,const string DEF,length_word_column, length_def_column)
+** Функция поиска Слова и Определения **
+Дана строка и в ней найти Слово и Определение
+bool find_WORD_DEF (const string line, string& WORD,string& DEF);
+** Функция конструкции определения map ** 
+void (string "raw_dict.txt")
+
+
+==========================================================================
+модуль configure_preparation.cpp
+вспомогательный файл start_data.txt
+
+string command_browser; полностью всю команду написать в зависимости linux или Windows
+
+***preparing_module(const string start_data_name, string& command_browser);
+Вспомогательные файлы start_data.txt
+
+		
+=========================================================
+Модуль главное меню menu_main.cpp
+вспомогательные файлы dictionary.txt, words.txt
+
+***Main menu***
+---  List of the words  -------------------  (1)(список терминов из Страуструппа)
+---  Find the words with the key  ---------  (2) (список строковых определений из текстового файла выводит ВСЁ)
+---  Add word with definition  ------------  (3)(Добавляет пару Слово-Определение в Словарик map)
+---  Launch Ravesli menu   ----------------  (4)
+---  Launch Yandex coursera menu  ---------  (5)
+---  Change browser command  --------------  (6)
+---  Quit  --------------------------------  (7)
+==============================================================================
+class menu_main
+{
+++++++++
+++Объекты++
+
+
+Список слов
+vector<string> words
+
+Словарик пара Слово - Определение
+map<string> dictionary
+
+команда запуска в терминале компьютера
+string command_browser;
+
+Ширины столбца для Слова
+int length_word_column = 20;
+
+Ширина столбца для Определения
+int length_def_column = 40;
+
+++Методы++
+
+--Конструкторы
+
+menu_main(const browser_command_value,int length_word_column_value, int length_def_column_value);--
+Инициализация вектора words через внешний файл dictionary.txt
+Инициализация вектора dictionary через внешний файл dictionary.txt
+Инициализация длин для ширины столбцов для Word и Definition
+
+menu_main(const browser_command_value); 
+
+--Главная функция класса menu_course
+   void launch();
+	
+--Функция считывания выбора
+void choose_option(string& option)
+
+--Функция запуска нужного выбора
+void launch_option(const string option)
+Запускает выбор
+
+--Вывод меню на экран
+  void display_menu()
+
+--функция выводит все слова, которые есть в словарике (Страуструппа)
+void option1()
+	view_all_words();
+
+
+void view_all_words();
+Вывод в заданном формате пронумерованные элементы вектора WORDS
+1.Word1
+2.Word2
+...
+
+
+void option2()
+	Общение с пользователем
+	Введите слово или часть слова для поиска
+	find_words(const string key_or_word number, vector<string>& words)
+		по заданному ключу или номеру Слова в векторе(отсчет с единицы)
+	Вывод списка найденных Слов.
+	Вопрос пользователю: Найденные слова верны? 
+				Да(Enter,1) ->  Выход из цикла.
+				Нет(2) -> Возврат к началу цикла.		
+
+--Функция определяющая, string thing это слово или цифра
+bool is_digit(const string);
+
+void option_3()
+	Общение с пользователем: Введите Слово, которое хотите добавить
+	>> word
+	Общение с пользователем: Введите Определение, которое хотите добавить
+	>> definition
+	add_word_definition(const string Word, const String Definition)
+
+	
+
+--Функция добавления пары Слово+Определение в конец словарика--
+void add_word_definition(const string Word, const String Definition)
+	Добавляет в файл Словарик
+	Добавляет в map
+	Добавляет в вектор
+	Сортировка вектора по возрастанию
+
+
+---void option_4() 
+	menu_course Ravesli(string source_directory, command_browser);source_directory название папки в которой лежат файлы
+	Ravesli.launch();
+
+
+void option_5()
+	menu_course Yandex_coursera(string source_directory, command_browser);source_directory название папки в которой лежат файлы
+	Yandex_coursera.launch();
+
+void option_6()
+	Обращение к пользователю введите новую команду 
+	запуска файлов полностью с учётом операционной системы.
+	change_browser_command(string new_command);
+
+void change_browser_command(string new_command)
+
+--Деструктор
+Обнуляет  стартовый текстовой файл со словарем, добавляет текущий map dictionary.
+~menu_main()
+===========================================
+Модуль menu_course
+вспомогательный файл files.txt (список файлов)
+
+
+Класс меню  menu_course
+
+***menu_course***
+---  Headings  ----------------------------  (1)  (список файлов(названий с расширениями))
+---  Find the files with key  -------------  (2)(находит файлы по ключу или по номеру в векторе файлов)
+---  Add the file  ------------------------  (3)    (Добавляет в список файлов новое название файла в определенное место списка)
+---  Quit the menu   ----------------------- (4)(Переходим в главное меню)
+
+== 
+++++++++
+class menu
+++++++++
+++Объекты++
+
+	Список файлов
+	vector<string> files;
+
+	Текстовой файл со стартовыми параметрами
+	const string flle="files.txt" (.txt) в имени внести
+	
+	Папка, где расположены файлы для открытия
+	string source_directory (название папки)
+
+	Команда запуска файла
+	string command_browser;
+
+++Методы++
+
+--Конструктор
+	main_course(string source_directory_new, const string command_browser);
+	инициализация переменной source_directory = source_directory_new
+	инициализация вектора files с внешнего файла files.txt
+
+--Главная функция класса menu_course
+   void launch()
+	Цикл  
+	{	Выводит меню display_menu()
+		Считывает выбор меню от пользователя >>  choice
+		choose_option(string& option)
+		И вызывает нужную функцию выбора
+		launch_option(const string option)
+		Если choice не  quit, то возввращаемся в начало цикла
+	}
+--Функция считывания выбора
+void choose_option(string& option)
+
+--Функция запуска нужного выбора
+void launch_option(const string option)
+Запускает выбор
+
+--Вывод меню на экран
+  void display_menu()
+
+--Выводит в столбик все названия файлов в порядке добавления
+void option_1()   //view_all_files()
+	вывод вектора files формат : 1.files[0]
+			             2.files[1]
+	Номера обязательны
+
+--Find the Files
+void option_2()	
+		Цикл
+		  1.Обращение к пользователю 
+			Введите название файла или часть или номер файла
+		  Вызов функции find_words(const string key, vector<string>& 			key_files)
+		  Находит вектор файлов key_files
+		  2.Обращение к пользователю
+			Открыть вам эти файлы?
+			-> Да -> Все файлы открывает в браузере,
+				выход из цикла
+			-> Нет -> К началу  цикла	
+	
+
+void option_3()
+       Цикл{
+	Обращение к пользователю
+		Введите название файла new_name(string)
+		Введите номер, после которого вы хотите внести его в список всех 			файлов >> number
+	void add_file(new_name, number)
+	Вывести на дисплей для проверки
+	в столбик предыдущее, новое и следующее файлы из списка	вектора files
+	Уточнить, всё введено правильно?
+		Да -> Выход из цикла
+          }		Нет -> Возврат в начало цикла
+
+**Добавляет в список файлов новое название файла в определенное место списка
+void add_file(string new_name,int number)
+	new_name название нового файла
+	number - номер файла, после которого новый файл можно вставить
+	
+**деструктор
+~menu_course()
+ Обнуляет файл с вектором файлов.
+ Сохраняет текущий вектор файлов в файл, где хранятся списки файлов.		
+==========================================================================
+
+
+
+
+
+
+
+
+
+***Preparing_module(const string start_data_name, string& command_browser)
+
+	Дано внешний файл start_data.txt 
+	Вывод: 1) Считает данные OS input_browser
+	 	  Выведет на экран информацию
+      	 2) Обращение: вас устроит данный браузер?
+		 {
+	 	Да -> выход
+	  	Нет -> Обращение: Введите название команды вызова нужного браузера
+		            (Windows Yandex - browser.ru)
+				     Chrome - chrome.exe
+				     Firefox - firefox.exe
+			      Linux  Firefox - firefox
+			             Chrome  - chrome
+			       Ввод от пользователя названия браузера.
+			       К началу цикла
+	}
+
+
+
+***Изменение команды вызова браузера
+void change_browser_command(const string new_browser_command)
+
+
+
+???Открытие файла в браузере
+void launch_file(const string path_to_file, command_browser)  
+
+
+
+-----Тесты--------
+Оставить текущий браузер
+Вывести названия ОС и Браузер
+
+Изменить имя браузера
+Вывести названия ОС и Браузер
+
+Изменить имя браузера, потом еще раз изменить
+Вывести названия ОС и Браузер
+------------------------
+
+--Функция вызова файла используя текущую команду браузера и ОС
+
+
+
+
+=========================================================
+Модуль главное меню menu_main.cpp
+
+***Main menu***
+
+***Main menu***
+---  List of the words  -------------------  (1)(список терминов из Страуструппа)
+---  Find the words with the key (2) (список строковых определений из текстового файла выводит ВСЁ)
+---  Add word with definition  ------------  (3)(Добавляет пару Слово-Определение в Словарик map)
+---  Launch Ravesli menu   ----------------  (4)
+---  Launch Yandex coursera menu  ---------  (5)
+---  Change browser command  --------------  (6)
+---  Quit  --------------------------------  (7)
+== 
+++++++++
+class menu_main
+++++++++
+++Объекты++
+
+
+Список слов
+vector<string> words
+
+Словарик пара Слово - Определение
+map<string> dictionary
+
+название файла(вместе с расширением)
+string command_browser  //где содержится command_browser (полностью команда запуска файла с учетом операционной системы)
+
+Ширины столбца для Слова
+int length_word_column
+
+Ширина столбца для Определения
+int length_def_column
+
+++Методы++
+
+--Конструктор
+menu_main(cosnt browser_command,int length_word_column_value, int length_def_column_valu)--
+Инициализация вектора words через внешний файл dictionary.txt
+Инициализация вектора dictionary через внешний файл dictionary.txt
+Инициализация длин для ширины столбцов для Word и Definition
+
+--Главная функция класса menu_course
+   void launch()
+	m.Display()
+	Обращение к пользователю введите выбор
+	while choice <7 >0
+	{
+		Main.choose_option(int& choice)
+		Main.launch_option(choice)
+	
+			Launch_option(1)
+				isplay all vectors
+			Launch_option(2)
+				Обращение к пользователю
+				Find_the_words_with_the_key
+			Launch_option(3)
+				Обращение к пользователю
+				Add_the_word
+			Launch_option(4)
+				menu_course Ravesli(string source_directory, command_browser);source_directory название папки в которой лежат файлы
+				Ravesli.launch();				
+			Launch_option(5)
+				
+				menu_course Yandex_coursera(string source_directory,command_browser);source_directory название папки в которой лежат файлы
+				Yandex_coursera.launch();
+			Launch_option(6)
+				Обращение к пользователю введите новую команду 
+				запуска файлов полностью с учётом операционной системы.
+				change_browser_command(string new_command)
+				
+	}
+--Функция считывания выбора
+void choose_option(string& option)
+
+--Функция запуска нужного выбора
+void launch_option(const string option)
+Запускает выбор
+
+--Вывод меню на экран
+  void display_menu()
+
+--функция выводит все слова, которые есть в словарике (Страуструппа)
+void option1()
+	view_all_words();
+
+
+void view_all_words()
+Вывод в заданном формате пронумерованные элементы вектора WORDS
+1.Word1
+2.Word2
+...
+
+
+
+
+void option2()
+	Общение с пользователем
+	Введите слово или часть слова для поиска
+	find_words(const string key_or_word number, vector<string>& words)
+		по заданному ключу или номеру Слова в векторе(отсчет с единицы)
+	Вывод списка найденных Слов.
+	Вопрос пользователю: Найденные слова верны? 
+				Да(Enter,1) ->  Выход из цикла.
+				Нет(2) -> Возврат к началу цикла.		
+
+--Функция находит все слова по части слова или номеру слова 
+void find_words(const string key_or_number, vector<string>? words)
+
+--Функция определяющая, string thing это слово или цифра
+
+void option_3()
+	Общение с пользователем: Введите Слово, которое хотите добавить
+	>> word
+	Общение с пользователем: Введите Определение, которое хотите добавить
+	>> definition
+	add_word_definition(const string Word, const String Definition)
+
+	
+
+--Функция добавления пары Слово+Определение в конец словарика--
+void add_word_definition(const string Word, const String Definition)
+	Добавляет в файл Словарик
+	Добавляет в map
+	Добавляет в вектор
+	Сортировка вектора по возрастанию
+
+---Тесты----
+Дано Пусто Определение
+Вывод Ошибка
+Открытие Словарика
+Вывод всех элементов map
+Вывод всех элементов вектора 	
+
+Дано Пусто Пусто
+Вывод Ошибка
+
+Дано Слово Пусто
+Вывод Ошибка
+
+Дано Слово Определение
+Открытие Словарика
+Вывод всех элементов map
+Вывод всех элементов вектора 	
+-------------------------------
+
+---void option_4() 
+	menu_course Ravesli(string source_directory, command_browser);source_directory название папки в которой лежат файлы
+	Ravesli.launch();
+
+
+void option_5()
+	menu_course Yandex_coursera(string source_directory, command_browser);source_directory название папки в которой лежат файлы
+	Yandex_coursera.launch();
+
+void option_6()
+	Обращение к пользователю введите новую команду 
+	запуска файлов полностью с учётом операционной системы.
+				change_browser_command(string new_command)
+
+--Деструктор
+Обнуляет  стартовый текстовой файл со словарем, добавляет текущий map dictionary.
+~menu_main()
+===========================================
+Класс меню  menu_course
+
+***menu_course***
+---  Headings  ----------------------------  (1)  (список файлов(названий с расширениями))
+---  Find the files with key  -------------  (2)(находит файлы по ключу или по номеру в векторе файлов)
+---  Add the file  ------------------------  (3)    (Добавляет в список файлов новое название файла в определенное место списка)
+---  Quit the menu   ----------------------- (4)(Переходим в главное меню)
+
+== 
+++++++++
+class menu
+++++++++
+++Объекты++
+
+Список файлов
+vector<string> list_files
+
+Текстовой файл со стартовыми параметрами
+const string flle="list_files.txt" (.txt) в имени внести
+string source_directory (название папки)
+++Методы++
+
+--Конструктор(string source_directory_new, const string command_browser, menu_course(string start_file_name(.txt))
+	инициализация переменной source_directory = source_directory_new
+	инициализация вектора list_files с внешнего файла list_files.txt
+
+--Главная функция класса menu_course
+   void launch()
+	Цикл  
+	{	Выводит меню display_menu()
+		Считывает выбор меню от пользователя >>  choice
+		choose_option(string& option)
+		И вызывает нужную функцию выбора
+		launch_option(const string option)
+		Если choice не  quit, то возввращаемся в начало цикла
+	}
+--Функция считывания выбора
+void choose_option(string& option)
+
+--Функция запуска нужного выбора
+void launch_option(const string option)
+Запускает выбор
+
+--Вывод меню на экран
+  void display_menu()
+
+--Выводит в столбик все названия файлов в порядке добавления
+void option_1()   //view_all_files()
+	вывод вектора files формат : 1.files[0]
+			             2.files[1]
+	Номера обязательны
+
+--Find the Files  Общение с пользователем по поводу  ключа
+void option_2()	
+		Цикл
+		  1.Обращение к пользователю 
+			Введите название файла или часть или номер файла
+		  Вызов функции find_the_file_names(const string key, vector<string>& 			key_files)
+		  Находит вектор файлов key_files
+		  2.Обращение к пользователю
+			Открыть вам эти файлы?
+			-> Да -> Все файлы открывает в браузере,
+				выход из цикла
+			-> Нет -> К началу  цикла
+
+
+--функция поиска вектора файлов по ключу или по номеру из списка файлов
+void find_the_file(const string key, vector<string>& key_files)
+	string -> vector<string>
+	
+	
+
+void option_3()
+       Цикл{
+	Обращение к пользователю
+		Введите название файла new_name(string)
+		Введите номер, после которого вы хотите внести его в список всех 			файлов >> number
+	void add_file(new_name, number)
+	Вывести на дисплей для проверки
+	в столбик предыдущее, новое и следующее файлы из списка	вектора files
+	Уточнить, всё введено правильно?
+		Да -> Выход из цикла
+          }		Нет -> Возврат в начало цикла
+
+**Добавляет в список файлов новое название файла в определенное место списка
+void add_file(string new_name,int number)
+	new_name название нового файла
+	number - номер файла, после которого новый файл можно вставить
+	
+**деструктор
+~menu_course()
+ Обнуляет файл с вектором файлов.
+ Сохраняет текущий вектор файлов в файл, где хранятся списки файлов.		
+

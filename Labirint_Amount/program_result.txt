@@ -1,0 +1,17 @@
+1)Amount = 5385
+Chudesa v Zimnem lesu, 739 ,quantity = 1
+Shkola pomoshnikov Deda Moroza, 787 ,quantity = 2
+Roschdenstvenskoe chudo mistera Tumi, 768 ,quantity = 4
+2)Amount = 5385
+Elka.Sto let nazad, 1056 ,quantity = 1
+Dvenadcatj mesyacev, 2112 ,quantity = 1
+Chudesa v Zimnem lesu, 739 ,quantity = 3
+3)Amount = 5385
+Elka.Sto let nazad, 1056 ,quantity = 3
+Chudesa v Zimnem lesu, 739 ,quantity = 3
+4)Amount = 5385
+Ostrov Sokrovisch, 3273 ,quantity = 1
+Dvenadcatj mesyacev, 2112 ,quantity = 1
+5)Amount = 5385
+Ostrov Sokrovisch, 3273 ,quantity = 1
+Elka.Sto let nazad, 1056 ,quantity = 2
