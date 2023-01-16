@@ -18,7 +18,7 @@ echo "If connection failed press Ctrl+c and start bat-file \"generate_ssh_key_W.
 
 echo 'Push file to your remote repository leyalutik/leya.git'
 read -p "Press enter to continue"
-#cd /c/git/leya
+cd /c/git/leya
 git remote set-url origin git@github.com:leyalutik/leya.git
 git add .
 git commit -m " %date% %time%"

@@ -105,6 +105,14 @@ CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
 if %errorlevel%==1 echo Enter the time for opening file "evening_tasks.txt" in format HH:mm (20:00) & set /P time_set= 
 if %errorlevel%==1 schtasks /create /SC ONCE  /TN Evening_task /TR "C:\git\leya\evening_tasks.txt" /ST %time_set%   
 
+:: OPEN file "Vitrina_inventarisation.txt"
+::---------------------------------------------------------
+cd C:\git\leya\Labirint
+
+echo OPEN file "Vitrina_inventarisation.txt"?
+CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
+if %errorlevel%==1 echo "Check the Vitrina and input result in file" & echo -------------------- >> "Vitrina_inventarisation.txt" & echo %Date% >> "Vitrina_inventarisation.txt" & echo Name of punkt: >> "Vitrina_inventarisation.txt" & echo Check Result : >> "Vitrina_inventarisation.txt" & start  "" notepad.exe "Vitrina_inventarisation.txt" ||  echo Something happens :)) && pause
+
 ::OPEN daily text files 
 ::--------------------------------------------------------------------------
 echo DAILY TEXT FILES
