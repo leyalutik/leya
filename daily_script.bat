@@ -1,4 +1,4 @@
-chcp 65001
+﻿chcp 65001
 
 @Echo off
 
@@ -28,7 +28,7 @@ if %errorlevel%==1 start "" %browser_command% https://disk.yandex.ru/i/naZjI_AUj
 ::-------------------------------------------------------------------------------------------------------------------
 
 set Name_site=Tinkoff
-set URL_site=https://journal.tinkoff.ru/
+set URL_site=https://journal.tinkoff.ru/3-budget/
 
 :: OPEN site "%Name_site%"
 ::----------------------------------------

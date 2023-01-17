@@ -1,14 +1,12 @@
-chcp 65001
+﻿chcp 65001
 
-echo Переменной pc присвоим полный путь до папки Kitay
-if not defined pd ( set pd="%USERPROFILE%\Desktop\Kitay" & pd = %pd%)  else  ( echo variable pd is already defined by %pd% )
-echo Переменной pl присвоим полный путь до папки leya
-if not defined pd ( set pl="C:\git\leya" & echo pl = %pl%)  else  ( echo variable pl is already defined by %pl% )
+@Echo off
 
-
-
-
+::ADD PATH variables
+::---------------------------------------------------------------------
+Path=%Path%;C:\git\bin;C:\git\mingw\bin;C:\git\mingw\cmake\bin;C:\git\mingw\vim82;C:\git\leya\notion_set;C:\git\leya;C:\git\leya\WORK 
+echo %Path%
 
 ::-----------------------------------------------
 
-exit /B
+::exit  /B

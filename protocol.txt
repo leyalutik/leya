@@ -4298,4 +4298,44 @@ https://intensive.skillbox.ru/c-plus-plus/record/
 
 
 
- 
+ -------------------  
+17.01.2023  
+Помолись за тех, кто тебе важен.
+Мой гражданский долг понимать, что происходит. 
+Нужно возращаться к своему прошлому, изучать свою историю и язык. 
+Полюби свой город.
+
+
+Динамическое чтение:
+ скачать книгу и открыть https://disk.yandex.ru/i/naZjI_AUjiIyTA
+Reading файл
+Упражнения
+Доделать конспект
+
+Логи программы где искать
+
+
+Создать файл возражение клиенту
+Диктофон поменять батарейки и носить с собой
+
+
+
+LeetCode
+Git
+Docker
+Multithreads
+Boost(хотя б 1 либ)
+Linux base
+OOP
+LVM 
+Pointers
+
+getch (conio.h only for windows) replace on std::getchar()
+
+Посмотрите на направление embedded-разработки, там с/c++ практически монополист
+
+Язык C++: создаём высокопроизводительный сервер за 3 дня
+https://intensive.skillbox.ru/c-plus-plus/record/
+
+tg://resolve?domain=devops_online
+

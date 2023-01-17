@@ -12,8 +12,15 @@ if %errorlevel%==1  set browser_command=chrome.exe
 
 if %errorlevel%==2 echo Enter the execute file of browser (browser.exe, firefox.exe): & set /P browser_command=
 
+::ADD PATH variables
+::---------------------------------------------------------------------
+Path=%Path%;C:\git\bin;C:\git\mingw\bin;C:\git\mingw\cmake\bin;C:\git\mingw\vim82;C:\git\leya\notion_set;C:\git\leya;C:\git\leya\WORK 
+echo %Path%
 
-echo DOWNLOAD GIT32 and LEYA
+
+
+echo DOWNLOAD GIT32 MINGW32 and LEYA
+
 ::DOWNLOAD directory GIT32
 ::------------------------------------------------------------------------
 echo download GIT32?
@@ -40,6 +47,35 @@ if %leyalutik_indicator%==1 echo Coping git directory from Downloads to C:\  || 
 
 if %leyalutik_indicator%==1 cd %USERPROFILE%\Downloads  ||  echo Something happens :)) && pause
 if %leyalutik_indicator%==1 XCOPY  git C:\git\ /E  ||  echo Something happens :)) && pause
+
+
+::MINGW32
+::-----------------------------------------------------------
+::DOWNLOAD directory MINGW32
+::------------------------------------------------------------------------
+echo download directory MINGW32?
+CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
+
+if %errorlevel%==1  set leyalutik_indicator=1
+if %errorlevel%==2  set leyalutik_indicator=2
+
+if %leyalutik_indicator%==1 start "" %browser_command% "https://github.com/brechtsanders/winlibs_mingw/releases/download/12.1.0-14.0.6-10.0.0-ucrt-r3/winlibs-i686-posix-dwarf-gcc-12.1.0-llvm-14.0.6-mingw-w64ucrt-10.0.0-r3.7z"
+if %leyalutik_indicator%==1 echo WAIT for downloading directory MINGW32 (PortableGit)
+if %leyalutik_indicator%==1 pause 
+if %leyalutik_indicator%==1 echo Extract MINGW32...zip to according directory 
+if %leyalutik_indicator%==1 echo And Rename to "mingw"    
+if %leyalutik_indicator%==1 pause                                                   
+
+::MOVE MINGW32 to  C:\git\mingw
+::-----------------------------------------------------------------------
+
+
+if %leyalutik_indicator%==1 echo Coping mingw directory from Downloads to C:\git  ||  echo Something happens :)) && pause
+if %leyalutik_indicator%==1 cd C:\git & mkdir mingw
+if %leyalutik_indicator%==1 cd %USERPROFILE%\Downloads  ||  echo Something happens :)) && pause
+if %leyalutik_indicator%==1 XCOPY  mingw C:\git\mingw /E  ||  echo Something happens :)) && pause
+
+
 
 
 ::LEYA 

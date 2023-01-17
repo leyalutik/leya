@@ -183,7 +183,7 @@ cd C:\git\leya
 
 echo DOWNLOAD AND OPEN Telegram ?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 start "" start "" telegram.bat
+if %errorlevel%==1 start "" telegram.bat
 
 ::OPEN NEWS
 ::---------------------------------------------------------

@@ -12,8 +12,12 @@ if %errorlevel%==2 echo Enter the execute file of browser (browser.exe, firefox.
 
 echo The command of opening current browser : %browser_command% 
 pause
-:Download telegram portable version
-start "" chrome "https://telegram.org/dl/desktop/win64_portable" || echo Some mistake's happend. && pause
+echo Is the Typed System 64?
+CHOICE /T 9999 /C 12 /D 1 /M "Press 1 for Yes, 2 for No."
+
+if %errorlevel%==1  start "" %browser_command% "https://telegram.org/dl/desktop/win64_portable" || echo Some mistake's happend. && pause
+if %errorlevel%==2 echo No Telegram version for 32 Typed System
+
 echo Press Enter when file's downloaded.
 pause
 
