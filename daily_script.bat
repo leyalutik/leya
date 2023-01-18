@@ -27,6 +27,59 @@ if %errorlevel%==1 start "" %browser_command% https://disk.yandex.ru/i/naZjI_AUj
 ::SITES
 ::-------------------------------------------------------------------------------------------------------------------
 
+
+
+set Name_site=yandex.ru
+set URL_site=https://translate.yandex.ru/?source_lang=en&target_lang=ru&text=vertices
+
+:: OPEN site "%Name_site%"
+::----------------------------------------
+echo OPEN site "%Name_site%" ?
+CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
+if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
+
+
+set Name_site=disk.yandex.ru
+set URL_site=https://disk.yandex.ru/client/disk
+
+:: OPEN site "%Name_site%"
+::----------------------------------------
+echo OPEN site "%Name_site%" ?
+CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
+if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
+
+
+set Name_site=ankiweb.net
+set URL_site=https://ankiweb.net/account/login
+
+:: OPEN site "%Name_site%"
+::----------------------------------------
+echo OPEN site "%Name_site%" ?
+CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
+if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
+
+
+set Name_site=English_Toeffl
+set URL_site=https://disk.yandex.ru/client/disk/1.%%D0%%A1%%D1%%82%%D0%%B0%%D0%%BD%%D0%%BE%%D0%%B2%%D0%%B8%%D0%%BC%%D1%%81%%D1%%8F%%20%%D0%%BB%%D1%%83%%D1%%87%%D1%%88%%D0%%B5/English
+
+:: OPEN site "%Name_site%"
+::----------------------------------------
+echo OPEN site "%Name_site%" ?
+CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
+if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
+
+
+
+set Name_site=Algorithms
+set URL_site=https://leetcode.com/discuss/general-discussion/665604/Important-and-Useful-links-from-all-over-the-LeetCode
+
+:: OPEN site "%Name_site%"
+::----------------------------------------
+echo OPEN site "%Name_site%" ?
+CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
+if %errorlevel%==1 start "" %browser_command%  "%URL_site%"  "https://leetcode.com/discuss/general-discussion/665604/Important-and-Useful-links-from-all-over-the-LeetCode"
+
+
 set Name_site=Tinkoff
 set URL_site=https://journal.tinkoff.ru/3-budget/
 
