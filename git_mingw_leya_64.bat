@@ -17,58 +17,39 @@ if %errorlevel%==2 echo Enter the execute file of browser (browser.exe, firefox.
 ::------------------------------------------------------------------------
 echo download GIT?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==2 exit /B
+if %errorlevel%==1  set leyalutik_indicator=1
+if %errorlevel%==2  set leyalutik_indicator=2
 
-start "" %browser_command% https://github.com/leyalutik/git/archive/refs/heads/master.zip
 
-echo WAIT for downloading directory GIT
-pause 
+if %leyalutik_indicator%==1 start "" %browser_comman% https://github.com/leyalutik/git/archive/refs/heads/master.zip
+
+if %leyalutik_indicator%==1 cd %USERPROFILE%\Downloads  ||  echo Something happens :)) && pause
+if %leyalutik_indicator%==1 RENAME git-master.zip git.zip  ||  echo Something happens :)) && pause
+
+
+if %leyalutik_indicator%==1 echo Unzipping file git.zip in Downloads directory.  ||  echo Something happens :)) && pause
+
+if %leyalutik_indicator%==1 cd %USERPROFILE%\Downloads  ||  echo Something happens :)) && pause
+if %leyalutik_indicator%==1 tar -xf  git.zip || echo In directory Downloads Unzip file git.zip by hand. && pause ||  echo Something happens :)) && pause
+
+if %leyalutik_indicator%==1 echo Rename git_master directory to  git directory  ||  echo Something happens :)) && pause
+                                              
 
 ::MOVE GIT to  C:\git
 ::-----------------------------------------------------------------------
-cd %USERPROFILE%\Downloads  ||  echo Something happens :)) && pause
-RENAME git-master.zip git.zip  ||  echo Something happens :)) && pause
 
-::echo Распакование файлов git.zip в папке Загрузки
-echo Unzipping file git.zip in Downloads directory.  ||  echo Something happens :)) && pause
+if %leyalutik_indicator%==1 echo Coping git directory from Downloads to C:\  ||  echo Something happens :)) && pause
 
-cd %USERPROFILE%\Downloads  ||  echo Something happens :)) && pause
-tar -xf  git.zip || echo In directory Downloads Unzip file git.zip by hand. && pause ||  echo Something happens :)) && pause
-
-echo Rename git_master directory to  git directory  ||  echo Something happens :)) && pause
-
-cd %USERPROFILE%\Downloads  ||  echo Something happens :)) && pause
-RENAME git-master git  ||  echo Something happens :)) && pause
+if %leyalutik_indicator%==1 cd %USERPROFILE%\Downloads  ||  echo Something happens :)) && pause
+if %leyalutik_indicator%==1 XCOPY  git C:\git\ /E  ||  echo Something happens :)) && pause
 
 
-echo Coping git directory from Downloads to C:\  ||  echo Something happens :)) && pause
 
-cd %USERPROFILE%\Downloads  ||  echo Something happens :)) && pause
-XCOPY  git C:\git\ /E  ||  echo Something happens :)) && pause
-
-::echo Deleting directory git from directory Downloads ||  echo Something happens :)) && pause
-::Удаление папки git из папки Загрузки
-::cd "%USERPROFILE%\Downloads" ||  echo Something happens :)) && pause
-::RMDIR /S  /Q git ||  echo Something happens :)) && pause
-::echo Deleting archive git.zip from directory Downloads  ||  echo Something happens :)) && pause
-::Удаление архива git.zip из папки Загрузки  
-::del git.zip ||  echo Something happens :)) && pause
-
-
-::Добавить переменные (nostart add_path_variables.bat)
-::----------------------------------------------------------------------------
-cd C:\git\leya
-set Path >> path_this_computer.txt	||  echo Something happens :)) && pause
-Path=%Path%;C:\git\bin;C:\git\mingw\bin;C:\git\mingw\cmake\bin;C:\git\mingw\vim82;C:\git\leya\notion_set;C:\git\leya;C:\git\leya\WORK  ||  echo Something happens :)) && pause
-
-
-cd C:\git
-
-::MINGW LEYA
-::--------------------------------------------------------------------------
 ::MINGW
 ::------------------------------ 
 echo download MINGW?
+cd C:\git
+
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
 if %errorlevel%==1 git clone https://github.com/leyalutik/mingw.git ||  echo Something happens :)) && pause
 
