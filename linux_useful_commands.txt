@@ -11,3 +11,4 @@ $^
 sed -i "s/\r$/ /" start_Linux.sh
 Проверка кодировки 
 head -10 start_Linux.sh | od -c
+sudo git pull --rebase origin master
