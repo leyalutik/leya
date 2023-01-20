@@ -18,11 +18,14 @@ echo  SPEED READING
 
 :: OPEN BOOK "Dynamicheskoe_chtenie.pdf"
 ::----------------------------------------
-cd C:\git\leya\WORK
-
-echo OPEN BOOK "Dynamicheskoe_chtenie.pdf" ?
+echo DOWNLOAD BOOK "Dynamicheskoe_chtenie.pdf" ?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
 if %errorlevel%==1 start "" %browser_command% https://disk.yandex.ru/i/naZjI_AUjiIyTA
+
+echo OPEN BOOK "Dynamicheskoe_chtenie.pdf" (in Downloads directory)?
+CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
+if %errorlevel%==1 start "" %browser_command% file:///%userprofile%/Downloads/"Vormsbekher_100_stranits_v_chas.pdf"
+
 
 ::SITES
 ::-------------------------------------------------------------------------------------------------------------------
