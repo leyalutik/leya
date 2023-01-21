@@ -36,7 +36,8 @@ if %leyalutik_indicator%==1 start "" %browser_command% https://github.com/git-fo
 if %leyalutik_indicator%==1 echo WAIT for downloading directory GIT32 (PortableGit)
 if %leyalutik_indicator%==1 pause 
 if %leyalutik_indicator%==1 echo Extract PortableGit.7z to directory PortableGit
-if %leyalutik_indicator%==1 echo And Rename to "git"    
+if %leyalutik_indicator%==1 echo And Rename to "git" 
+if %leyalutik_indicator%==1 start "" explorer.exe "%userprofile%\Downloads"
 if %leyalutik_indicator%==1 pause                                                   
 
 ::MOVE GIT32 to  C:\git
@@ -64,6 +65,7 @@ if %leyalutik_indicator%==1 echo WAIT for downloading directory MINGW32 (Portabl
 if %leyalutik_indicator%==1 pause 
 if %leyalutik_indicator%==1 echo Extract MINGW32...zip to according directory 
 if %leyalutik_indicator%==1 echo And Rename to "mingw"    
+if %leyalutik_indicator%==1 start "" explorer.exe "%userprofile%\Downloads"
 if %leyalutik_indicator%==1 pause                                                   
 
 ::MOVE MINGW32 to  C:\git\mingw

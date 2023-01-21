@@ -2,6 +2,10 @@
 17.01.2023  
 Name of punkt: Zanevskiy 28  
 Check Result :  OK
+---------------------------
+21.01.2023
+Name of punct: Zanevskiy 28
+Check Result : 
 
 
 
@@ -58,3 +62,7 @@ Check Result :
 19.01.2023  
 Name of punkt:  
 Check Result :  
+--------------------  
+21.01.2023  
+Name of punkt:  Zanevskiy 28
+Check Result :  OK
