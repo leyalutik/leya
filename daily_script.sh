@@ -103,24 +103,11 @@ then
 fi
 
 
- Name_site=English_Toeffl
- URL_site=https://disk.yandex.ru/client/disk/1.%D0%A1%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D0%BC%D1%81%D1%8F%20%D0%BB%D1%83%D1%87%D1%88%D0%B5/English
-
-## OPEN site "$Name_site"
-##----------------------------------------
-echo OPEN site \"$Name_site\" ? Press 1 for Yes, 2 for No.
-read ANSWER
-if [[ $ANSWER -eq 1 ]] 
-then
-{ 
-	$browser_command  "$URL_site"  &
-}
-fi
-
+ 
 
 
  Name_site=Algorithms
- URL_site=https://leetcode.com/discuss/general-discussion/665604/Important-and-Useful-links-from-all-over-the-LeetCode
+ URL_site=https://leetcode.com/discuss/general-discussion/665604/Important-and-Useful-links-from-all-over-the-LeetCode https://leetcode.com/explore/learn/
 
 ## OPEN site "$Name_site"
 ##----------------------------------------
@@ -549,5 +536,19 @@ then
 fi
 ##------------------------------------------------------------------------------------------
 
-exit /B
+Name_site=English_Toeffl
+ URL_site=https://disk.yandex.ru/client/disk/1.%D0%A1%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D0%BC%D1%81%D1%8F%20%D0%BB%D1%83%D1%87%D1%88%D0%B5/English
+
+## OPEN site "$Name_site"
+##----------------------------------------
+echo OPEN site \"$Name_site\" ? Press 1 for Yes, 2 for No.
+read ANSWER
+if [[ $ANSWER -eq 1 ]] 
+then
+{ 
+	$browser_command  "$URL_site"  &
+}
+fi
+
+
 

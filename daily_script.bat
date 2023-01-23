@@ -48,19 +48,11 @@ CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
 if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
 
 
-set Name_site=English_Toeffl
-set URL_site=https://disk.yandex.ru/client/disk/1.%%D0%%A1%%D1%%82%%D0%%B0%%D0%%BD%%D0%%BE%%D0%%B2%%D0%%B8%%D0%%BC%%D1%%81%%D1%%8F%%20%%D0%%BB%%D1%%83%%D1%%87%%D1%%88%%D0%%B5/English
-
-:: OPEN site "%Name_site%"
-::----------------------------------------
-echo OPEN site "%Name_site%" ?
-CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
+s
 
 
-
-set Name_site=Leetcode Algorithms and general plan of stydies
-set URL_site=https://leetcode.com/discuss/general-discussion/665604/Important-and-Useful-links-from-all-over-the-LeetCode
+set Name_site=Leetcode Algorithms and general plan of studies
+set URL_site=https://leetcode.com/discuss/general-discussion/665604/Important-and-Useful-links-from-all-over-the-LeetCode https://leetcode.com/explore/learn/
 
 :: OPEN site "%Name_site%"
 ::----------------------------------------
@@ -379,7 +371,7 @@ set book_leya="E. Gamma et al.| Object Oriented Design Patterns (2020) [PDF]"
 set name_file="Gamma. Patterns."
 set name_site="https://disk.yandex.ru/i/BTCDadGkbSWQqg"
 
-echo  
+ 
 ::-------------------------------------------------
 :: OPEN BOOK %book_leya% ?
 ::----------------------------------------
@@ -398,8 +390,27 @@ set name_file /P
 if %errorlevel%==1  start "" %browser_command% "file:///%userprofile%/Downloads/%name_file%"
 
 
+::ENGLISH TOEFFL
+::---------------------------------------------
 
 
+set book_leya=English_Toeffl
+set name_site=https://disk.yandex.ru/client/disk/1.%%D0%%A1%%D1%%82%%D0%%B0%%D0%%BD%%D0%%BE%%D0%%B2%%D0%%B8%%D0%%BC%%D1%%81%%D1%%8F%%20%%D0%%BB%%D1%%83%%D1%%87%%D1%%88%%D0%%B5/English
+
+echo DOWNLOAD BOOK  %book_leya% ?
+CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
+if %errorlevel%==1 start "" %browser_command% %name_site%
+
+echo OPEN BOOK  %book_leya% (in Downloads directory)?
+CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
+
+if %errorlevel%==1 cd "%userprofile%\Downloads"
+if %errorlevel%==1 dir /OD
+echo Copy the name of downloaded file:
+if %errorlevel%==1 pause
+echo Enter the name of downloaded file (exactly):
+set name_file /P 
+if %errorlevel%==1  start "" %browser_command% "file:///%userprofile%/Downloads/%name_file%"
 
 
 

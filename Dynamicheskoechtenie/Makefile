@@ -3,7 +3,7 @@ CXXFLAGS = -ggdb -Wall -static -static-libgcc -static-libstdc++ -pthread -std=c+
 SOURCE=main.cpp
 GOAL=Dynamicheskoechtenie
 ##GOAL=$(SOURCE:.cpp=$*)
-##MODULES=template_work.cpp
+MODULES=parse_file.cpp game1.cpp
 OBJMODULES=$(MODULES:.cpp=.o)
 
 all: run

@@ -8,6 +8,7 @@ git config --global user.email "ludapevek@gmail.com"
 git config --global user.name "leyalutik"
 git config --global  core.autocrlf true
 git config --global --list
+git config --global core.quotepath off
 
 echo 'Test the SSH key:'
 eval "$(ssh-agent -s)"
