@@ -12,18 +12,18 @@
 #include "parse_file.h"
 #include "game1.h"
 
-	display menu_task(); //Start task (1) // Go to next task (2) // Quit program(3)	
-	display_shift(); // Отступ слева
-	task1();
-	task2();
-	task3();
-	task4();
-	task5();
-	task6();
-	task7();
+//	display menu_task(); //Start task (1) // Go to next task (2) // Quit program(3)	
+//	display_shift(); // Отступ слева
+//	task1();
+//	task2();
+//	task3();
+//	task4();
+//	task5();
+//	task6();
+//	task7();
  int main()
 {
-	int number_task = 0;
+/*	int number_task = 0;
 	std::ifstream in("options.txt", std::ios_base::in);
 	in >> number_task;
 	
@@ -58,7 +58,7 @@
 			break;
 
 	}
-
+*/
 	std::string FILENAME = "english_words.txt";
 
 
@@ -78,6 +78,8 @@
 	number_of_tries = 5;
 	number_of_set = 5;
 	game1(russian_words,number_of_set, number_of_tries);
+	std::getchar();
+	game5(english_words,15);
 
 	return 0;
 }
