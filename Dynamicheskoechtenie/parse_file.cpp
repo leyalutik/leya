@@ -21,7 +21,7 @@ struct List
 };
 
 
-const int32_t LIMIT=10000;
+const int32_t LIMIT=3000000;
 
 
 void get_all_lines_from_output_file(const std::string& FILENAME,
@@ -31,7 +31,7 @@ void get_all_lines_from_output_file(const std::string& FILENAME,
 	std::ifstream in(FILENAME, std::ios_base::in);
 	std::string str;
 	int32_t number_line = 0;
-	while(getline(in,str) 
+	while(std::getline(in,str) 
 			&& number_line < LIMIT)
 	{
 		buffer.push_back(str);

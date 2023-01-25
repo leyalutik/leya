@@ -9,6 +9,7 @@
 #include <sstream>
 #include <fstream>
 #include <chrono>
+
 #include "parse_file.h"
 #include "game1.h"
 
@@ -59,27 +60,94 @@
 
 	}
 */
-	std::string FILENAME = "english_words.txt";
+	std::system ("chcp 65001");
+	std::cout << "\t\t СКОРОЧТЕНИЕ\n";
+	std::cout << "Enter number of task:\n";
+	int32_t number_task = 0;
+	std::cin >> number_task;
+	while(!std::cin)
+	{
+		if(std::cin.bad())  //поток повреждён; Отправляем отчет об ошибке внешней программе
+		{
+			throw std::runtime_error ("In function stream cin was corrupted");
+		}
+		if(std::cin.eof())
+		{
+			//Больше никаких входных данных
+			//Последовательность символов правильно должна оканчиваться именно так
+		}
+		if(std::cin.fail()) // поток столкнулся с чем-то неожиданным
+		{
+			std::cin.clear();// make ready for more input
+			std::cin.ignore(32767, '\n'); // очищаем поток от мусора
+			std::cin >> number_task;
+		}
 
-
-	std::vector<std::string> english_words;
-	get_all_lines_from_output_file(FILENAME,english_words);
-
-	
-	int32_t number_of_tries = 5;
-	int32_t number_of_set = 5;
-	game1(english_words,number_of_set, number_of_tries);
-
-	 FILENAME = "russian_words.txt";
-	std::vector<std::string> russian_words;
-	get_all_lines_from_output_file(FILENAME,russian_words);
-
-	
-	number_of_tries = 5;
-	number_of_set = 5;
-	game1(russian_words,number_of_set, number_of_tries);
+			
+	}
 	std::getchar();
-	game5(english_words,15);
+
+	display_preparations();
+	std::getchar();
+//Week1
+	switch(number_task)
+	{
+		case 0:
+			//task_menu
+			std::cout << "\t Task 0\n";
+			lesson0();
+			std::getchar();
+		case 1:
+			std::cout << "\t Task 1\n";
+			lesson1();
+			std::getchar();
+		case 2:
+			std::cout << "\t Task 2\n";
+			lesson2();
+			std::getchar();
+		case 3:
+			std::cout << "\t Task 3\n";
+			lesson3();
+			std::getchar();
+		case 4:
+			std::cout << "\t Task 4\n";
+			lesson4();
+			std::getchar();
+		case 5:
+			std::cout << "\t Task 5\n";
+			lesson5();
+			std::getchar(); 
+		case 6:
+			std::cout << "\t Task 6\n";
+			lesson6();
+			std::getchar(); 
+		case 7:
+			std::cout << "\t Task 7\n";
+			lesson7();
+			std::getchar(); 
+		case 8:
+			std::cout << "\t Task 8\n";
+			lesson8();
+			std::getchar(); 
+		case 9:
+			std::cout << "\t Task 9\n";
+			lesson9();
+			std::getchar(); 
+		case 10:
+			std::cout << "\t Task 10\n";
+			lesson10();
+			std::getchar(); 
+		case 11:
+			std::cout << "\t Task11\n";
+			lesson11();
+			std::getchar(); 
+		case 12:
+			std::cout << "\t Task 12\n";
+			lesson12();
+			std::getchar();
+
+
+	}
 
 	return 0;
 }
