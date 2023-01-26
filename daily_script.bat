@@ -321,7 +321,7 @@ if %errorlevel%==1 start "" %browser_command% %name_site%
 
 echo OPEN BOOK  %book_leya% (in Downloads directory)?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-:loop
+
 if %errorlevel%==1 set leyalutik_level = 1
 if %errorlevel%==2 set leyalutik_level = 2
 if %errorlevel%==1 cd "%userprofile%\Downloads"
@@ -335,25 +335,20 @@ echo  "Stolyarov book"
 ::-------------------------------------------------
 :: OPEN BOOK %book_leya% ?
 ::----------------------------------------
-echo DOWNLOAD BOOK  %book_leya% ?
+::echo DOWNLOAD BOOK  %book_leya% ?
+::CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
+::if %errorlevel%==1 set leyalutik_level = 1
+::if %errorlevel%==2 set leyalutik_level = 2
+::if %leyalutik_level%==1 start "" %browser_command% %name_site%
+
+echo OPEN BOOK  %book_leya% (in Downloads directory)?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
+
 if %errorlevel%==1 set leyalutik_level = 1
 if %errorlevel%==2 set leyalutik_level = 2
-if %leyalutik_level%==1 start "" %browser_command% %name_site%
+if %errorlevel%==1 cd "%userprofile%\Downloads"
+if %leyalutik_level%==1 start "" explorer.exe .
 
-echo OPEN BOOK  %book_leya% (in Downloads directory)?
-CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-:loop
-if %leyalutik_level%==1 cd "%userprofile%\Downloads"
-if %leyalutik_level%==1 dir /OD
-echo Copy the name of downloaded file:
-if %leyalutik_level%==1 pause
-set name_file /P 
-if %leyalutik_level%==1  start "" %browser_command% "file:///%userprofile%/Downloads/%name_file%"
-
-echo OPEN BOOK  %book_leya% (in Downloads directory)?
-CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %leyalutik_level%==1 goto loop
 
 
 ::SYSTEM DESIGN
@@ -378,13 +373,21 @@ if %leyalutik_level%==1 start "" %browser_command% %name_site%
 
 echo OPEN BOOK  %book_leya% (in Downloads directory)?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-:loop
-if %leyalutik_level%==1 cd "%userprofile%\Downloads"
-if %leyalutik_level%==1 dir /OD
-echo Copy the name of downloaded file:
-if %leyalutik_level%==1 pause
-set name_file /P 
-if %leyalutik_level%==1  start "" %browser_command% "file:///%userprofile%/Downloads/%name_file%"
+
+if %errorlevel%==1 set leyalutik_level = 1
+if %errorlevel%==2 set leyalutik_level = 2
+if %errorlevel%==1 cd "%userprofile%\Downloads"
+if %leyalutik_level%==1 start "" explorer.exe .
+
+::echo OPEN BOOK  %book_leya% (in Downloads directory)?
+::CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
+::loop
+::if %leyalutik_level%==1 cd "%userprofile%\Downloads"
+::if %leyalutik_level%==1 dir /OD
+::echo Copy the name of downloaded file:
+::if %leyalutik_level%==1 pause
+::set name_file /P 
+::if %leyalutik_level%==1  start "" %browser_command% "file:///%userprofile%/Downloads/%name_file%"
 
 
 ::ENGLISH TOEFFL
@@ -403,14 +406,10 @@ if %leyalutik_level%==1  start "" %browser_command% %name_site%
 echo OPEN BOOK  %book_leya% (in Downloads directory)?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
 
-if %leyalutik_level%==1 cd "%userprofile%\Downloads"
-if %leyalutik_level%==1 dir /OD
-echo Copy the name of downloaded file:
-if %leyalutik_level%==1 pause
-echo Enter the name of downloaded file (exactly):
-set name_file /P 
-if %leyalutik_level%==1  start "" %browser_command% "file:///%userprofile%/Downloads/%name_file%"
-
+if %errorlevel%==1 set leyalutik_level = 1
+if %errorlevel%==2 set leyalutik_level = 2
+if %errorlevel%==1 cd "%userprofile%\Downloads"
+if %leyalutik_level%==1 start "" explorer.exe .
 
 
 ::--------------------------------

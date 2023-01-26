@@ -148,7 +148,44 @@
 
 
 	}
+//Week
+	switch(number_task)
+	{
+		case 13:
+			std::cout << "\t Task 13\n";
+			lesson13();
+			std::getchar();
+		case 14:
+			std::cout << "\t Task 14\n";
+			lesson14();
+			std::getchar();
+		case 15:
+			std::cout << "\t Task 15\n";
+			lesson15();
+			std::getchar();
+		case 16:
+			std::cout << "\t Task 16\n";
+			lesson16();
+			std::getchar();
+		case 17:
+			std::cout << "\t Task 17\n";
+			lesson17();
+			std::getchar();
+		case 18:
+			std::cout << "\t Task 18\n";
+			lesson18();
+			std::getchar();
+		case 19:
+			std::cout << "\t Task 19\n";
+			lesson19();
+			std::getchar();
 
+
+
+
+
+
+	}
 	return 0;
 }
 	
