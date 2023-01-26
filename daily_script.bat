@@ -27,6 +27,16 @@ echo OPEN site "%Name_site%" ?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
 if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
 
+set Name_site=ankiweb.net
+set URL_site=https://ankiweb.net/account/login
+
+:: OPEN site "%Name_site%"
+::----------------------------------------
+echo OPEN site "%Name_site%" ?
+CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
+if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
+
+
 
 set Name_site=disk.yandex.ru
 set URL_site=https://disk.yandex.ru/client/disk
@@ -38,27 +48,18 @@ CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
 if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
 
 
-set Name_site=ankiweb.net
-set URL_site=https://ankiweb.net/account/login
 
-:: OPEN site "%Name_site%"
-::----------------------------------------
-echo OPEN site "%Name_site%" ?
-CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
-
-
-s
 
 
 set Name_site=Leetcode Algorithms and general plan of studies
-set URL_site=https://leetcode.com/discuss/general-discussion/665604/Important-and-Useful-links-from-all-over-the-LeetCode https://leetcode.com/explore/learn/
-
+set URL_site=https://leetcode.com/discuss/general-discussion/665604/Important-and-Useful-links-from-all-over-the-LeetCode
+set URL2_site= https://leetcode.com/explore/learn/
 :: OPEN site "%Name_site%"
 ::----------------------------------------
 echo OPEN site "%Name_site%" ?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 start "" %browser_command%  "%URL_site%"  "https://leetcode.com/discuss/general-discussion/665604/Important-and-Useful-links-from-all-over-the-LeetCode"
+if %errorlevel%==1 start "" %browser_command%  "%URL_site%"  
+if %errorlevel%==1 start "" %browser_command%  "%URL2_site%"  
 
 
 set Name_site=Tinkoff
@@ -280,8 +281,8 @@ if %errorlevel%==1 start "" %browser_command% "file:///%userprofile%/Downloads/%
 
 
 set book_leya="Stroustrupp. C++"
-set name_file=" "
-set name_site="https://disk.yandex.ru/i/xg_bOhq1iL8Upw https://disk.yandex.ru/i/FSkmO5-JMknjTQ"
+set name_file=Stroustrup_Programming__Principles_and_Practice_Using_C++.pdf
+set name_site=https://disk.yandex.ru/i/xg_bOhq1iL8Upw https://disk.yandex.ru/i/FSkmO5-JMknjTQ
 
 echo  C++
 
@@ -290,28 +291,23 @@ echo Stroustrupp
 ::-------------------------------------------------
 :: OPEN BOOK %book_leya% ?
 ::----------------------------------------
-echo DOWNLOAD BOOK  %book_leya% ?
-CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 start "" %browser_command% %name_site%
+::echo DOWNLOAD BOOK  %book_leya% ?
+::CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
+::if %errorlevel%==1 set leyalutik_level=1
+::if %errorlevel%==2 set leyalutik_level=2
+
+::if %leyalutik_level%==1 start "" %browser_command% %name_site%
 
 echo OPEN BOOK  %book_leya% (in Downloads directory)?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-:loop
-if %errorlevel%==1 cd "%userprofile%\Downloads"
-if %errorlevel%==1 dir /OD
- echo Copy the name of downloaded file:
-if %errorlevel%==1 pause
-set name_file /P 
-if %errorlevel%==1  start "" %browser_command% "file:///%userprofile%/Downloads/%name_file%"
+if %errorlevel%==1    start "" %browser_command% "file:///C:/git/leya/Stroustrupp/%name_file%"
 
-echo OPEN BOOK  %book_leya% (in Downloads directory)?
-CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 goto loop
+
 
 
 set book_leya="Yandex Cplusplus"
-set name_file="Vormsbekher_100_stranits_v_chas.pdf"
-set name_site="https://disk.yandex.ru/i/KXfLuCI5WD4rVA https://disk.yandex.ru/i/yHJxdp_iANEsfg https://disk.yandex.ru/i/esQLMMkrjvJ74g"
+set name_file=""
+set name_site=https://disk.yandex.ru/i/KXfLuCI5WD4rVA https://disk.yandex.ru/i/yHJxdp_iANEsfg https://disk.yandex.ru/i/esQLMMkrjvJ74g
 
 echo  "Yandex Cplusplus"
 ::-------------------------------------------------
@@ -319,21 +315,18 @@ echo  "Yandex Cplusplus"
 ::----------------------------------------
 echo DOWNLOAD BOOK  %book_leya% ?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
+if %errorlevel%==1 set leyalutik_level = 1
+if %errorlevel%==2 set leyalutik_level = 2
 if %errorlevel%==1 start "" %browser_command% %name_site%
 
 echo OPEN BOOK  %book_leya% (in Downloads directory)?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
 :loop
+if %errorlevel%==1 set leyalutik_level = 1
+if %errorlevel%==2 set leyalutik_level = 2
 if %errorlevel%==1 cd "%userprofile%\Downloads"
-if %errorlevel%==1 dir /OD
- echo Copy the name of downloaded file:
-if %errorlevel%==1 pause
-set name_file /P 
-if %errorlevel%==1  start "" %browser_command% "file:///%userprofile%/Downloads/%name_file%"
+if %leyalutik_level%==1 start "" explorer.exe .
 
-echo OPEN BOOK  %book_leya% (in Downloads directory)?
-CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 goto loop
 
 set book_leya="Stolyarov. C++"
 set name_file=" "
@@ -344,21 +337,23 @@ echo  "Stolyarov book"
 ::----------------------------------------
 echo DOWNLOAD BOOK  %book_leya% ?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 start "" %browser_command% %name_site%
+if %errorlevel%==1 set leyalutik_level = 1
+if %errorlevel%==2 set leyalutik_level = 2
+if %leyalutik_level%==1 start "" %browser_command% %name_site%
 
 echo OPEN BOOK  %book_leya% (in Downloads directory)?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
 :loop
-if %errorlevel%==1 cd "%userprofile%\Downloads"
-if %errorlevel%==1 dir /OD
+if %leyalutik_level%==1 cd "%userprofile%\Downloads"
+if %leyalutik_level%==1 dir /OD
 echo Copy the name of downloaded file:
-if %errorlevel%==1 pause
+if %leyalutik_level%==1 pause
 set name_file /P 
-if %errorlevel%==1  start "" %browser_command% "file:///%userprofile%/Downloads/%name_file%"
+if %leyalutik_level%==1  start "" %browser_command% "file:///%userprofile%/Downloads/%name_file%"
 
 echo OPEN BOOK  %book_leya% (in Downloads directory)?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 goto loop
+if %leyalutik_level%==1 goto loop
 
 
 ::SYSTEM DESIGN
@@ -377,17 +372,19 @@ set name_site="https://disk.yandex.ru/i/BTCDadGkbSWQqg"
 ::----------------------------------------
 echo DOWNLOAD BOOK  %book_leya% ?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 start "" %browser_command% %name_site%
+if %errorlevel%==1 set leyalutik_level = 1
+if %errorlevel%==2 set leyalutik_level = 2
+if %leyalutik_level%==1 start "" %browser_command% %name_site%
 
 echo OPEN BOOK  %book_leya% (in Downloads directory)?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
 :loop
-if %errorlevel%==1 cd "%userprofile%\Downloads"
-if %errorlevel%==1 dir /OD
+if %leyalutik_level%==1 cd "%userprofile%\Downloads"
+if %leyalutik_level%==1 dir /OD
 echo Copy the name of downloaded file:
-if %errorlevel%==1 pause
+if %leyalutik_level%==1 pause
 set name_file /P 
-if %errorlevel%==1  start "" %browser_command% "file:///%userprofile%/Downloads/%name_file%"
+if %leyalutik_level%==1  start "" %browser_command% "file:///%userprofile%/Downloads/%name_file%"
 
 
 ::ENGLISH TOEFFL
@@ -399,18 +396,20 @@ set name_site=https://disk.yandex.ru/client/disk/1.%%D0%%A1%%D1%%82%%D0%%B0%%D0%
 
 echo DOWNLOAD BOOK  %book_leya% ?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 start "" %browser_command% %name_site%
+if %errorlevel%==1 set leyalutik_level = 1
+if %errorlevel%==2 set leyalutik_level = 2
+if %leyalutik_level%==1  start "" %browser_command% %name_site%
 
 echo OPEN BOOK  %book_leya% (in Downloads directory)?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
 
-if %errorlevel%==1 cd "%userprofile%\Downloads"
-if %errorlevel%==1 dir /OD
+if %leyalutik_level%==1 cd "%userprofile%\Downloads"
+if %leyalutik_level%==1 dir /OD
 echo Copy the name of downloaded file:
-if %errorlevel%==1 pause
+if %leyalutik_level%==1 pause
 echo Enter the name of downloaded file (exactly):
 set name_file /P 
-if %errorlevel%==1  start "" %browser_command% "file:///%userprofile%/Downloads/%name_file%"
+if %leyalutik_level%==1  start "" %browser_command% "file:///%userprofile%/Downloads/%name_file%"
 
 
 

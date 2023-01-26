@@ -1,4 +1,4 @@
---------------------  
+﻿--------------------  
 17.01.2023  
 Name of punkt: Zanevskiy 28  
 Check Result :  OK
@@ -70,3 +70,7 @@ Check Result :  OK
 24.01.2023  
 Name of punkt:  Гражданский 119
 Check Result :  OK
+--------------------  
+26.01.2023  
+Name of punkt:  Заневский		
+Check Result :  ОК
