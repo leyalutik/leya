@@ -13,12 +13,8 @@
 using namespace std::chrono;
  int main()
 {
-	int32_t index;
-char option = '0';
-		std::cout << "Choose the protocol:\n";
-		std::cin >> option;
-		index = static_cast<int32_t> (option) - static_cast<int32_t>('0');
-
+	int32_t* index = new int32_t{1};
+		
 	std::cout << index << "\n";
 
 	return 0;
