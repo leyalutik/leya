@@ -21,7 +21,7 @@ if %errorlevel%==1  set leyalutik_indicator=1
 if %errorlevel%==2  set leyalutik_indicator=2
 
 
-if %leyalutik_indicator%==1 start "" %browser_comman% https://github.com/leyalutik/git/archive/refs/heads/master.zip
+if %leyalutik_indicator%==1 start "" %browser_command% https://github.com/leyalutik/git/archive/refs/heads/master.zip
 
 if %leyalutik_indicator%==1 cd %USERPROFILE%\Downloads  ||  echo Something happens :)) && pause
 if %leyalutik_indicator%==1 RENAME git-master.zip git.zip  ||  echo Something happens :)) && pause
