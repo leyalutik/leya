@@ -14,8 +14,12 @@ using namespace std::chrono;
  int main()
 {
 	int32_t* index = new int32_t{1};
-		
-	std::cout << index << "\n";
+	std::string clause = "\t";
+	for(int i=0; i<6;++i)
+	{
+		clause += "\t";
+	}
+	std::cout << clause << index << "\n";
 
 	return 0;
 }

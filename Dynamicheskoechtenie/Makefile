@@ -6,7 +6,7 @@ GOAL=Dynamicheskoechtenie
 MODULES=parse_file.cpp game1.cpp
 OBJMODULES=$(MODULES:.cpp=.o)
 
-all: run
+##all: run
 
 run : $(GOAL)
 	./$(GOAL)

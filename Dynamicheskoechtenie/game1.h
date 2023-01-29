@@ -43,7 +43,7 @@ void lesson16();
 void lesson17();
 void lesson18();
 void lesson19();
-	
+void lesson20();
 			
 void display_set_of_words(const std::vector<std::string>& set_of_words);
 void game5_russian(const std::vector<std::string>& source_list_of_words,

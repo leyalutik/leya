@@ -146,11 +146,8 @@
 			lesson12();
 			std::getchar();
 
-
-	}
-//Week
-	switch(number_task)
-	{
+//Week2	
+	
 		case 13:
 			std::cout << "\t Task 13\n";
 			lesson13();
@@ -179,12 +176,6 @@
 			std::cout << "\t Task 19\n";
 			lesson19();
 			std::getchar();
-
-
-
-
-
-
 	}
 	return 0;
 }
