@@ -13,3 +13,75 @@
  
 Связанный список
 
+
+
+
+По чтению
+создать кирпичики
+создать временную функци
+
+что такое chrono
+
+
+
+Сделать свой собственный тест
+
+1. Для проверки каждой функции f
+	1. Создаём шаблон тестовых функций bool test(f){}
+		Принцип действия:
+			На вход из файла даются данные
+			Функция их преобразовывает в функцию,
+				где сравниваются f(данных) ?= Правильное значение
+			Добавляет в файл set_test_functions.cpp
+2. Собираем все такие функции в отдельный файл set_test_functions.cpp
+
+3. В файле test.cpp находятся функции void create_test_cases(std::string function_name, std::string source_file_name)
+   В файле test.h находится фреймворк
+
+Проверить у Курсеры
+
+2. Все эти функции мы объединяем под типом std::function
+	и создаём фреймворк
+	class Test
+	{ 
+		public:
+		template(func f)
+		void run(func f, std::string name_test_function)
+		{
+			try
+			{
+				func();
+				std::cerr << name_test_function << " OK.\n";
+			}
+			catch(std::runtime_error& e)
+			{
+				++fail.count;
+				std::cerr << "Test function " << name_test_function << " fails:\n";
+				std::cerr << "\t" << e.what() << "\n";
+			}
+		}
+		~test()
+		{
+			std::cerr << "Function " << function_name << "failed\n";
+			std::getchar();
+			exit(1);
+		}
+private:
+			int32_t fail_count = 0;
+}
+
+Функция Хроно
+
+include <chrono>
+
+Файл "Кирпичики функций"
+	bricks.cpp
+Временная функция, которая задерживает время на определённое время
+
+
+auto start = std::chrono::steady_clock::now();
+auto finish = steady_clock::now();
+while(duration_cast<milliseconds>(finish-start).count() <= 2000)
+{
+	finish = steady_clock::now();
+}
