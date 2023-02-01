@@ -14,6 +14,14 @@ echo The command of opening current browser : %browser_command%
 
 
 
+:: OPEN program "Dynamicheskoe chtenie"
+::----------------------------------------
+echo OPEN program "Dynamicheskoe chtenie" ?
+CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
+if %errorlevel%==1 cd Dynamicheskoechtenie && start "" Dynamicheskoechtenie.exe
+
+
+
 ::SITES
 ::-------------------------------------------------------------------------------------------------------------------
 
