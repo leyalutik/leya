@@ -41,7 +41,7 @@ if %indeficator_leya%==1 echo Rename downloaded file leya-master.zip to leya.zip
 if %indeficator_leya%==1 RENAME leya-master.zip leya.zip  ||  echo Something happens :)) && pause
 
 if %indeficator_leya%==1 echo Unzipping file leya.zip in Downloads directory. 
-if %indeficator_leya%==1 tar -xf  leya.zip || echo In directory Downloads Unzip file leya.zip by hand. && pause ||  echo Something happens :)) && pause
+if %indeficator_leya%==1 tar -xf  leya.zip || echo In directory Downloads Unzip file leya.zip by hand. && start "" explorer.exe . :)) && pause
 if %indeficator_leya%==1 echo Rename leya_master directory to  leya directory
 if %indeficator_leya%==1 RENAME leya-master leya  ||  echo Something happens :)) && pause
 if %indeficator_leya%==1 echo Coping leya directory from Downloads to C:\ git
@@ -167,7 +167,7 @@ cd C:\git\leya\Mind_sharp
 
 echo Open program MIND SHARP?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 start "" mind_sharp.exe
+if %errorlevel%==1 start "" mind_sharp.exe  || echo Something happens  && start "" explorer.exe . :)) && pause
 
 ::OPEN daily program "work.exe"
 ::-----------------------------------------------------

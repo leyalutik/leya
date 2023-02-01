@@ -11,6 +11,7 @@
 #include <chrono>
 
 #include "bricks.h"
+#include "parse_file.h"
 
 void time_stop(const int32_t milliseconds)
 {

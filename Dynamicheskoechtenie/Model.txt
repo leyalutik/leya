@@ -1,15 +1,18 @@
 Функции вывода нескольких столбцов 
-display_columns_rows( const int32_t number_tab,  int32_t number_columns, const std::vector<std::vector<std::string>>& sets);
+display_columns_rows( const int32_t N_tabs,  int32_t N_columns, const std::vector<std::vector<std::string>>& word_sets);
 В одном векторе несколько векторов (столбца) сразу , сначала -   первый(отчёт слева - направо) , последний  - самый правый.
 
 Функция создания вектора(столбца) с заданным количеством слов, с заданным размером слов)
-void create_column(const int32_t size_column, const size_t size_word, std::vector<std::string>& column);
+void create_column(const int32_t N_words, const size_t size_word, std::vector<std::string>& column);
 
 Просто вывод столбца  с заданным отступом слева
-void display_column(const int32_t number_tab, std::vector<std::string>& column);
+void display_column(const int32_t N_tabs, const std::vector<std::string>& column);
+
+Функция по отступу вправо
+void right_shift(const int32_t N_tabs);
 
 Функция по отступу вниз, N - количество переводов строки
-void display_scroll_down(const number_N);
+void display_scroll_down(const int32_t N_strings);
 Функция по времени
 
 while (duration < 2 сек)

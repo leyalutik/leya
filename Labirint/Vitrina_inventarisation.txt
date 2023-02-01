@@ -82,3 +82,7 @@ Check Result :  ОК
 29.01.2023  
 Name of punkt:  Энгельса 124		
 Check Result :   ОК
+--------------------  
+01.02.2023  
+Name of punkt:   Арсенальная
+Check Result :   ОК. 9 книг по 2 штуки, Сертификаты - ОК

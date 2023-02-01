@@ -63,9 +63,8 @@ if %errorlevel%==1 start "" %browser_command%  "%URL2_site%"
 
 
 
-
-set Name_site=Stackoverflow.com
-set URL_site=https://stackoverflow.com
+set Name_site="Skilbox"
+set URL_site=https://go.skillbox.ru/profession/paket-c-plus-plus/profession-c-plus-plus/213034a3-9ce5-4894-9514-2627e774a69f/homework
 
 :: OPEN site "%Name_site%"
 ::----------------------------------------
@@ -74,116 +73,63 @@ CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
 if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
 
 
+::--------------------------------------------------------------------------------------
+set Name_site="Хирьянов лекции Алгоритмы"
+set URL_site="https://www.youtube.com/c/ТимофейХирьянов/playlists"
+
+:: OPEN site "%Name_site%"
+::----------------------------------------
+echo OPEN site "%Name_site%" ?
+CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
+if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
+::------------------------------------------------------------------------------------------
+
+exit /B
+
+
+
+set Name_site=Stackoverflow.com
+set URL_site=https://stackoverflow.com
 
 
 set Name_site=vc.ru
 set URL_site=https://vc.ru/
 
-:: OPEN site "%Name_site%"
-::----------------------------------------
-echo OPEN site "%Name_site%" ?
-CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
-
-
-
 set Name_site=modernescpp.com
 set URL_site=https://www.modernescpp.com/index.php/argument-dependent-lookup-and-hidden-friends
 
 
-:: OPEN site "%Name_site%"
-::----------------------------------------
-echo OPEN site "%Name_site%" ?
-CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
-
-
-
 set Name_site=Anton_Nazarov
 set URL_site=https://vk.com/antoshkanazarov
-
-:: OPEN site "%Name_site%"
-::----------------------------------------
-echo OPEN site "%Name_site%" ?
-CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
-
 
 
 
 set Name_site=isocpp.org
 set URL_site=https://isocpp.org/
 
-:: OPEN site "%Name_site%"
-::----------------------------------------
-echo OPEN site "%Name_site%" ?
-CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
 
 set Name_site="Wu YongWei's (programmer modern C++) page"
 set URL_site=http://wyw.dcweb.cn/index.htm
-
-:: OPEN site "%Name_site%"
-::----------------------------------------
-echo OPEN site "%Name_site%" ?
-CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
-
-
 
 
 set Name_site=www.accu.org
 set URL_site=https://www.accu.org/
 
-:: OPEN site "%Name_site%"
-::----------------------------------------
-echo OPEN site "%Name_site%" ?
-CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
 
 set Name_site=rsdn.org
 set URL_site=https://rsdn.org/
-
-:: OPEN site "%Name_site%"
-::----------------------------------------
-echo OPEN site "%Name_site%" ?
-CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
-
 
 
 set Name_site=journals_nonmembers_overload
 set URL_site=https://www.accu.org/journals/nonmembers/overload_issue_members/
 
-:: OPEN site "%Name_site%"
-::----------------------------------------
-echo OPEN site "%Name_site%" ?
-CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
-
-
-
 
 set Name_site=cppreference
 set URL_site=https://en.cppreference.com/w/
 
-:: OPEN site "%Name_site%"
-::----------------------------------------
-echo OPEN site "%Name_site%" ?
-CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
-
-
-
 
 set Name_site=habr.com
 set URL_site=https://habr.com
-
-:: OPEN site "%Name_site%"
-::----------------------------------------
-echo OPEN site "%Name_site%" ?
-CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
 
 
 
@@ -398,14 +344,7 @@ if %leyalutik_level%==1 start "" explorer.exe .
 
 
 
-set Name_site="Skilbox"
-set URL_site=https://go.skillbox.ru
 
-:: OPEN site "%Name_site%"
-::----------------------------------------
-echo OPEN site "%Name_site%" ?
-CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
 ::-------------------------------------------
 set Name_site="Yandex C++"
 set URL_site="https://disk.yandex.ru/i/KXfLuCI5WD4rVA https://disk.yandex.ru/i/yHJxdp_iANEsfg https://disk.yandex.ru/i/esQLMMkrjvJ74g"
@@ -427,16 +366,6 @@ CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
 if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
 ::------------------------------------------------------------------------------------------
 
-::--------------------------------------------------------------------------------------
-set Name_site="Хирьянов лекции Алгоритмы"
-set URL_site="https://www.youtube.com/c/ТимофейХирьянов/playlists"
-
-:: OPEN site "%Name_site%"
-::----------------------------------------
-echo OPEN site "%Name_site%" ?
-CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
-::------------------------------------------------------------------------------------------
 
 ::--------------------------------------------------------------------------------------
 set Name_site=" Столяров Stolyarov"
@@ -449,4 +378,4 @@ CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
 if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
 ::------------------------------------------------------------------------------------------
 
-exit /B
+
