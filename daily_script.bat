@@ -47,7 +47,7 @@ if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
 
 
 set Name_site=multitran
-set URL_site=https://www.multitran.com/m.exe?l1=1&l2=2
+set URL_site=https://www.multitran.com/
 
 :: OPEN site "%Name_site%"
 ::----------------------------------------
@@ -71,7 +71,7 @@ if %errorlevel%==1 start "" %browser_command%  "%URL2_site%"
 
 
 
-set Name_site="Skilbox"
+set Name_site="Skillbox"
 set URL_site=https://go.skillbox.ru/profession/paket-c-plus-plus/profession-c-plus-plus/213034a3-9ce5-4894-9514-2627e774a69f/homework
 
 :: OPEN site "%Name_site%"
@@ -82,7 +82,7 @@ if %errorlevel%==1 start "" %browser_command%  "%URL_site%"
 
 
 ::--------------------------------------------------------------------------------------
-set Name_site="Хирьянов лекции Алгоритмы"
+set Name_site="Hirjanov. Algorithm Lections."
 set URL_site="https://www.youtube.com/c/ТимофейХирьянов/playlists"
 
 :: OPEN site "%Name_site%"

@@ -15,7 +15,7 @@ void right_shift(const int32_t N);
 
 //CREATE
 //------------------------------------------------------------
-Функция создания вектора(столбца) с заданным количеством слов, с заданным размером слов)
+//Функция создания вектора(столбца) с заданным количеством слов, с заданным размером слов)
 void create_set(const std::string& file_name, //source file
 			const int32_t size_set, // length of vector
 			const size_t size_element, // length of vector element
@@ -23,7 +23,7 @@ void create_set(const std::string& file_name, //source file
 
 
 //DISPLAY
-Просто вывод столбца  с заданным отступом слева
+//Просто вывод столбца  с заданным отступом слева
 void display_set(const int32_t number_tab,
 			const std::vector<std::string>& set);
 //Output several columns

@@ -1,25 +1,25 @@
-#include <vector>
-#include <map>
-#include <set>
-#include<exception>
-#include <cassert>
-#include<cstdlib>
-#include<iostream>
-#include<string>
-#include <sstream>
-#include <fstream>
-#include <chrono>
+#include "game1.h"
+#include "parse_file.h"
 
-#include "lessons.h"
-#include "bricks.h"
+
+//List of words for memory
+//
+//
+//
+//input number of words
+//input number of tries
 
 void display_preparations()
 {
-	std::cout << "\n\t\tПодготовка к Скорочтению:\n\n";
-	std::cout << "\t\t\tОткройте программу Скорочтение\n";
-	std::cout << "\t\t\tПриготовьте журнал Наука и Жизнь\n";
-	std::cout << "\t\t\tОтройте сайты для чтения маленьких заметок\n";
-	scroll_down((25-6-5-3));
+	std::cout << "\t\tПодготовка к Скорочтению:\n";
+
+	std::cout << "\t\tОткройте Таймер\n"; 
+	std::cout << "\t\tОткройте программу Скорочтение\n";
+	std::cout << "\t\tПриготовьте журнал Наука и Жизнь\n";
+	std::cout << "\t\tОтройте сайты для чтения маленьких заметок\n";
+	std::cout << "\n\n\n\n\n";
+	std::cout << "\n\n\n\n\n";
+	std::cout << "\n\n\n\n\n";
 }
 
 void lesson0()
@@ -30,7 +30,9 @@ void lesson0()
 	std::cout << "\t\tЗадание:\n";
 	std::cout << "\t\t\t1.Техника мандарина\n";
 	std::cout << "\t\t\t2.Открыть программу\n";
-	scroll_down((25-7));
+	std::cout << "\n\n\n\n\n";
+	std::cout << "\n\n\n\n\n";
+	std::cout << "\n\n\n\n\n";
 
 
 }
@@ -43,12 +45,13 @@ void lesson1()
 	std::cout << "\t\tЗадание:\n";
 	std::cout << "\t\t\t1.Техника мандарина\n";
 	std::cout << "\t\t\t2.Прочитать текст с одновременным подсчётом слов.\n";
-	scroll_down((25-7));
-	run_timer(5); //seconds
+	std::cout << "\n\n\n\n\n";
+	std::cout << "\n\n\n\n\n";
+	std::cout << "\n\n\n\n\n";
+
+
 
 }
-
-
 void lesson2()
 {
 	std:: cout << "\tЧтение столбиков с шаблоном.\n";
@@ -61,11 +64,13 @@ void lesson2()
 	std::cout << "\t\t\t\t\tсо скоростью одна секунда на колонку.\n";
 	std::cout << "\t\t\t\tЧерез прорез шаблона нужно \"схватить,узнать\" слова\n";
 	std::cout << "\t\t\t\t\tбез прочитывания.\n";
-	scroll_down((25-11));
-	run_timer(5);
+	std::cout << "\n\n\n\n\n";
+	std::cout << "\n\n\n\n\n";
+	std::cout << "\n\n\n\n\n";
+
 }
 
-/*					
+					
 void lesson3()
 {
 	std:: cout << "\tЧтение орфографического словаря.\n";
@@ -76,12 +81,14 @@ void lesson3()
 	std::cout << "\t\t\t\tслова узнаются, но не проговариваются.\n";
 	std::cout << "\t\t\t\tПо 2 секунды на страницу\n";
 	std::cout << "Press \'Enter\':\n"; 
-	
+	std::cout << "\n\n\n\n\n";
+	std::cout << "\n\n\n\n\n";
+	std::cout << "\n\n\n\n\n";
+
 	bool WindowsOS = true;
 	std::system( WindowsOS ? "start \"\" chrome.exe \"https://povto.ru/books/slovari/orfograficheskiy-slovar-online/orfograficheskii-slovar-online-bukva-a.htm\"": "google-chrome\"https://povto.ru/books/slovari/orfograficheskiy-slovar-online/orfograficheskii-slovar-online-bukva-a.htm\"");
-	scroll_down((25-9-1));
-}
 
+}
 void lesson4()
 {
 	std:: cout << "\t\"Поле зрения\" (расширение сферического зрения)\n";
@@ -372,7 +379,7 @@ void lesson20()
 
 	std::string FILENAME = "russian_words.txt";
 	std::vector<std::string> source_list_of_words;
-	//get_all_lines_from_output_file(FILENAME,source_list_of_words);
+	get_all_lines_from_output_file(FILENAME,source_list_of_words);
 
 	int32_t number_of_words = 20;
 	std::vector<std::string> set_of_words;
@@ -435,7 +442,132 @@ void lesson20()
 
 }
 
-*/		
+	
+			
+void display_set_of_words(const std::vector<std::string>& set_of_words)
+{
+		for(auto& s:set_of_words)
+	{
+		std::cout << "\t\t\t" << s << "\n";
+	}
+
+}
+
+void game5_russian(const std::vector<std::string>& source_list_of_words,
+		const int32_t number_of_words)	
+{
+	std::cout << "\n";
+	std::cout << "\t\t\t {Набор слов} \n";
+	std::cout << "\t\t-------------------------------\n";
+	std::cout << "\n\n\n";
+
+	//create arbitrarily number from [0,number_of_words)
+
+	std::vector<std::string> set_of_words;
+	create_set_of_words(source_list_of_words,number_of_words,set_of_words);
+	
+//	std::srand(std::static_cast<unsigned int>(std::time(nullptr)));
+	size_t any_number = unsigned(std::rand())%number_of_words;
+	
+	std::cout << "Найдите слово: " << set_of_words[any_number] << "\n\n";
+	std::getchar();
+
+	display_set_of_words(set_of_words);
+	size_t verbs,nowns,adjs;
+	std::getchar();
+
+}
+
+void game5(const std::vector<std::string>& source_list_of_words,
+		const int32_t number_of_words)	
+{
+	std::cout << "\n";
+	std::cout << "\t\t\t {Set of words} \n";
+	std::cout << "\t\t-------------------------------\n";
+	std::cout << "\n\n\n";
+
+	//create arbitrarily number from [0,number_of_words)
+
+	std::vector<std::string> set_of_words;
+	create_set_of_words(source_list_of_words,number_of_words,set_of_words);
+	
+//	std::srand(std::static_cast<unsigned int>(std::time(nullptr)));
+	size_t any_number = unsigned(std::rand())%number_of_words;
+	
+	std::cout << "Find the word: " << set_of_words[any_number] << "\n\n";
+	std::getchar();
+
+	display_set_of_words(set_of_words);
+	size_t verbs,nowns,adjs;
+	std::cout << "\n\n";
+	std::cout << "Count verbs for 2 secunds:\n";
+	std::cin >> verbs;
+	std::cout << "Count nowns for 2 secunds:\n";
+	std::cin >> nowns;
+	std::cout << "Count adjectivess for 2 secunds:\n";
+	std::cin >> adjs;
+	std::cout << "Check your answers:" 
+		<< "Verbs: " << verbs << "\n"
+		<< "Nowns: " << nowns << "\n"
+		<< "Adjectives: " << adjs << "\n";
+	std::cout << "Press the \'Enter\':\n";
+	display_set_of_words(set_of_words);
+
+	std::getchar();
+
+}
+void game1(const std::vector<std::string>& source_list_of_words,
+		const int32_t number_of_words,
+		const int32_t number_of_tries)
+{//
+	int32_t i=0;
+	std::cout << "\n";
+	std::cout << "\t\t\t {Set of words} \n";
+	std::cout << "\t\t-------------------------------\n";
+	std::cout << "\n\n\n";
+	while(i<number_of_tries)
+	{
+		++i;
+
+		std::vector<std::string> set_of_words;
+		create_set_of_words(source_list_of_words,number_of_words,set_of_words);
+
+		display_set_of_words(set_of_words);
+
+		std::cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nn";
+
+		std::getchar();
+
+	}
+}
+
+void create_set_of_words(const std::vector<std::string>& source_list_of_words,
+		const int32_t number_of_words, std::vector<std::string>& set_of_words)
+{
+	std::srand(static_cast<unsigned int>(std::time(nullptr)));
+	
+	int i=0;
+	while(i < number_of_words)
+	{
+		++i;
+
+		int32_t size = source_list_of_words.size();
+		//std::cout << "size =" << size  << "\n";
+		int32_t iter = int(std::rand()) % size;
+		//std::cout << "iterator =" << iter << "\n";  
+		set_of_words.push_back(source_list_of_words[iter]);
+	}
+
+}
+
+void display_n()
+{
+	std::cout << "\n\n\n\n\n";
+	std::cout << "\n\n\n\n\n";
+	std::cout << "\n\n\n\n\n";
+}
+
+	
 	
 	
 
