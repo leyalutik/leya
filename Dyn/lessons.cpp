@@ -15,55 +15,93 @@
 
 void display_preparations()
 {
+	scroll_down(6);
 	std::cout << "\n\t\tПодготовка к Скорочтению:\n\n";
-	std::cout << "\t\t\tОткройте программу Скорочтение\n";
-	std::cout << "\t\t\tПриготовьте журнал Наука и Жизнь\n";
-	std::cout << "\t\t\tОтройте сайты для чтения маленьких заметок\n";
-	scroll_down((25-6-5-3));
+	std::cout << "\t\t\tОткройте программу Скорочтение.\n";
+	std::cout << "\t\t\tПриготовьте журнал Наука и Жизнь.\n";
+	std::cout << "\t\t\tОтройте сайты для чтения маленьких заметок.\n";
+	scroll_down((25-6-6));
 }
 
 void lesson0()
 {
+	scroll_down(6);
+			std::cout << "\t\t\t Task 0.\n\n";
 	std:: cout << "\tУпражнения по концентрации и расширению сферы зрения.\n";
-	std::cout << "\t\tПрограмма Скорочтение:Тренажёр >> Нейронный ускоритель.\n";
-	std::cout << "\t\t5 минут\n";
+	std::cout << "\t\tПрограмма Скорочтение:\n";
+	std::cout << "\t\t\tТренажёр >> Нейронный ускоритель.\n";
+	std::cout << "\t\t5 минут.\n";
 	std::cout << "\t\tЗадание:\n";
-	std::cout << "\t\t\t1.Техника мандарина\n";
-	std::cout << "\t\t\t2.Открыть программу\n";
-	scroll_down((25-7));
+	std::cout << "\t\t\t1.Техника мандарина.\n";
+	std::cout << "\t\t\t2.Открыть программу.\n";
+	
+	scroll_down((25-6-9));
+	std::getchar();
+
+	scroll_down(6);
+
+	right_shift(4);
+	std::cout << "Упражнение 0 закончено.\n";
+	scroll_down((25-6-2));
+	std::getchar();
+
 
 
 }
 
 void lesson1()
 {
+	scroll_down(6);
+			std::cout << "\t\t\t Task 1.\n\n";
 	std:: cout << "\tЧтение и подсчёт слов.\n";
 	std::cout << "\t\tТекст с лёгким содержанием.\n";
 	std::cout << "\t\tТаймер - 5 минут.\n";
 	std::cout << "\t\tЗадание:\n";
 	std::cout << "\t\t\t1.Техника мандарина\n";
 	std::cout << "\t\t\t2.Прочитать текст с одновременным подсчётом слов.\n";
-	scroll_down((25-7));
-	run_timer(5); //seconds
+	scroll_down((25-6-9));
+	std::getchar();
+	run_timer((5*60)); //seconds
+
+	scroll_down(6);
+
+	right_shift(4);
+	std::cout << "Упражнение 1 закончено.\n";
+	scroll_down((25-6-2));
+	std::getchar();
+
 
 }
 
 
 void lesson2()
 {
+	scroll_down(6);
+
+			std::cout << "\t\t\t Task 2.\n\n";
 	std:: cout << "\tЧтение столбиков с шаблоном.\n";
-	std::cout << "\t\tТекст столбиком\n";
-	std::cout << "\t\tШаблон\n";
+	std::cout << "\t\tТекст столбиком.\n";
+	std::cout << "\t\tШаблон.\n";
 	std::cout << "\t\tТаймер -3-5 минут.\n";
-	std::cout << "\t\t\t1.Техника мандарина\n";
+	std::cout << "\t\t\t1.Техника мандарина.\n";
 	std::cout << "\t\t\t2.Задание:\n";
 	std::cout << "\t\t\t\tдвигать шаблон сверху вниз\n";
 	std::cout << "\t\t\t\t\tсо скоростью одна секунда на колонку.\n";
-	std::cout << "\t\t\t\tЧерез прорез шаблона нужно \"схватить,узнать\" слова\n";
-	std::cout << "\t\t\t\t\tбез прочитывания.\n";
-	scroll_down((25-11));
-	run_timer(5);
-}
+	std::cout << "\t\t\t\tЧерез прорез шаблона нужно \"схватить,узнать\"\n";
+	std::cout << "\t\t\t\t\tслова без прочитывания.\n";
+	scroll_down((25-6-13));
+	std::getchar();
+
+	run_timer((5*60));
+
+	scroll_down(6);
+
+	right_shift(4);
+	std::cout << "Упражнение 2 закончено.\n";
+	scroll_down((25-6-2));
+	std::getchar();
+
+	}
 
 /*					
 void lesson3()

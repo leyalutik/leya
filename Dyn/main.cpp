@@ -52,7 +52,7 @@ int main()
 	}
 */
 	std::system ("chcp 65001");
-	std::cout << "\n\t\t СКОРОЧТЕНИЕ\n";
+	std::cout << "\n\t\t\t\t СКОРОЧТЕНИЕ\n";
 	std::cout << "Enter number of task:\n";
 	int32_t number_task = 0;
 	std::cin >> number_task;
@@ -85,17 +85,13 @@ int main()
 	{
 		case 0:
 			//task_menu
-			std::cout << "\t Task 0\n";
 			lesson0();
-			std::getchar();
 		case 1:
-			std::cout << "\t Task 1\n";
 			lesson1();
-			std::getchar();
 		case 2:
-			std::cout << "\t Task 2\n";
 			lesson2();
-			std::getchar();
+	}
+	/*
 		case 3:
 			std::cout << "\t Task 3\n";
 			lesson3();
@@ -168,6 +164,9 @@ int main()
 			lesson19();
 			std::getchar();
 	}
+
+	*/
+
 	return 0;
 }
 	
