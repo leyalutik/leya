@@ -84,7 +84,7 @@ cd "%USERPROFILE%"
 
 echo Delete temporary git files?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 RMDIR /S /Q .ssh  ||  echo Something happens :)) && pause 
+::if %errorlevel%==1 RMDIR /S /Q .ssh  ||  echo Something happens :)) && pause 
 if %errorlevel%==1 echo Delete all temporary files (.~)  & start "" explorer.exe . 
 pause 
 
@@ -94,7 +94,9 @@ cd C:\
 
 echo Delete directory "git" in volume "C:" ?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1  RMDIR /S  git ||  echo Something happens :)) && pause
+if %errorlevel%==1  echo Delete directory GIT  & start "" explorer.exe . 
+pause 
+
 
 ::-----------------------------------------------------------------------------
 echo When you finish in directory "Desktop" delete file "end_day.bat"
