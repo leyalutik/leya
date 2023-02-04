@@ -1,12 +1,12 @@
 CXX = g++
 CXXFLAGS = -ggdb -Wall -static -static-libgcc -static-libstdc++ -pthread -std=c++20
 SOURCE=main.cpp
-GOAL=Dynamicheskoechtenie
+GOAL=dyn
 ##GOAL=$(SOURCE:.cpp=$*)
-MODULES=parse_file.cpp lessons.cpp bricks.cpp
+MODULES=parse_file.cpp lessons.cpp bricks.cpp edit.cpp interface.cpp
 OBJMODULES=$(MODULES:.cpp=.o)
 
-all: run clean
+all: run 
 
 run : $(GOAL)
 	./$(GOAL)
@@ -18,4 +18,4 @@ $(GOAL) : $(SOURCE) $(OBJMODULES)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 clean :
-	rm -f *.o 
+	rm  *.o 

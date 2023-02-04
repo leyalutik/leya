@@ -11,10 +11,49 @@
 #include <chrono>
 
 #include "bricks.h"
+#include "edit.h"
 #include "parse_file.h"
+//FORMAT TEXT
+
+void display_text_in_page(const std::string& text, const int32_t number_lines) //if text contains more than one line, then number_lines > 0
+{
+	if(number_lines < 0)
+	{
+		throw std::runtime_error("Illegal value in function display_text_in_page()");
+	}
+	scroll_down(8);
+	right_shift(4);
+	std::cout << text << "\n";
+	scroll_down(25-8-1-1-number_lines);
+}
+
+//INPUT POSITIVE NUMBERS
+void input(int32_t& number_lesson)
+{
+	std::cout << "Enter number of task:\n";
+	std::cin >> number_lesson;
+	while(!std::cin && number_lesson < 0 )
+	{
+		if(std::cin.bad())  //поток повреждён; Отправляем отчет об ошибке внешней программе
+		{
+			throw std::runtime_error ("In function stream cin was corrupted");
+		}
+		if(std::cin.eof())
+		{
+			std::cout << "The input stream is overloaded.\n";
+			//Больше никаких входных данных
+			//Последовательность символов правильно должна оканчиваться именно так
+		}
+		if(std::cin.fail()) // поток столкнулся с чем-то неожиданным
+		{
+			std::cin.clear();// make ready for more input
+			std::cin.ignore(32767, '\n'); // очищаем поток от мусора
+			std::cin >> number_lesson;
+		}
 
 
-
+	}
+}
 void run_timer(const int32_t seconds)
 {
 	if(seconds <= 0) 
@@ -24,17 +63,17 @@ void run_timer(const int32_t seconds)
 		throw std::runtime_error(os.str());
 	}
 	
-	scroll_down(12);
-	right_shift(3);
+	scroll_down(8);
+	right_shift(4);
 	std::cout << "Запустите таймер на ";
 	display_time(seconds/60,seconds%60);
 	std::cout << ".";
 
 	scroll_down(1);
-	right_shift(3);
-	std::cout << "Нажмите \"Enter\" :\n";
+	right_shift(4);
+	std::cout << "   Нажмите \"Enter\" :\n";
 
-	scroll_down((25-12-3));
+	scroll_down((25-8-1-1-1));
 	std::getchar();
 	
 	
@@ -45,16 +84,16 @@ void run_timer(const int32_t seconds)
 	
 	flash(5);
 	
-	scroll_down(12);
-	right_shift(3);
+	scroll_down(8);
+	right_shift(4);
 	std::cout << "Время закончилось. Прошло ";
 	display_time(seconds/60,seconds%60);
 	std::cout << ".";
 
 	scroll_down(1);
-	right_shift(3);
-	std::cout << "Нажмите \"Enter\" :\n";
-	scroll_down((25-12-1));
+	right_shift(4);
+	std::cout << "   Нажмите \"Enter\" :\n";
+	scroll_down((25-8-1-1));
 	std::getchar();
 	
 } 
@@ -95,54 +134,6 @@ void timer(const int32_t milliseconds)
 	finish = std::chrono::steady_clock::now();
 }
   
-}
-
-void picture_swan()
-{
-	right_shift(3);std::cout << "                      +  +                    \n";
-	right_shift(3);std::cout << "                    +      +                  \n";
-	right_shift(3);std::cout << "                   +       +                  \n";
-	right_shift(3);std::cout << "                          +                   \n";
-	right_shift(3);std::cout << "                        +                     \n";
-	right_shift(3);std::cout << "                      +                       \n";
-	right_shift(3);std::cout << "                    +                         \n";
-	right_shift(3);std::cout << "                  +   +  +  +  +              \n";
-	right_shift(3);std::cout << "                 + +              +           \n";
-	right_shift(3);std::cout << "                 +   +              +         \n";
-	right_shift(3);std::cout << "                  +     +  +  +  +  + +       \n";
-	right_shift(3);std::cout << "                    +  +  +  +  +  +          \n";
-}
-
-//EDIT
-//---------------------------------------------------------
-
-void scroll_down(const int32_t N)
-{
-	if(N < 0) 
-	{
-		std::ostringstream os;
-		os << "Illegal value of N " << N << " in finction: scroll_down().";
-		throw std::runtime_error(os.str());
-	}
-	for(int32_t i=0; i<N; ++i)
-	{
-		std::cout << "\n";
-	}
-}
-
-void right_shift(const int32_t N)
-{
-	if(N < 0) 
-	{
-		std::ostringstream os;
-		os << "Illegal value of N " << N << " in finction: right_shift().";
-		throw std::runtime_error(os.str());
-	}
-	for(int32_t i=0; i<N; ++i)
-	{
-		std::cout << "\t";
-	}
-
 }
 
 //CREATE

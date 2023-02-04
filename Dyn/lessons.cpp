@@ -12,37 +12,44 @@
 
 #include "lessons.h"
 #include "bricks.h"
+#include "edit.h"
 
 void display_preparations()
 {
-	scroll_down(6);
-	std::cout << "\n\t\tПодготовка к Скорочтению:\n\n";
-	std::cout << "\t\t\tОткройте программу Скорочтение.\n";
-	std::cout << "\t\t\tПриготовьте журнал Наука и Жизнь.\n";
-	std::cout << "\t\t\tОтройте сайты для чтения маленьких заметок.\n";
+	scroll_down(7);
+	right_shift(4);std::cout << "Подготовка к Скорочтению:";
+	scroll_down(2);
+	right_shift(4);std::cout << "Откройте программу Скорочтение.\n";
+	right_shift(4);std::cout << "Приготовьте журнал Наука и Жизнь.\n";
+	right_shift(4);std::cout << "Отройте сайты для чтения маленьких заметок.\n";
 	scroll_down((25-6-6));
 }
 
 void lesson0()
 {
-	scroll_down(6);
-			std::cout << "\t\t\t Task 0.\n\n";
-	std:: cout << "\tУпражнения по концентрации и расширению сферы зрения.\n";
-	std::cout << "\t\tПрограмма Скорочтение:\n";
-	std::cout << "\t\t\tТренажёр >> Нейронный ускоритель.\n";
-	std::cout << "\t\t5 минут.\n";
-	std::cout << "\t\tЗадание:\n";
-	std::cout << "\t\t\t1.Техника мандарина.\n";
-	std::cout << "\t\t\t2.Открыть программу.\n";
+	scroll_down(3);
+	right_shift(7);	std::cout << "Task 0";
+	scroll_down(2);
+	right_shift(4);std:: cout << "Упражнения по концентрации и расширению сферы зрения.\n";
+	scroll_down(2);
+	right_shift(4);std:: cout << "Подготовка:\n";
+	right_shift(5);std::cout << "Программа Скорочтение:\n";
+	right_shift(6);std::cout << "Тренажёр >> Нейронный ускоритель.\n";
+	right_shift(5);std::cout << "Таймер - 5 минут.\n";
+	right_shift(4);std::cout << "Описание задания:\n";
+	right_shift(5);std::cout << "Открыть программу.\n";
+	right_shift(4);std::cout << "1.Техника мандарина.\n";
+	right_shift(4);std::cout << "2.С Богом!\n";
 	
-	scroll_down((25-6-9));
+	scroll_down((25-3-2-2-9));
 	std::getchar();
 
-	scroll_down(6);
-
-	right_shift(4);
-	std::cout << "Упражнение 0 закончено.\n";
-	scroll_down((25-6-2));
+	scroll_down(8);
+	right_shift(4);std::cout << "Упражнение 0 завершено";
+	scroll_down(2);
+	right_shift(4);std::cout << " У вас всё получилось!\n";
+	right_shift(4);std::cout << "        Молодец!\n";
+	scroll_down((25-8-2-1));
 	std::getchar();
 
 
@@ -50,25 +57,39 @@ void lesson0()
 }
 
 void lesson1()
-{
-	scroll_down(6);
-			std::cout << "\t\t\t Task 1.\n\n";
-	std:: cout << "\tЧтение и подсчёт слов.\n";
-	std::cout << "\t\tТекст с лёгким содержанием.\n";
-	std::cout << "\t\tТаймер - 5 минут.\n";
-	std::cout << "\t\tЗадание:\n";
-	std::cout << "\t\t\t1.Техника мандарина\n";
-	std::cout << "\t\t\t2.Прочитать текст с одновременным подсчётом слов.\n";
-	scroll_down((25-6-9));
-	std::getchar();
-	run_timer((5*60)); //seconds
+{	
 
-	scroll_down(6);
-
-	right_shift(4);
-	std::cout << "Упражнение 1 закончено.\n";
-	scroll_down((25-6-2));
+	scroll_down(3);
+	right_shift(7);	std::cout << "Task 1";
+	scroll_down(2);
+	right_shift(4);std:: cout << "Чтение и подсчёт слов.";
+	scroll_down(2);
+	right_shift(4);std:: cout << "Подготовка:\n";
+	right_shift(5);std::cout << "Текст с лёгким содержанием.\n";
+	right_shift(5);std::cout << "Таймер - 5 минут.\n";
+	right_shift(4);std:: cout << "Описание задания:\n";
+	right_shift(5);std::cout << "Прочитать текст с одновременным подсчётом слов.\n";
+	right_shift(4);std::cout << "1.Техника мандарина.\n";
+	right_shift(4);std::cout << "2.Начали!\n";
+	
+	scroll_down((25-3-2-7-1));
 	std::getchar();
+	
+	scroll_down(8);
+	int32_t minutes=1;
+	right_shift(4);std::cout << "Input minutes:\n";
+	scroll_down(28-8-1-1);
+	std::cin >> minutes;
+	run_timer((minutes*60)); //seconds
+
+	scroll_down(8);
+	right_shift(4);std::cout << "Упражнение 1 завершено";
+	scroll_down(2);
+	right_shift(4);std::cout << " У вас всё получилось!\n";
+	right_shift(4);std::cout << "        Молодец!\n";
+	scroll_down((25-8-2-1-1));
+	std::getchar();
+
 
 
 }
@@ -76,31 +97,41 @@ void lesson1()
 
 void lesson2()
 {
-	scroll_down(6);
-
-			std::cout << "\t\t\t Task 2.\n\n";
-	std:: cout << "\tЧтение столбиков с шаблоном.\n";
-	std::cout << "\t\tТекст столбиком.\n";
-	std::cout << "\t\tШаблон.\n";
-	std::cout << "\t\tТаймер -3-5 минут.\n";
-	std::cout << "\t\t\t1.Техника мандарина.\n";
-	std::cout << "\t\t\t2.Задание:\n";
-	std::cout << "\t\t\t\tдвигать шаблон сверху вниз\n";
-	std::cout << "\t\t\t\t\tсо скоростью одна секунда на колонку.\n";
-	std::cout << "\t\t\t\tЧерез прорез шаблона нужно \"схватить,узнать\"\n";
-	std::cout << "\t\t\t\t\tслова без прочитывания.\n";
-	scroll_down((25-6-13));
+	scroll_down(3);
+	right_shift(7);	std::cout << "Task 2";
+	scroll_down(2);
+	right_shift(4);std:: cout << "Чтение столбиков с шаблоном.";
+	scroll_down(2);
+	right_shift(4);std::cout << "Подготовка:\n";
+	right_shift(5);std::cout << "Текст столбиком.\n";
+	right_shift(5);std::cout << "Таймер - 5 минут.\n";
+	right_shift(4);std::cout << "Описание задания:\n";
+	right_shift(5);std::cout << "Cдвигать шаблон сверху вниз\n";
+	right_shift(6);std::cout << "со скоростью одна секунда на колонку.\n";
+	right_shift(5);std::cout << "Через прорез шаблона нужно \"схватить,узнать\"\n";
+	right_shift(6);std::cout << "слова без прочитывания.\n";
+	right_shift(4);std::cout << "1.Техника мандарина.\n";
+	right_shift(4);std::cout << "2.Начали!\n";	
+	scroll_down((25-3-2-10-1));
+	
 	std::getchar();
 
-	run_timer((5*60));
+	scroll_down(8);
+	int32_t minutes=1;
+	right_shift(4);std::cout << "Input minutes:\n";
+	scroll_down(28-8-1-1);
+	std::cin >> minutes;
+	run_timer((minutes*60)); //seconds
 
-	scroll_down(6);
-
-	right_shift(4);
-	std::cout << "Упражнение 2 закончено.\n";
-	scroll_down((25-6-2));
+	scroll_down(8);
+	right_shift(4);std::cout << "Упражнение 2 завершено";
+	scroll_down(2);
+	right_shift(4);std::cout << " У вас всё получилось!\n";
+	right_shift(4);std::cout << "        Молодец!\n";
+	scroll_down((25-8-2-1-1));
 	std::getchar();
 
+	
 	}
 
 /*					

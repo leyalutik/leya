@@ -1,18 +1,18 @@
 #pragma once
 
+
+//FORMAT TEXT
+void display_text_in_page(const std::string& text, const int32_t number_lines);
+
+
+//INPUT
+void input(int32_t& number_lesson);
 //TIME
 //----------------------------------------------------
 void run_timer(const int32_t seconds);
 void flash(const int32_t times);  // pulse when time is over
 void display_time(const int32_t minutes, int32_t seconds);
 void timer(const int32_t milliseconds);
-void picture_swan();
-//EDIT
-//---------------------------------------------------------
-
-void scroll_down(const int32_t N);
-void right_shift(const int32_t N);
-
 
 //CREATE
 //------------------------------------------------------------
