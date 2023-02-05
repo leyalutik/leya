@@ -7,11 +7,11 @@ struct Working_Space
 	Working_Space();
 	void initialize();
 	void add_URL(const std::string& URL_new);
-	void run_site();
-
+	void run_site(const std::string& URL);
+	void display_variables();
+	
 	std::string OS;
 	std::string browser_command;
-	std::string URL;
 };
 
 

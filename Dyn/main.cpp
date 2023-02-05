@@ -12,6 +12,7 @@
 #include <functional>
 
 #include "lessons.h"
+#include "bricks.h"
 #include "interface.h"
 #include "edit.h"
 #include "working_space.h"
@@ -20,17 +21,13 @@
 int main()
 {
 	std::system ("chcp 65001");
-
-	right_shift(1);
-	std::cout << "\nСделайте ваше окно терминила: высота - 25, ширина - 120.";	
-	scroll_down(2);
-	right_shift(4);
-	std::cout << "СКОРОЧТЕНИЕ\n";
+display_text_in_page("    ЗАПУСК ПРОГРАММЫ\n\n\t\t\t\tПРЕДВАРИТЕЛЬНЫЕ НАСТРОЙКИ\n\n\t\t\t\tСделайте ваше окно терминала: высота - 25, ширина - 120.",4,1,4);
+std::getchar();
+	
 
 	try
 	{
 		Interface_Main training;
-		training.ws.initialize();
 		training.start();
 	}
 	catch(std::runtime_error &e)

@@ -15,22 +15,21 @@
 #include "parse_file.h"
 //FORMAT TEXT
 
-void display_text_in_page(const std::string& text, const int32_t number_lines) //if text contains more than one line, then number_lines > 0
+void display_text_in_page(const std::string& text, const int32_t rightshift, const int32_t number_upper_lines,const int32_t number_n_in_text) //if text contains more than one line, then number_lines > 0
 {
-	if(number_lines < 0)
+	if(number_n_in_text < 0 || number_upper_lines < 0 || rightshift < 0)
 	{
 		throw std::runtime_error("Illegal value in function display_text_in_page()");
 	}
-	scroll_down(8);
-	right_shift(4);
+	scroll_down(number_upper_lines);
+	right_shift(rightshift);
 	std::cout << text << "\n";
-	scroll_down(25-8-1-1-number_lines);
+	scroll_down(25-2-number_n_in_text - number_upper_lines);
 }
 
 //INPUT POSITIVE NUMBERS
 void input(int32_t& number_lesson)
 {
-	std::cout << "Enter number of task:\n";
 	std::cin >> number_lesson;
 	while(!std::cin && number_lesson < 0 )
 	{

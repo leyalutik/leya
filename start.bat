@@ -129,12 +129,15 @@ echo open READING_BOOKS?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
 if %errorlevel%==1 start "" reading_books.txt || echo Something happens :)) && pause
 
-cd C:\git\leya/WORK/
+cd C:\git\leya/
  
-echo open MY_OWN_PAGES?
+echo open CURRENT_TIME?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1  echo ------- >> my_own_pages.txt & echo ------------------------------------ >> my_own_pages.txt  &  echo %Date% >> my_own_pages.txt & start "" my_own_pages.txt || echo Something happens :)) && pause
+if %errorlevel%==1  echo ------- >> current_time.txt & echo ------------------------------------ >> current_time.txt  &  echo %Date% >> current_time.txt & start "" current_time.txt || echo Something happens :)) && pause
 
+echo open INVESTMENT?
+CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
+if %errorlevel%==1  echo ------- >> investment.txt & echo ------------------------------------ >> investment.txt.txt  &  echo %Date% >> investment.txt.txt & start "" investment.txt.txt || echo Something happens :)) && pause
 
 
 

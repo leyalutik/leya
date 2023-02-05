@@ -12,6 +12,7 @@
 
 
 #include "interface.h"
+#include "lessons.h"
 #include "edit.h"
 #include "bricks.h"
 #include "working_space.h"
@@ -25,6 +26,7 @@ Interface_Main::Interface_Main()
 void Interface_Main:: start()
 {
 	int32_t number_lesson = 0;
+	display_text_in_page("  СКОРОЧТЕНИЕ\n\n\t\t\t\tНачало программы\n\n\t\t\t\tEnter number of task:",4,8,4);
 	input(number_lesson);
 	display_preparations();
 	std::getchar();
@@ -36,14 +38,11 @@ void Interface_Main:: start()
 				int end_cycle = 1;
 				while(end_cycle == 1)
 				{
-
 					lesson0();
-					scroll_down(8);
-					right_shift(4);
-					std::cout << "Повторить упражнение?\n";
-					right_shift(4);
-					std::cout << "Yes(1)/No(2)\n"; 
-					scroll_down(25-8-2-1);
+					display_text_in_page(
+						"Повторить упражнение?\n\t\t\t\tYes(1)/No(2)"
+						,4,8,1);
+
 					std::cin >> end_cycle;
 
 					std::getchar();
@@ -57,12 +56,10 @@ void Interface_Main:: start()
 				{
 
 					lesson1();
-					scroll_down(8);
-					right_shift(4);
-					std::cout << "Повторить упражнение?\n";
-					right_shift(4);
-					std::cout << "Yes(1)/No(2)\n"; 
-					scroll_down(25-8-2-1);
+					display_text_in_page(
+						"Повторить упражнение?\n\t\t\t\tYes(1)/No(2)"
+						,4,8,1);
+					
 					std::cin >> end_cycle;
 
 					std::getchar();
@@ -77,12 +74,9 @@ void Interface_Main:: start()
 				{
 
 					lesson2();
-					scroll_down(8);
-					right_shift(4);
-					std::cout << "Повторить упражнение?\n";
-					right_shift(4);
-					std::cout << "Yes(1)/No(2)\n"; 
-					scroll_down(25-8-2-1);
+					display_text_in_page(
+						"Повторить упражнение?\n\t\t\t\tYes(1)/No(2)"
+						,4,8,1);
 					std::cin >> end_cycle;
 
 					std::getchar();

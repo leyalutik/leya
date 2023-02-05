@@ -23,6 +23,7 @@ void display_preparations()
 	right_shift(4);std::cout << "Приготовьте журнал Наука и Жизнь.\n";
 	right_shift(4);std::cout << "Отройте сайты для чтения маленьких заметок.\n";
 	scroll_down((25-6-6));
+	std::getchar();
 }
 
 void lesson0()

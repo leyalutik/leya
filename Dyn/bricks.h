@@ -2,11 +2,11 @@
 
 
 //FORMAT TEXT
-void display_text_in_page(const std::string& text, const int32_t number_lines);
+void display_text_in_page(const std::string& text, const int32_t rightshift, const int32_t number_upper_lines,const int32_t number_n_in_text);
 
 
 //INPUT
-void input(int32_t& number_lesson);
+void input(int32_t& number_lesson); // non negative integer number
 //TIME
 //----------------------------------------------------
 void run_timer(const int32_t seconds);

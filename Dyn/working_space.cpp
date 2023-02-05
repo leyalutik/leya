@@ -18,77 +18,74 @@
 Working_Space::Working_Space(){}
 
 
-Working_Space(const std::string& OS_new, const std::string& browser_command_new)
+Working_Space::Working_Space(const std::string& OS_new, const std::string& browser_command_new)
 {
 
 	Working_Space::OS = OS_new;
 	Working_Space::browser_command = browser_command_new;
-	Working_Space::URL = "";
 }
 
 void Working_Space::initialize()
 {
 	Working_Space::browser_command = "chrome.exe";
 	Working_Space::OS = "Windows";
-	Working_Space::URL = "";
 
 	int32_t answer = 1;
-	scroll_down(8);
-	right_shift(4);
-	std::cout << "Is your operating system Windows ?\n";
-	right_shift(4);
-	std::cout << "Yes(1)/No(2)\n"; 
-	scroll_down(25-8-2-1);
-	input_number(answer);
+	display_text_in_page("Is your operating system Windows ?\n\t\t\t\tYes(1)/No(2)",4,8,1);
+	input(answer);
 	std::getchar();
+
 	if(answer == 1)
 	{
-		this.OS = "Windows";
+		Working_Space::OS = "Windows";
 	}
 	else
 	{
-		this.OS = "Linux";
+		Working_Space::OS = "Linux";
 	}
 
 	display_text_in_page(("Is your current browser " +  Working_Space::browser_command 
 				+ " ?\n"
-				+ right_shift(4) + "Yes(1)/No(2)"),1);
-	input_number(answer);
+				+ "\t\t\t\t" + "Yes(1)/No(2)"),4,8,1);
+	input(answer);
 	std::getchar();
 
 	if(answer == 2)
 	{
-		int32_t answer2 = 1;
-		while(answer2 == 1)
+		int32_t answer_browser = 2;
+		while(answer_browser == 2)
 		{
-			display_text_in_page("Input the browser command:");
+			display_text_in_page("Input the browser command:",4,8,0);
 			getline(std::cin,Working_Space::browser_command);
 			std::getchar();
 
 			display_text_in_page(("You wrote command : \'" 
 						+ Working_Space::browser_command 
 						+ "\'\n" 
-						+ "is it correct? Yes(1)/No(2)"),1);
-			input_number(answer2);
+						+ "\t\t\t\tis it correct? Yes(1)/No(2)"),4,8,1);
+			input(answer_browser);
 			std::getchar();
 		}		
 
 	}
 }
 
-void Working_Space::add_URL(const std::string& URL_new)
-{
-	Working_Space::URL = URL_new;
-}
 
-void Working_Space::run_site()
+void Working_Space::run_site(const std::string& URL)
 {
 
 	std::string start_command = ( Working_Space::OS == "Windows" ? "start \"\" " : " ");
-	std::string command = start_command + Working::browser_command
-		+ Working_Space::URL;				
+	std::string command = start_command + Working_Space::browser_command
+		+ URL;				
 	const char* system_command = command.c_str();		\
 				     std::system(system_command);
 }
 
+void Working_Space::display_variables()
+{
+	display_text_in_page (("OS = " + Working_Space::OS 
+				+ "\nbrowser command = " + Working_Space::browser_command)
+			,4,8,1);
 
+
+}

@@ -3,7 +3,7 @@ CXXFLAGS = -ggdb -Wall -static -static-libgcc -static-libstdc++ -pthread -std=c+
 SOURCE=main.cpp
 GOAL=dyn
 ##GOAL=$(SOURCE:.cpp=$*)
-MODULES=parse_file.cpp lessons.cpp bricks.cpp edit.cpp interface.cpp
+MODULES=parse_file.cpp lessons.cpp bricks.cpp edit.cpp interface.cpp working_space.cpp
 OBJMODULES=$(MODULES:.cpp=.o)
 
 all: run 
