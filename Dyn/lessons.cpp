@@ -16,19 +16,44 @@
 
 void display_preparations()
 {
-	scroll_down(7);
-	right_shift(4);std::cout << "Подготовка к Скорочтению:";
-	scroll_down(2);
+	display_text_in_page((std::string("Подготовка к Скорочтению:\n\n") 
+				+ right_shift(4) + std::string("Откройте программу Скорочтение.\n")
+				+ right_shift(4) + std::string("Приготовьте журнал Наука и Жизнь.\n")
+				+ right_shift(4) + std::string("Откройте сайты для чтения маленьких заметок.\n")
+			     ),4,4,6);
+
+
+
+	/*
+	   scroll_down(7);
+	   right_shift(4);std::cout << "Подготовка к Скорочтению:";
+	   scroll_down(2);
 	right_shift(4);std::cout << "Откройте программу Скорочтение.\n";
 	right_shift(4);std::cout << "Приготовьте журнал Наука и Жизнь.\n";
-	right_shift(4);std::cout << "Отройте сайты для чтения маленьких заметок.\n";
+	right_shift(4);std::cout << "Откройте сайты для чтения маленьких заметок.\n";
 	scroll_down((25-6-6));
 	std::getchar();
+	*/
 }
 
 void lesson0()
 {
-	scroll_down(3);
+
+
+	display_text_in_page((std::string("Task 0\n\n") 
+				+ right_shift(4) + std::string("Упражнения по концентрации и расширению сферы зрения.\n")
+				+ right_shift(4) + std::string("Подготовка:\n")
+				+ right_shift(5) + std::string("Программа Скорочтение:\n")
+				+ right_shift(6) + std::string("Тренажёр >> Нейронный ускоритель.\n")
+				+ right_shift(5) + std::string("Таймер - 5 минут.\n")
+				+ right_shift(4) + std::string("Описание задания:\n")
+				+ right_shift(5) + std::string("Открыть программу.\n\n")
+				
+				+ right_shift(4) + std::string("1.Техника Мандарина\n")
+				+ right_shift(4) + std::string("2.С Богом!\n")
+			     ),7,3,11);
+
+/*	scroll_down(3);
 	right_shift(7);	std::cout << "Task 0";
 	scroll_down(2);
 	right_shift(4);std:: cout << "Упражнения по концентрации и расширению сферы зрения.\n";
@@ -41,7 +66,12 @@ void lesson0()
 	right_shift(5);std::cout << "Открыть программу.\n";
 	right_shift(4);std::cout << "1.Техника мандарина.\n";
 	right_shift(4);std::cout << "2.С Богом!\n";
-	
+
+
+
+
+
+
 	scroll_down((25-3-2-2-9));
 	std::getchar();
 
@@ -53,13 +83,25 @@ void lesson0()
 	scroll_down((25-8-2-1));
 	std::getchar();
 
-
+*/
 
 }
 
 void lesson1()
-{	
+{
+	display_text_in_page((std::string("Task 1\n\n") 
+				+ right_shift(4) + std::string("Чтение и подсчёт слов.\n")
+				+ right_shift(4) + std::string("Подготовка:\n")
+				+ right_shift(5) + std::string("Текст с лёгким содержанием.\n")
+				+ right_shift(5) + std::string("Таймер - 5 минут.\n")
+				+ right_shift(4) + std::string("Описание задания:\n")
+				+ right_shift(5) + std::string("Прочитать текст с одновременным подсчётом слов.\n\n")
+				
+				+ right_shift(4) + std::string("1.Техника Мандарина\n")
+				+ right_shift(4) + std::string("2.Начали!\n")
+			     ),7,3,11);
 
+/*
 	scroll_down(3);
 	right_shift(7);	std::cout << "Task 1";
 	scroll_down(2);
@@ -91,14 +133,28 @@ void lesson1()
 	scroll_down((25-8-2-1-1));
 	std::getchar();
 
-
+*/
 
 }
 
 
 void lesson2()
 {
-	scroll_down(3);
+	display_text_in_page((std::string("Task 2\n\n") 
+				+ std::string("\t\t\t\tЧтение столбиков с шаблоном.\n")
+				+ right_shift(4) + std::string("Подготовка:\n")
+				+ right_shift(5) + std::string("Текст столбиком.\n")
+				+ right_shift(5) + std::string("Таймер - 5 минут.\n")
+				+ right_shift(4) + std::string("Описание задания:\n")
+				+ right_shift(5) + std::string("Cдвигать шаблон сверху вниз\n")
+				+ right_shift(6) + std::string("со скоростью одна секунда на колонку.\n")
+				+ right_shift(5) + std::string("Через прорез шаблона нужно \"схватить,узнать\"\n")
+				+ right_shift(6) + std::string("слова без прочитывания.\n\n")
+				+ right_shift(4) + std::string("1.Техника Мандарина\n")
+				+ right_shift(4) + std::string("2.Начали!\n")
+			     ),7,3,13);
+
+/*	scroll_down(3);
 	right_shift(7);	std::cout << "Task 2";
 	scroll_down(2);
 	right_shift(4);std:: cout << "Чтение столбиков с шаблоном.";
@@ -111,47 +167,34 @@ void lesson2()
 	right_shift(6);std::cout << "со скоростью одна секунда на колонку.\n";
 	right_shift(5);std::cout << "Через прорез шаблона нужно \"схватить,узнать\"\n";
 	right_shift(6);std::cout << "слова без прочитывания.\n";
-	right_shift(4);std::cout << "1.Техника мандарина.\n";
+	right_shift(4);std::cout << "1.Техника мандарина\n";
 	right_shift(4);std::cout << "2.Начали!\n";	
 	scroll_down((25-3-2-10-1));
-	
-	std::getchar();
-
-	scroll_down(8);
-	int32_t minutes=1;
-	right_shift(4);std::cout << "Input minutes:\n";
-	scroll_down(28-8-1-1);
-	std::cin >> minutes;
-	run_timer((minutes*60)); //seconds
-
-	scroll_down(8);
-	right_shift(4);std::cout << "Упражнение 2 завершено";
-	scroll_down(2);
-	right_shift(4);std::cout << " У вас всё получилось!\n";
-	right_shift(4);std::cout << "        Молодец!\n";
-	scroll_down((25-8-2-1-1));
-	std::getchar();
-
+*/	
 	
 	}
 
-/*					
+					
 void lesson3()
 {
-	std:: cout << "\tЧтение орфографического словаря.\n";
-	std::cout << "\t\tСайт https://povto.ru/books/slovari/orfograficheskiy-slovar-online\n";
-	std::cout << "\t\tВремя 10-15 страниц.\n";
-	std::cout << "\t\tЗадание:\n";
-	std::cout << "\t\t\tПросматривать колонку слов,\n";
-	std::cout << "\t\t\t\tслова узнаются, но не проговариваются.\n";
-	std::cout << "\t\t\t\tПо 2 секунды на страницу\n";
-	std::cout << "Press \'Enter\':\n"; 
+	display_text_in_page((std::string("Task 3\n\n") 
+				+ std::string("\t\t\t\tЧтение орфографического словаря.\n")
+				+ right_shift(4) + std::string("Подготовка:\n")
+				+ right_shift(5) + std::string("Сайт https://povto.ru/books/slovari/orfograficheskiy-slovar-online\n")
+				+ right_shift(5) + std::string("Время 10-15 страниц.\n")
+				+ right_shift(4) + std::string("Описание задания:\n")
+				+ right_shift(5) + std::string("Просматривать колонку слов,\n")
+				+ right_shift(6) + std::string("слова узнаются, но не проговариваются.\n")
+				+ right_shift(5) + std::string("По 2 секунды на страницу.\n\n")
+				+ right_shift(4) + std::string("Техника Мандарина\n")
+				+ right_shift(4) + std::string("Полетели!\n")
+			     ),7,3,13);
+
 	
-	bool WindowsOS = true;
-	std::system( WindowsOS ? "start \"\" chrome.exe \"https://povto.ru/books/slovari/orfograficheskiy-slovar-online/orfograficheskii-slovar-online-bukva-a.htm\"": "google-chrome\"https://povto.ru/books/slovari/orfograficheskiy-slovar-online/orfograficheskii-slovar-online-bukva-a.htm\"");
+//	std::system( WindowsOS ? "start \"\" chrome.exe \"https://povto.ru/books/slovari/orfograficheskiy-slovar-online/orfograficheskii-slovar-online-bukva-a.htm\"": "google-chrome\"https://povto.ru/books/slovari/orfograficheskiy-slovar-online/orfograficheskii-slovar-online-bukva-a.htm\"");
 	scroll_down((25-9-1));
 }
-
+/*
 void lesson4()
 {
 	std:: cout << "\t\"Поле зрения\" (расширение сферического зрения)\n";

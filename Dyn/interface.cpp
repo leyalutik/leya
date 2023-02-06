@@ -28,6 +28,8 @@ void Interface_Main:: start()
 	int32_t number_lesson = 0;
 	display_text_in_page("  СКОРОЧТЕНИЕ\n\n\t\t\t\tНачало программы\n\n\t\t\t\tEnter number of task:",4,8,4);
 	input(number_lesson);
+	std::getchar();
+
 	display_preparations();
 	std::getchar();
 	//Week1
@@ -39,9 +41,10 @@ void Interface_Main:: start()
 				while(end_cycle == 1)
 				{
 					lesson0();
+					std::getchar();
 					display_text_in_page(
-						"Повторить упражнение?\n\t\t\t\tYes(1)/No(2)"
-						,4,8,1);
+							"Повторить упражнение?\n\t\t\t\tYes(1)/No(2)"
+							,4,8,1);
 
 					std::cin >> end_cycle;
 
@@ -56,10 +59,11 @@ void Interface_Main:: start()
 				{
 
 					lesson1();
+					std::getchar();
 					display_text_in_page(
-						"Повторить упражнение?\n\t\t\t\tYes(1)/No(2)"
-						,4,8,1);
-					
+							"Повторить упражнение?\n\t\t\t\tYes(1)/No(2)"
+							,4,8,1);
+
 					std::cin >> end_cycle;
 
 					std::getchar();
@@ -74,14 +78,27 @@ void Interface_Main:: start()
 				{
 
 					lesson2();
-					display_text_in_page(
-						"Повторить упражнение?\n\t\t\t\tYes(1)/No(2)"
-						,4,8,1);
-					std::cin >> end_cycle;
+					std::getchar();
 
+					display_text_in_page("Input minutes:",4,8,0);
+					int32_t minutes=1;
+					input(minutes);
+					run_timer((minutes*60)); //seconds
+					display_text_in_page((
+								std::string("Упражнение 2 завершено\n\n")
+								+ right_shift(4) + std::string(" У вас всё получилось!\n")
+						+ right_shift(4) + std::string("        Молодец!\n")
+
+							     ),4,8,4);
 					std::getchar();
 
 
+					display_text_in_page(
+						"Повторить упражнение?\n\t\t\t\tYes(1)/No(2)"
+						,4,8,1);
+					input(end_cycle);
+
+					std::getchar();
 				}
 			}
 

@@ -15,16 +15,16 @@
 #include "parse_file.h"
 //FORMAT TEXT
 
-void display_text_in_page(const std::string& text, const int32_t rightshift, const int32_t number_upper_lines,const int32_t number_n_in_text) //if text contains more than one line, then number_lines > 0
+void display_text_in_page(std::string text, const int32_t rightshift, const int32_t number_upper_lines,const int32_t number_n_in_text) //if text contains more than one line, then number_lines > 0
 {
 	if(number_n_in_text < 0 || number_upper_lines < 0 || rightshift < 0)
 	{
 		throw std::runtime_error("Illegal value in function display_text_in_page()");
 	}
-	scroll_down(number_upper_lines);
-	right_shift(rightshift);
+	display_scroll_down(number_upper_lines);
+	display_right_shift(rightshift);
 	std::cout << text << "\n";
-	scroll_down(25-2-number_n_in_text - number_upper_lines);
+	display_scroll_down(25-2-number_n_in_text - number_upper_lines);
 }
 
 //INPUT POSITIVE NUMBERS
@@ -53,6 +53,7 @@ void input(int32_t& number_lesson)
 
 	}
 }
+//TIME
 void run_timer(const int32_t seconds)
 {
 	if(seconds <= 0) 
@@ -62,38 +63,37 @@ void run_timer(const int32_t seconds)
 		throw std::runtime_error(os.str());
 	}
 	
-	scroll_down(8);
-	right_shift(4);
+	display_scroll_down(8);
+	display_right_shift(4);
 	std::cout << "Запустите таймер на ";
 	display_time(seconds/60,seconds%60);
 	std::cout << ".";
 
-	scroll_down(1);
-	right_shift(4);
+	display_scroll_down(1);
+	display_right_shift(4);
 	std::cout << "   Нажмите \"Enter\" :\n";
 
-	scroll_down((25-8-1-1-1));
+	display_scroll_down((25-8-1-1-1));
 	std::getchar();
 	
 	
-	scroll_down(4);
+	display_scroll_down(4);
 	picture_swan();
-	scroll_down(25-13-4);
+	display_scroll_down(25-13-4);
 	timer(seconds*1000);
 	
 	flash(5);
 	
-	scroll_down(8);
-	right_shift(4);
+	display_scroll_down(8);
+	display_right_shift(4);
 	std::cout << "Время закончилось. Прошло ";
 	display_time(seconds/60,seconds%60);
 	std::cout << ".";
 
-	scroll_down(1);
-	right_shift(4);
+	display_scroll_down(1);
+	display_right_shift(4);
 	std::cout << "   Нажмите \"Enter\" :\n";
-	scroll_down((25-8-1-1));
-	std::getchar();
+	display_scroll_down((25-8-1-1));
 	
 } 
 void flash(const int32_t times)
@@ -101,13 +101,13 @@ void flash(const int32_t times)
 
 	for(int i=0; i<times; ++i)
 	{
-		scroll_down(4);
+		display_scroll_down(4);
 		picture_swan();
-		scroll_down(25-13-4);
+		display_scroll_down(25-13-4);
 		
 		timer(1000);
 		
-		scroll_down(25);
+		display_scroll_down(25);
 		
 		timer(1000);
 	}
@@ -127,12 +127,17 @@ void timer(const int32_t milliseconds)
 	}
 	auto start = std::chrono::steady_clock::now();
 	auto finish = std::chrono::steady_clock::now();
-	while(std::chrono::duration_cast<std::chrono::milliseconds>(finish-start).count()
-        <= milliseconds)
-{
-	finish = std::chrono::steady_clock::now();
-}
-  
+	bool flag_break = false;
+	while((std::chrono::duration_cast<std::chrono::milliseconds>(finish-start).count()
+			<= milliseconds) && !flag_break)
+	{
+		finish = std::chrono::steady_clock::now();
+		//if(std::getchar()) 
+		//{
+		//	flag_break = true;
+		//}
+	}
+
 }
 
 //CREATE
