@@ -137,3 +137,7 @@ Check Result :  ОК
 06.02.2023  
 Name of punkt:  
 Check Result :  
+--------------------  
+07.02.2023  
+Name of punkt:  Гражданский 41
+Check Result :  ОК, сертификаты

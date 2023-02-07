@@ -42,8 +42,31 @@ void display_preparations()
 
 void lessons(const int32_t i)
 {
+	display_preparations();
+	
+	switch(i)
+	{
+		case 0:
+			{
+				lesson0();
+				break;
+			}
 
-
+		case 1:
+			{
+				lesson1();
+				break;
+			}
+		case 2:
+			{
+				lesson2();
+				break;
+			}
+		case 3:
+			{
+				lesson3();
+				break;
+			}
 
 
 }
