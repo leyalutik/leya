@@ -94,7 +94,7 @@ void run_timer(const int32_t seconds)
 	display_right_shift(4);
 	std::cout << "   Нажмите \"Enter\" :\n";
 	display_scroll_down((25-8-1-1));
-	
+	std::getchar();
 } 
 void flash(const int32_t times)
 {
@@ -105,7 +105,7 @@ void flash(const int32_t times)
 		picture_swan();
 		display_scroll_down(25-13-4);
 		
-		timer(1000);
+		timer(500);
 		
 		display_scroll_down(25);
 		
@@ -127,14 +127,13 @@ void timer(const int32_t milliseconds)
 	}
 	auto start = std::chrono::steady_clock::now();
 	auto finish = std::chrono::steady_clock::now();
-	bool flag_break = false;
 	while((std::chrono::duration_cast<std::chrono::milliseconds>(finish-start).count()
-			<= milliseconds) && !flag_break)
+			<= milliseconds) )
 	{
 		finish = std::chrono::steady_clock::now();
-		//if(std::getchar()) 
+		//if(std::getchar() == '1')
 		//{
-		//	flag_break = true;
+		//	break;
 		//}
 	}
 

@@ -32,9 +32,9 @@ void Working_Space::initialize()
 
 	int32_t answer = 1;
 	display_text_in_page("Is your operating system Windows ?\n\t\t\t\tYes(1)/No(2)",4,8,1);
+	
 	input(answer);
-	std::getchar();
-
+	
 	if(answer == 1)
 	{
 		Working_Space::OS = "Windows";
@@ -49,23 +49,19 @@ void Working_Space::initialize()
 				+ std::string(" ?\n")
 				+ right_shift(4) + std::string("Yes(1)/No(2)")),4,8,1);
 	input(answer);
-	std::getchar();
-
 	if(answer == 2)
 	{
 		int32_t answer_browser = 2;
 		while(answer_browser == 2)
 		{
 			display_text_in_page("Input the browser command:",4,8,0);
-			getline(std::cin,Working_Space::browser_command);
-			std::getchar();
+			std::cin >> Working_Space::browser_command;
 
 			display_text_in_page((std::string("You wrote command : \'")
 						+ Working_Space::browser_command 
 						+ "\'\n" 
 						+ "\t\t\t\tis it correct? Yes(1)/No(2)"),4,8,1);
 			input(answer_browser);
-			std::getchar();
 		}		
 
 	}
@@ -76,8 +72,8 @@ void Working_Space::run_site(const std::string& URL)
 {
 
 	std::string start_command = ( Working_Space::OS == "Windows" ? "start \"\" " : " ");
-	std::string command = start_command + Working_Space::browser_command
-		+ URL;				
+	std::string command = start_command + std::string(" ") + Working_Space::browser_command
+		+ std::string(" ") + URL;				
 	const char* system_command = command.c_str();		\
 				     std::system(system_command);
 }

@@ -13,30 +13,122 @@
 #include "lessons.h"
 #include "bricks.h"
 #include "edit.h"
+#include "working_space.h"
 
-void display_preparations()
+LESSONS::LESSONS(int32_t number_lessons_new)
+{
+	LESSONS::number_lessons = number_lessons_new;
+	LESSONS::ws.initialize();
+
+}
+
+
+LESSONS::LESSONS(
+		int32_t number_lessons_new,
+		const std::string& OS_new,
+		const std::string& browser_command_new
+		)
+{
+
+	LESSONS::number_lessons = number_lessons_new;
+	LESSONS::ws.OS = OS_new;
+	LESSONS::ws.browser_command = browser_command_new;
+
+}
+void LESSONS::start(const int32_t start_number)
+{
+	int32_t start = start_number;
+	while(start < LESSONS::number_lessons)
+	{
+		LESSONS::flow(start);
+		++start;
+	}
+
+
+
+}
+void LESSONS::flow(int32_t i)
+{
+	if(i<0)
+	{
+		throw std::runtime_error("Illegal input in function flow_lessons");
+	}
+
+
+	switch(i)
+	{
+
+		case 0:
+			LESSONS::display_preparations();
+			LESSONS::lesson0();
+			break;
+
+		case 1: 
+			LESSONS::lesson1();
+			break;
+		case 2: 
+			LESSONS::lesson2();
+			break;
+
+		case 3: 
+			LESSONS::lesson3();
+			break;
+		case 4:
+			LESSONS::lesson4();
+			break;
+		case 5:
+			LESSONS::lesson5();
+			break;
+		case 6:
+			LESSONS::lesson6();
+			break;
+		case 7:
+			LESSONS::lesson7();
+			break;
+		case 8:
+			LESSONS::lesson8();
+			break;
+		case 9:
+			LESSONS::lesson9();
+			break;
+		case 10:
+			LESSONS::lesson10();
+			break;
+		case 11:
+			LESSONS::lesson11();
+			break;
+		case 12:
+			LESSONS::lesson12();
+			break;
+
+
+		default:
+			std::cout << "Enter an other number option.\n";
+			std::getchar();
+			break;
+
+	}
+
+	
+
+}
+//DISPLAY PREPARATIONS
+//------------------------------------------------------------------------------
+void LESSONS::display_preparations()
 {
 	display_text_in_page((std::string("Подготовка к Скорочтению:\n\n") 
 				+ right_shift(4) + std::string("Откройте программу Скорочтение.\n")
 				+ right_shift(4) + std::string("Приготовьте журнал Наука и Жизнь.\n")
 				+ right_shift(4) + std::string("Откройте сайты для чтения маленьких заметок.\n")
 			     ),4,4,6);
-
-
-
-	/*
-	   scroll_down(7);
-	   right_shift(4);std::cout << "Подготовка к Скорочтению:";
-	   scroll_down(2);
-	right_shift(4);std::cout << "Откройте программу Скорочтение.\n";
-	right_shift(4);std::cout << "Приготовьте журнал Наука и Жизнь.\n";
-	right_shift(4);std::cout << "Откройте сайты для чтения маленьких заметок.\n";
-	scroll_down((25-6-6));
 	std::getchar();
-	*/
+
 }
 
-void lesson0()
+//LESSON 0
+//----------------------------------------------------------------------------
+
+void LESSONS::lesson0()
 {
 
 
@@ -48,46 +140,21 @@ void lesson0()
 				+ right_shift(5) + std::string("Таймер - 5 минут.\n")
 				+ right_shift(4) + std::string("Описание задания:\n")
 				+ right_shift(5) + std::string("Открыть программу.\n\n")
-				
+
 				+ right_shift(4) + std::string("1.Техника Мандарина\n")
 				+ right_shift(4) + std::string("2.С Богом!\n")
 			     ),7,3,11);
-
-/*	scroll_down(3);
-	right_shift(7);	std::cout << "Task 0";
-	scroll_down(2);
-	right_shift(4);std:: cout << "Упражнения по концентрации и расширению сферы зрения.\n";
-	scroll_down(2);
-	right_shift(4);std:: cout << "Подготовка:\n";
-	right_shift(5);std::cout << "Программа Скорочтение:\n";
-	right_shift(6);std::cout << "Тренажёр >> Нейронный ускоритель.\n";
-	right_shift(5);std::cout << "Таймер - 5 минут.\n";
-	right_shift(4);std::cout << "Описание задания:\n";
-	right_shift(5);std::cout << "Открыть программу.\n";
-	right_shift(4);std::cout << "1.Техника мандарина.\n";
-	right_shift(4);std::cout << "2.С Богом!\n";
-
-
-
-
-
-
-	scroll_down((25-3-2-2-9));
 	std::getchar();
 
-	scroll_down(8);
-	right_shift(4);std::cout << "Упражнение 0 завершено";
-	scroll_down(2);
-	right_shift(4);std::cout << " У вас всё получилось!\n";
-	right_shift(4);std::cout << "        Молодец!\n";
-	scroll_down((25-8-2-1));
+
+	display_text_in_page((std::string("Упражнение 0 завершено\n\n")
+				+ right_shift(4) + std::string(" У вас всё получилось!\n")
+				+ right_shift(4) + std::string("        Молодец!\n")
+			     ),4,8,4);
 	std::getchar();
-
-*/
-
 }
 
-void lesson1()
+void LESSONS::lesson1()
 {
 	display_text_in_page((std::string("Task 1\n\n") 
 				+ right_shift(4) + std::string("Чтение и подсчёт слов.\n")
@@ -101,44 +168,29 @@ void lesson1()
 				+ right_shift(4) + std::string("2.Начали!\n")
 			     ),7,3,11);
 
-/*
-	scroll_down(3);
-	right_shift(7);	std::cout << "Task 1";
-	scroll_down(2);
-	right_shift(4);std:: cout << "Чтение и подсчёт слов.";
-	scroll_down(2);
-	right_shift(4);std:: cout << "Подготовка:\n";
-	right_shift(5);std::cout << "Текст с лёгким содержанием.\n";
-	right_shift(5);std::cout << "Таймер - 5 минут.\n";
-	right_shift(4);std:: cout << "Описание задания:\n";
-	right_shift(5);std::cout << "Прочитать текст с одновременным подсчётом слов.\n";
-	right_shift(4);std::cout << "1.Техника мандарина.\n";
-	right_shift(4);std::cout << "2.Начали!\n";
-	
-	scroll_down((25-3-2-7-1));
-	std::getchar();
-	
-	scroll_down(8);
-	int32_t minutes=1;
-	right_shift(4);std::cout << "Input minutes:\n";
-	scroll_down(28-8-1-1);
-	std::cin >> minutes;
-	run_timer((minutes*60)); //seconds
 
-	scroll_down(8);
-	right_shift(4);std::cout << "Упражнение 1 завершено";
-	scroll_down(2);
-	right_shift(4);std::cout << " У вас всё получилось!\n";
-	right_shift(4);std::cout << "        Молодец!\n";
-	scroll_down((25-8-2-1-1));
+	
+	std::getchar();
+	display_text_in_page("Input seconds:",4,8,0);	
+
+	int32_t seconds=1;
+	input(seconds);
+	run_timer(seconds); //seconds
+
+	display_text_in_page(
+			(std::string("Упражнение 1 завершено\n\n")
+			+ right_shift(4) + std::string(" У вас всё получилось!\n")
+			+ right_shift(4) + std::string("        Молодец!\n")
+		     ),4,8,4);
+
 	std::getchar();
 
-*/
+
 
 }
 
 
-void lesson2()
+void LESSONS::lesson2()
 {
 	display_text_in_page((std::string("Task 2\n\n") 
 				+ std::string("\t\t\t\tЧтение столбиков с шаблоном.\n")
@@ -153,29 +205,24 @@ void lesson2()
 				+ right_shift(4) + std::string("1.Техника Мандарина\n")
 				+ right_shift(4) + std::string("2.Начали!\n")
 			     ),7,3,13);
+	std::getchar();
+	display_text_in_page("Input seconds:",4,8,0);	
 
-/*	scroll_down(3);
-	right_shift(7);	std::cout << "Task 2";
-	scroll_down(2);
-	right_shift(4);std:: cout << "Чтение столбиков с шаблоном.";
-	scroll_down(2);
-	right_shift(4);std::cout << "Подготовка:\n";
-	right_shift(5);std::cout << "Текст столбиком.\n";
-	right_shift(5);std::cout << "Таймер - 5 минут.\n";
-	right_shift(4);std::cout << "Описание задания:\n";
-	right_shift(5);std::cout << "Cдвигать шаблон сверху вниз\n";
-	right_shift(6);std::cout << "со скоростью одна секунда на колонку.\n";
-	right_shift(5);std::cout << "Через прорез шаблона нужно \"схватить,узнать\"\n";
-	right_shift(6);std::cout << "слова без прочитывания.\n";
-	right_shift(4);std::cout << "1.Техника мандарина\n";
-	right_shift(4);std::cout << "2.Начали!\n";	
-	scroll_down((25-3-2-10-1));
-*/	
-	
-	}
+	int32_t seconds=1;
+	input(seconds);
+	run_timer(seconds); //seconds
+
+	display_text_in_page(
+			(std::string("Упражнение 2 завершено\n\n")
+			+ right_shift(4) + std::string(" У вас всё получилось!\n")
+			+ right_shift(4) + std::string("        Молодец!\n")
+		     ),4,8,4);
+
+	std::getchar();
+}
 
 					
-void lesson3()
+void LESSONS::lesson3()
 {
 	display_text_in_page((std::string("Task 3\n\n") 
 				+ std::string("\t\t\t\tЧтение орфографического словаря.\n")
@@ -190,143 +237,260 @@ void lesson3()
 				+ right_shift(4) + std::string("Полетели!\n")
 			     ),7,3,13);
 
+	std::getchar();	
+	LESSONS::ws.run_site("https://povto.ru/books/slovari/orfograficheskiy-slovar-online/orfograficheskii-slovar-online-bukva-a.htm");
+
+	std::getchar();
+
+	display_text_in_page((std::string("Упражнение 2 завершено\n\n")
+				+ right_shift(4) + std::string(" У вас всё получилось!\n")
+				+ right_shift(4) + std::string("        Молодец!\n")
+			     ),4,8,4);
+
+	std::getchar();
+
 	
-//	std::system( WindowsOS ? "start \"\" chrome.exe \"https://povto.ru/books/slovari/orfograficheskiy-slovar-online/orfograficheskii-slovar-online-bukva-a.htm\"": "google-chrome\"https://povto.ru/books/slovari/orfograficheskiy-slovar-online/orfograficheskii-slovar-online-bukva-a.htm\"");
-	scroll_down((25-9-1));
+}
+
+void  LESSONS::lesson4()
+{
+
+
+	display_text_in_page((std::string("Task 4\n\n") 
+				+ right_shift(4) + std::string("\"Поле зрения\" (расширение сферического зрения)\n")
+				+ right_shift(4) + std::string("Подготовка:\n")
+				+ right_shift(5) + std::string("Время - 3 раза.\n")
+				+ right_shift(4) + std::string("Описание задания:\n")
+				+ right_shift(5) + std::string("Запускайте программу.\n")
+				+ right_shift(4) + std::string("\nТехника Мандарина\n")
+				+ right_shift(4) + std::string("Полетели!\n")
+			     ),7,3,10);
+
+	std::getchar();	
+
+
+	display_text_in_page((std::string("Упражнение 4 завершено\n\n")
+				+ right_shift(4) + std::string(" У вас всё получилось!\n")
+				+ right_shift(4) + std::string("        Молодец!\n")
+			     ),4,8,4);
+
+	std::getchar();
+}
+void  LESSONS::lesson5()
+{
+	
+	display_text_in_page((std::string("Task 5") 
+				+ right_shift(4) + std::string("Прочтите маленькую колонку и выделите главную мысль.\n")
+				+ right_shift(4) + std::string("Подготовка:\n")
+				+ right_shift(5) + std::string("Небольшая колонка текста (90 слов).\n")
+				+ right_shift(5) + std::string("Таймер - 2-3 минуты..\n")
+				+ right_shift(4) + std::string("Описание задания:\n")
+				+ right_shift(5) + std::string("Как можно внимательнее отнестись к деталям.\n")
+				+ right_shift(5) + std::string("Выделить главную мысль.\n")
+				+ right_shift(5) + std::string("Вслух пересказать как можно подробнее.\n")
+				+ right_shift(4) + std::string("\nТехника Мандарина\n")
+				+ right_shift(4) + std::string("Полетели!\n")
+			     ),7,3,10);
+
+	std::getchar();	
+
+
+	display_text_in_page((std::string("Упражнение 5 завершено\n\n")
+				+ right_shift(4) + std::string(" У вас всё получилось!\n")
+				+ right_shift(4) + std::string("        Молодец!\n")
+			     ),4,8,10);
+
+	std::getchar();
+
+}
+void  LESSONS::lesson6()
+{
+
+	display_text_in_page((std::string("Task 6") 
+				+ right_shift(4) + std::string("\"Зеленая точка\".(упражнение на концентрацию).\n")
+				+ right_shift(4) + std::string("Подготовка:\n")
+				+ right_shift(5) + std::string("Программа Скорочтение. Тренажёр >> Зелёная точка.\n")
+				+ right_shift(5) + std::string("Таймер - 10 минут.\n")
+				+ right_shift(4) + std::string("Описание задания:\n")
+				+ right_shift(5) + std::string("Запустите программу.\n")
+				+ right_shift(4) + std::string("\nТехника Мандарина\n")
+				+ right_shift(4) + std::string("Начинайте!\n")
+			     ),7,3,10);
+
+	std::getchar();	
+
+
+	display_text_in_page((std::string("Упражнение 6 завершено\n\n")
+				+ right_shift(4) + std::string(" У вас всё получилось!\n")
+				+ right_shift(4) + std::string("        Молодец!\n")
+			     ),4,8,10);
+
+	std::getchar();
+
+}
+	
+void  LESSONS::lesson7()
+{
+	
+display_text_in_page((std::string("Task 7") 
+				+ right_shift(4) + std::string("Упражнение на память. Запомнить предмет.\n")
+				+ right_shift(4) + std::string("Подготовка:\n")
+				+ right_shift(5) + std::string("Любой предмет.\n")
+				+ right_shift(5) + std::string("Таймер - по 1 минуте 4 раза.\n")
+				+ right_shift(4) + std::string("Описание задания:\n")
+				+ right_shift(5) + std::string("Сначала рассматриваете предмет.\n")
+				+ right_shift(5) + std::string("Потом закрываете глаза и воспроизводите в деталях.\n")
+				+ right_shift(4) + std::string("\nТехника Мандарина\n")
+				+ right_shift(4) + std::string("Поехали!\n")
+			     ),7,3,10);
+
+	std::getchar();	
+
+
+	display_text_in_page((std::string("Упражнение 7 завершено\n\n")
+				+ right_shift(4) + std::string(" У вас всё получилось!\n")
+				+ right_shift(4) + std::string("        Молодец!\n")
+			     ),4,8,10);
+
+	std::getchar();
+
+}
+void  LESSONS::lesson8()
+{
+	
+	display_text_in_page((std::string("Task 8") 
+				+ right_shift(4) + std::string("Замечаем неодинаковость в крайних буквах.\n")
+				+ right_shift(4) + std::string("Подготовка:\n")
+				+ right_shift(5) + std::string("Программа Скорочтение. Тренажёр >> Поле зрения.\n")
+				+ right_shift(5) + std::string("Таймер - 3 раза.\n")
+				+ right_shift(4) + std::string("Описание задания:\n")
+				+ right_shift(5) + std::string("Запустите задание.\n")
+				+ right_shift(4) + std::string("\nТехника Мандарина\n")
+				+ right_shift(4) + std::string("Поехали!\n")
+			     ),7,3,10);
+
+	std::getchar();	
+
+
+	display_text_in_page((std::string("Упражнение 8 завершено\n\n")
+				+ right_shift(4) + std::string(" У вас всё получилось!\n")
+				+ right_shift(4) + std::string("        Молодец!\n")
+			     ),4,8,10);
+
+	std::getchar();
+
+
+}
+void  LESSONS::lesson9()
+{
+	
+	display_text_in_page((std::string("Task 9") 
+				+ right_shift(4) + std::string("Запоминаем художественную открытку.\n")
+				+ right_shift(4) + std::string("Подготовка:\n")
+				+ right_shift(5) + std::string("Сайт с картинками.\n")
+				+ right_shift(5) + std::string("Таймер - 20 секунд по 3 раза.\n")
+				+ right_shift(4) + std::string("Описание задания:\n")
+				+ right_shift(5) + std::string("Берем открытку.\n")
+				+ right_shift(5) + std::string("Смотрим в центр и пытаемся увидеть изображения по краям.\n")
+				+ right_shift(5) + std::string("Закройте глаза и воспроизведите в памяти, что увидели,\n")
+				+ right_shift(6) + std::string("с предельной точностью.\n")
+				+ right_shift(5) + std::string("Про себя начинаем отсчёт до 20.\n")
+				+ right_shift(4) + std::string("\nТехника Мандарина\n")
+				+ right_shift(4) + std::string("Вперёд!\n")
+			     ),7,3,10);
+
+	std::getchar();	
+
+
+	display_text_in_page((std::string("Упражнение 9 завершено\n\n")
+				+ right_shift(4) + std::string(" У вас всё получилось!\n")
+				+ right_shift(4) + std::string("        Молодец!\n")
+			     ),4,8,10);
+
+	std::getchar();
+
+
+}
+void  LESSONS::lesson10()
+{
+	display_text_in_page((std::string("Task 10") 
+				+ right_shift(4) + std::string("Таблица Шульте.\n")
+				+ right_shift(4) + std::string("Подготовка:\n")
+				+ right_shift(5) + std::string("Программа Скорочтение. Тренажёр >> Таблица Шульте.\n")
+				+ right_shift(5) + std::string("Таймер - 3 раза.\n")
+				+ right_shift(4) + std::string("Описание задания:\n")
+				+ right_shift(5) + std::string("Запустите программу.\n")
+				+ right_shift(4) + std::string("\nРасслабиться с помощью техники мандарина.\n")
+				+ right_shift(4) + std::string("Начали!\n")
+			     ),7,3,10);
+
+	std::getchar();	
+
+
+	display_text_in_page((std::string("Упражнение 10 завершено\n\n")
+				+ right_shift(4) + std::string(" У вас всё получилось!\n")
+				+ right_shift(4) + std::string("        Молодец!\n")
+			     ),4,8,10);
+
+	std::getchar();
+
+}
+
+
+void  LESSONS::lesson11()
+{
+	display_text_in_page((std::string("Task 11") 
+				+ right_shift(4) + std::string("Выделить главную мысль в тексте.\n")
+				+ right_shift(4) + std::string("Подготовка:\n")
+				+ right_shift(5) + std::string("Маленькая статья (90 слов).\n")
+				+ right_shift(5) + std::string("Таймер - 45 секунд.\n")
+				+ right_shift(4) + std::string("Описание задания:\n")
+				+ right_shift(5) + std::string("Быстро, но вдумчиво прочитать.\n")
+				+ right_shift(5) + std::string("Выделить главные мысли текста.\n")
+				+ right_shift(4) + std::string("\nРасслабиться с помощью техники мандарина.\n")
+				+ right_shift(4) + std::string("Вы справитесь!\n")
+			     ),7,3,10);
+
+	std::getchar();	
+
+
+	display_text_in_page((std::string("Упражнение 11 завершено\n\n")
+				+ right_shift(4) + std::string(" У вас всё получилось!\n")
+				+ right_shift(4) + std::string("        Молодец!\n")
+			     ),4,8,10);
+
+	std::getchar();
+
+}
+
+void  LESSONS::lesson12()
+{
+
+	display_text_in_page((std::string("Task 12") 
+				+ right_shift(4) + std::string("Чтение литературы.\n")
+				+ right_shift(4) + std::string("Подготовка:\n")
+				+ right_shift(5) + std::string("Научно-популярная литература,\n")
+				+ right_shift(6) + std::string("или общественно-политическая.\n")
+				+ right_shift(6) + std::string("или литература по специальности.\n")
+				+ right_shift(5) + std::string("Таймер - 25-30 страниц.\n")
+				+ right_shift(4) + std::string("Описание задания:\n")
+				+ right_shift(5) + std::string("После прочтения логически обрабатывать информацию,\n")
+				+ right_shift(6) + std::string("выделить главные мысли.\n")
+				+ right_shift(4) + std::string("\nРасслабиться с помощью техники мандарина.\n")
+				+ right_shift(4) + std::string("3! 2! 1! ПУСК!!!\n")
+			     ),7,3,10);
+
+	std::getchar();	
+
+
+	display_text_in_page((std::string("Упражнение 12 завершено\n\n")
+				+ right_shift(4) + std::string(" У вас всё получилось!\n")
+				+ right_shift(4) + std::string("        Молодец!\n")
+			     ),4,8,10);
+
+	std::getchar();
 }
 /*
-void lesson4()
-{
-	std:: cout << "\t\"Поле зрения\" (расширение сферического зрения)\n";
-	std::cout << "\t\tПрограмма Скорочтение. Тренажёр >> Поле зрения.\n";
-	std::cout << "\t\tВремя - 3 раза\n";
-	std::cout << "\t\tТаймер -3-5 минут.\n";
-	std::cout << "\t\t\t1.Техника мандарина\n";
-	std::cout << "\t\t\t2.Выполняйте задание\n";
-	std::cout << "\n\n\n\n\n";
-	std::cout << "\n\n\n\n\n";
-	std::cout << "\n\n\n\n\n";
-}
-void lesson5()
-{
-	std:: cout << "\tПрочтите маленькую колонку и выделите главную мысль.\n";
-	std::cout << "\t\tНебольшая колонка текста (90 слов)\n";
-	std::cout << "\t\tТаймер - 2-3 минуты.\n";
-	std::cout << "\t\t\t1.Техника мандарина\n";
-	std::cout << "\t\t\t2.Задание:\n";
-	std::cout << "\t\t\t\tКак можно внимательнее отнестись к деталям\n";
-	std::cout << "\t\t\t\tВыделить главную мысль\n";
-	std::cout << "\t\t\t\tВслух пересказать как можно подробнее.\n";
-	std::cout << "\n\n\n\n\n";
-	std::cout << "\n\n\n\n\n";
-	std::cout << "\n\n\n\n\n";
-}
-void lesson6()
-{
-	std:: cout << "\t\"Зеленая точка\" (упражнение на концентрацию)\n";
-	std::cout << "\t\tПрограмма Скорочтение. Тренажёр >> Зелёная точка\n";
-	std::cout << "\t\tВремя - 5 минут.\n";
-	std::cout << "\t\t\t1.Техника мандарина\n";
-	std::cout << "\t\t\t2.Сконцентрируйтесь на точке\n";
-	std::cout << "\n\n\n\n\n";
-	std::cout << "\n\n\n\n\n";
-	std::cout << "\n\n\n\n\n";
-}
-	
-void lesson7()
-{
-	std:: cout << "\tУпражнение на память. Запомнить предмет.\n";
-	std::cout << "\t\tЛюбой предмет.\n";
-	std::cout << "\t\tТаймер - по 1 минуте 4 раза.\n";
-	std::cout << "\t\t\t1.Техника мандарина\n";
-	std::cout << "\t\t\t2.Задание:\n";
-	std::cout << "\t\t\t\tСначала рассматриваете предмет.\n";
-	std::cout << "\t\t\t\tПотом закрываете глаза и воспроизводите в деталях.\n";
-	std::cout << "\n\n\n\n\n";
-	std::cout << "\n\n\n\n\n";
-	std::cout << "\n\n\n\n\n";
-}
-void lesson8()
-{
-	std:: cout << "\tЗамечаем неодинаковость в крайних буквах.\n";
-	std::cout << "\t\tПрограмма Скорочтение. Тренажёр >> Поле зрения\n";
-	std::cout << "\t\tТаймер - 3 раза.\n";
-	std::cout << "\t\t\t1.Техника мандарина\n";
-	std::cout << "\t\t\t2.Приступаем к заданию\n";
-	std::cout << "\n\n\n\n\n";
-	std::cout << "\n\n\n\n\n";
-	std::cout << "\n\n\n\n\n";
-}
-void lesson9()
-{
-	std:: cout << "\tЗапоминаем художественную открытку\n";
-	std::cout << "\t\tСайт с картинками.\n";
-	std::cout << "\t\tТаймер - 20 секунд по 3 раза.\n";
-	std::cout << "\t\t\t1.Техника мандарина\n";
-	std::cout << "\t\t\t2.Задание:\n";
-	std::cout << "\t\t\t\tБерем открытку.\n";
-	std::cout << "\t\t\t\tСмотрим в центр и пытаемся увидеть изображения по краям.\n";
-	std::cout << "\t\t\t\tЗакройте глаза и воспроизведите в памяти, что увидели,\n";
-	std::cout << "\t\t\t\t\tс предельной точностью.\n";
-	std::cout << "\t\t\t3.Про себя начинаем отсчёт до 20.\n";
-	std::cout << "\t\t\t4.Вперёд!\n";
-
-	std::cout << "\n\n\n\n\n";
-	std::cout << "\n\n\n\n\n";
-	std::cout << "\n\n\n\n\n";
-}
-void lesson10()
-{
-	std:: cout << "\tТаблица Шульте.\n";
-	std::cout << "\t\tПрограмма Скорочтение. Тренажёр >> Таблица Шульте\n";
-	std::cout << "\t\tТаймер - 3 раза.\n";
-	std::cout << "\t\t\t1.Расслабиться с помощью техники мандарина.\n";
-	std::cout << "\t\t\t2.Начали!\n";
-
-	std::cout << "\n\n\n\n\n";
-	std::cout << "\n\n\n\n\n";
-	std::cout << "\n\n\n\n\n";
-}
-
-
-void lesson11()
-{
-	std:: cout << "\tВыделить главную мысль в тексте.\n";
-	std::cout << "\t\tМаленькая статья (90 слов)\n";
-	std::cout << "\t\t\t(Журнал Наука и жизнь).\n";
-	std::cout << "\t\tТаймер - 45 секунд.\n";
-	std::cout << "\t\t\t1.Расслабиться с помощью техники мандарина.\n";
-	std::cout << "\t\t\t2.Задание:\n";
-	std::cout << "\t\t\t\tБыстро, но вдумчиво прочитать.\n";
-	std::cout << "\t\t\t\tВыделить главные мысли текста.\n";
-	std::cout << "\t\t\t3.Вперёд!\n";
-
-
-	std::cout << "\n\n\n\n\n";
-	std::cout << "\n\n\n\n\n";
-	std::cout << "\n\n\n\n\n";
-}
-
-void lesson12()
-{
-	std:: cout << "\tЧтение литературы.\n";
-	std::cout << "\t\tТаймер - 25-30 страниц.\n";
-	std::cout << "\t\tНаучно-популярная литература,\n";
-	std::cout << "\t\t\tили общественно-политическая.\n";
-	std::cout << "\t\t\tили литература по специальности.\n";
-
-	std::cout << "\t\t\t1.Расслабиться с помощью техники мандарина.\n";
-	std::cout << "\t\t\t2.Задание:\n";
-	std::cout << "\t\t\t\tПосле прочтения логически обрабатывать информацию,\n";
-	std::cout << "\t\t\t\t\tвыделить главные мысли.\n";
-	std::cout << "\t\t\t3.3! 2! 1! ПУСК!!!\n";
-
-
-	std::cout << "\n\n\n\n\n";
-	std::cout << "\n\n\n\n\n";
-	std::cout << "\n\n\n\n\n";
-}
-
 void lesson13()
 {
 	std:: cout << "\tРасширяем поле зрения.\n";

@@ -13,9 +13,9 @@
 
 #include "lessons.h"
 #include "bricks.h"
-#include "interface.h"
+//#include "interface.h"
 #include "edit.h"
-#include "working_space.h"
+//#include "working_space.h"
 
 
 int main()
@@ -27,8 +27,10 @@ std::getchar();
 
 	try
 	{
-		Interface_Main training;
-		training.start();
+		int32_t  start = 4;
+		int32_t number_options = 13;
+		LESSONS lesson(number_options);
+		lesson.start(start);
 	}
 	catch(std::runtime_error &e)
 	{
