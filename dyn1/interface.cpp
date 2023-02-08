@@ -18,6 +18,57 @@
 #include "working_space.h"
 
 
+
+
+void public INTERFACE::input() //input number option (positive and integer) (with check) 
+{
+	std::cin >> INTERFACE::i;
+	while(!std::cin && INTERFACE::i < 0 )
+	{
+		if(std::cin.bad())  //поток повреждён; Отправляем отчет об ошибке внешней программе
+		{
+			throw std::runtime_error ("In function stream cin was corrupted");
+		}
+		if(std::cin.eof())
+		{
+			std::cout << "The input stream is overloaded.\n";
+			//Больше никаких входных данных
+			//Последовательность символов правильно должна оканчиваться именно так
+		}
+		if(std::cin.fail()) // поток столкнулся с чем-то неожиданным
+		{
+			std::cin.clear();// make ready for more input
+			std::cin.ignore(32767, '\n'); // очищаем поток от мусора
+			std::cin >> INTERFACE::i;
+		}
+
+
+	}
+
+
+}
+
+
+
+
+
+	void display_options();
+
+void start()
+{
+	while(i < number_options)
+	{
+		display_options();
+		input(i);
+		base_funcion(i);
+	}
+}
+};
+
+
+
+
+/*
 Interface_Main::Interface_Main()
 {
 	Interface_Main::ws.initialize();
@@ -25,15 +76,15 @@ Interface_Main::Interface_Main()
 }
 void Interface_Main:: start()
 {
-	int32_t number_lesson = 0;
+	int32_t INTERFACE::i = 0;
 	display_text_in_page("  СКОРОЧТЕНИЕ\n\n\t\t\t\tНачало программы\n\n\t\t\t\tEnter number of task:",4,8,4);
-	input(number_lesson);
+	input(INTERFACE::i);
 	std::getchar();
 
 	display_preparations();
 	std::getchar();
 	//Week1
-	switch(number_lesson)
+	switch(INTERFACE::i)
 	{
 		case 0:
 			{
@@ -104,7 +155,6 @@ void Interface_Main:: start()
 
 
 	}
-	/*
 
 	   case 3:
 	   std::cout << "\t Task 3\n";
