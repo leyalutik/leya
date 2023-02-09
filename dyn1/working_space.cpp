@@ -34,7 +34,7 @@ void Working_Space::initialize()
 	display_text_in_page("Is your operating system Windows ?\n\t\t\t\tYes(1)/No(2)",4,8,1);
 	
 	input(answer);
-	
+	std::getchar();
 	if(answer == 1)
 	{
 		Working_Space::OS = "Windows";
@@ -49,6 +49,7 @@ void Working_Space::initialize()
 				+ std::string(" ?\n")
 				+ right_shift(4) + std::string("Yes(1)/No(2)")),4,8,1);
 	input(answer);
+	std::getchar();
 	if(answer == 2)
 	{
 		int32_t answer_browser = 2;
@@ -62,6 +63,7 @@ void Working_Space::initialize()
 						+ "\'\n" 
 						+ "\t\t\t\tis it correct? Yes(1)/No(2)"),4,8,1);
 			input(answer_browser);
+			std::getchar();
 		}		
 
 	}

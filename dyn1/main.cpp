@@ -27,7 +27,7 @@ std::getchar();
 
 	try
 	{
-		int32_t  start = 4;
+		int32_t  start = 0;
 		int32_t number_options = 13;
 		LESSONS lesson(number_options);
 		lesson.start(start);

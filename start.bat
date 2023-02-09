@@ -52,6 +52,15 @@ if %indeficator_leya%==1 mkdir leya
 if %indeficator_leya%==1 cd "%USERPROFILE%\Downloads"
 if %indeficator_leya%==1 XCOPY  leya C:\git\leya /E  ||  echo Something happens :)) && pause
 
+::OPEN PROTOCOL
+::------------------------------------------------------------------------------
+cd C:\git\leya
+
+echo open PROTOCOL?
+CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
+if %errorlevel%==1 echo ------------------- >> protocol.txt & echo %Date% >> protocol.txt & type important_words.txt >> protocol.txt & start "" C:\git\leya\protocol.txt || echo Something happens :)) && pause
+
+
 
 ::SAVE information about COMPUTER SYSTEM in directory "leya"
 ::-------------------------------------------------------------------------
@@ -88,6 +97,11 @@ cd C:\git\leya
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
 if %errorlevel%==1 start "" git_connection.bat
  
+cd C:\git\leya
+
+echo open PROTOCOL? 
+CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
+if %errorlevel%==1 echo ------------------- >> protocol.txt & echo %Date% >> protocol.txt & type important_words.txt >> protocol.txt & start "" C:\git\leya\protocol.txt || echo Something happens :)) && pause
 
 
 :: OPEN file "evening_tasks"
@@ -117,11 +131,6 @@ if %errorlevel%==1 echo "Check the Vitrina and input result in file" & echo ----
 ::--------------------------------------------------------------------------
 echo DAILY TEXT FILES
 
-cd C:\git\leya
-
-echo open PROTOCOL?
-CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
-if %errorlevel%==1 echo ------------------- >> protocol.txt & echo %Date% >> protocol.txt & type important_words.txt >> protocol.txt & start "" C:\git\leya\protocol.txt || echo Something happens :)) && pause
 
 cd C:\git\leya
 

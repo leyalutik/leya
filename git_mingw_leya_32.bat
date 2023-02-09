@@ -97,6 +97,15 @@ echo EXIST LEYA1 ? (you should rename it from LEYA)
 cd C:\git
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
 if %errorlevel%==1  git clone https://github.com/leyalutik/leya.git ||  echo Something happens :)) & pause
+
+if %errorlevel%==1 echo WAIT for cloning directory LEYA. and than program copy Protocol.txt from LEAY1 to LEYA.
+if %errorlevel%==1 pause
+if %errorlevel%==1 cd C:\git\leya1
+if %errorlevel%==1 copy protocol.txt ..\leya\protocol.txt
+if %errorlevel%==1 pause
+
+
+
 if %errorlevel%==2  echo Close this cmd-window & echo In "C:\git" rename directory "leya" to  "leya1" & echo Move to directory "leya1"  & echo Launch file "git_mingw_leya_32.bat"
 
 exit /B
