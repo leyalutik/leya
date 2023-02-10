@@ -9,7 +9,7 @@
 #include <sstream>
 #include <fstream>
 #include <chrono>
-
+#include <functional>
 
 #include "interface.h"
 #include "lessons.h"
@@ -20,7 +20,7 @@
 
 
 
-void public INTERFACE::input() //input number option (positive and integer) (with check) 
+void INTERFACE::input() //input number option (positive and integer) (with check) 
 {
 	std::cin >> INTERFACE::i;
 	while(!std::cin && INTERFACE::i < 0 )
@@ -49,21 +49,40 @@ void public INTERFACE::input() //input number option (positive and integer) (wit
 }
 
 
-
-
-
-	void display_options();
-
-void start()
+void INTERFACE::display_options()
 {
-	while(i < number_options)
-	{
-		display_options();
-		input(i);
-		base_funcion(i);
-	}
+	display_text_in_page(text_menu,0,0,4+INTERFACE::number_options);
 }
-};
+void INTERFACE::create_text_menu(const std::string& raw_menu)// Just options with new string
+{
+	std::string str;
+	size_t i = 0;
+	std::stringstream stream(raw_menu);
+	while(std::getline(stream,str))
+	{
+		if(i == 0)
+		{	text_menu += scroll_down(4)
+				+ right_shift(5) + str
+				+ scroll_down(1);
+
+
+			++i;
+		}
+		else
+		{
+			
+			text_menu += right_shift(4) + str 
+				+ right_shift(4) + std::to_string(i)
+				+ scroll_down(1);
+			++i;
+		}
+	}
+
+}
+
+
+
+
 
 
 
@@ -230,9 +249,9 @@ void Interface_Main:: start()
 }
 
 
-*/
+
 
 
 }
 
-
+*/

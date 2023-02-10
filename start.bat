@@ -60,6 +60,18 @@ echo open PROTOCOL?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
 if %errorlevel%==1 echo ------------------- >> protocol.txt & echo %Date% >> protocol.txt & type important_words.txt >> protocol.txt & start "" C:\git\leya\protocol.txt || echo Something happens :)) && pause
 
+::OPEN CURRENT PROGRAMS
+::------------------------------------------------------
+cd C:\git\leya
+echo open CURRENT PROGRAMS?
+CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
+if %errorlevel%==1  set indeficator_leya=1
+if %errorlevel%==2  set indeficator_leya=2
+if %indeficator_leya%==1 echo open program CHTENIE? 
+if %indeficator_leya%==1 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."  
+if %indeficator_leya%==1 if %errorlevel%==1 start "" dyn1\lesson.exe
+
+
 
 
 ::SAVE information about COMPUTER SYSTEM in directory "leya"

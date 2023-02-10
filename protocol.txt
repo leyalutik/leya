@@ -5198,3 +5198,35 @@ git tutoreal
 
 Выполненное:
 Видео Скиллбокс
+-------------------  
+10.02.2023  
+Помолись за тех, кто тебе важен.
+Мой гражданский долг понимать, что происходит. 
+Нужно возращаться к своему прошлому, изучать свою историю и язык. 
+Полюби свой город.
+
+
+Читать
+Надо сделать другой интерфейс для lessons menu for one lesson
+
+Сравнить с исходным интерфейсом
+
+Сделать интерфейс LESSON тоже самое что и class интерфейс,
+только base_fuction = std::function<void(int,int)>
+и примерная  base_function (int i , int j)
+{
+while(j<lessons.size & i<4)
+{	base_function{ &i, &j)
+	switch(i) // action with leson
+	{
+		case 1:   (Proceed)  flow(++j);
+			break;	
+		case 2: (Repeat)  flow(j);
+			break;
+		case 3: Input(&j) flow(j);
+			break;
+		case 4: break;(Exit)
+	{
+{		
+Выполненное:
+создать интерфейс основной функции

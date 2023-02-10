@@ -5,8 +5,8 @@ class LESSONS
 {
 
 	public:
-		LESSONS(int32_t numbeк_lessons_new);
-		LESSONS(int32_t numbeк_lessons_new,const std::string& OS_new, const std::string& browser_command_new);
+		LESSONS(int32_t number_lessons_new);
+		LESSONS(int32_t number_lessons_new,const std::string& OS_new, const std::string& browser_command_new);
 		void flow(int32_t i);
 		void start(const int32_t start_number);	
 
