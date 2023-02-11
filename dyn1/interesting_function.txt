@@ -1,0 +1,145 @@
+*************************************************************************
+Интерфейс универсальный для программ с выбором действия.
+	Дано: Текст меню (без выход), дана функция, которая выполняется в зависимости от выбора (base_function(int choice (e[1,N))).
+И программа сама модифицирует меню (в соответствии с размером страницы (120 на 25)),
+сама считывает ответ и запускает функцию
+**************************************************************************
+<interface.h>
+class INTERFACE
+{
+	public:
+		INTERFACE(const int32_t number_options_new,
+				std::function<void(int)> base_function,//funсtion of actions for every option
+				const std::string& raw_menu)
+		{
+			number_options = number_options_new;
+			create_text_menu(raw_menu);
+
+			while(i < number_options)
+			{
+				display_options();
+				input();
+				base_function(i);
+
+			}
+		}
+		void input(); //input number option (positive and integer) (with check) 
+		int32_t i = 0;  //curent option number
+		int32_t number_options = 0;
+		std::string text_menu = "";
+		void display_options();
+		void create_text_menu(const std::string& display_options);
+
+};
+
+*************************************************************************
+Запуск простого таймера
+	Программа ничего не делает, пока не пройдет положенное время.
+void timer(const int32_t milliseconds)
+**************************************************************************
+void timer(const int32_t milliseconds)
+{
+	if(milliseconds <= 0) 
+	{
+		std::ostringstream os;
+		os << "Illegal value of seconds " << milliseconds << " in finction: timer().";
+		throw std::runtime_error(os.str());
+	}
+	auto start = std::chrono::steady_clock::now();
+	auto finish = std::chrono::steady_clock::now();
+	while((std::chrono::duration_cast<std::chrono::milliseconds>(finish-start).count()
+			<= milliseconds) )
+	{
+		finish = std::chrono::steady_clock::now();
+		//if(std::getchar() == '1')
+		//{
+		//	break;
+		//}
+	}
+
+}
+
+
+
+
+***************************************************************
+Ввод положительного числа
+при ошибке ввода , нужно повторить ввод. 
+***************************************************************
+void input(int32_t& number_lesson)
+{
+	std::cin >> number_lesson;
+	while(!std::cin && number_lesson < 0 )
+	{
+		if(std::cin.bad())  //поток повреждён; Отправляем отчет об ошибке внешней программе
+		{
+			throw std::runtime_error ("In function stream cin was corrupted");
+		}
+		if(std::cin.eof())
+		{
+			std::cout << "The input stream is overloaded.\n";
+			//Больше никаких входных данных
+			//Последовательность символов правильно должна оканчиваться именно так
+		}
+		if(std::cin.fail()) // поток столкнулся с чем-то неожиданным
+		{
+			std::cin.clear();// make ready for more input
+			std::cin.ignore(32767, '\n'); // очищаем поток от мусора
+			std::cin >> number_lesson;
+		}
+
+
+	}
+}
+
+
+***************************************************************
+Размещение текста на странице (Размер: ширина(120) высота(25))
+*****************************************************************
+void display_text_in_page(string,int,int,int)
+Первый аргумент, сам текст.
+Второй - Отступ(сколько табов справа) первой строчки
+Третий - Сверху сколько пустых строк
+Четвёртый - сколько во фразе символов перевода строки.
+
+Связан с функциями string right_shift(int), string scroll_down(int);
+
+void display_text_in_page(std::string text, const int32_t rightshift, const int32_t number_upper_lines,const int32_t number_n_in_text) //if text contains more than one line, then number_lines > 0
+{
+	if(number_n_in_text < 0 || number_upper_lines < 0 || rightshift < 0)
+	{
+		throw std::runtime_error("Illegal value in function display_text_in_page()");
+	}
+	display_scroll_down(number_upper_lines);
+	display_right_shift(rightshift);
+	std::cout << text << "\n";
+	display_scroll_down(25-2-number_n_in_text - number_upper_lines);
+}
+
+****************************************************************
+Изображение лебедя
+****************************************************************
+
+void picture_swan()
+{
+scroll_down(4);
+
+
+
+right_shift();std::cout << "                      +  +                    ";
+right_shift();std::cout << "                    +      +                  ";
+right_shift();std::cout << "                   +       +                  ";
+right_shift();std::cout << "                          +                   ";
+right_shift();std::cout << "                        +                     ";
+right_shift();std::cout << "                      +                       ";
+right_shift();std::cout << "                    +                         ";
+right_shift();std::cout << "                  +   +  +  +  +              ";
+right_shift();std::cout << "                 + +              +           ";
+right_shift();std::cout << "                 +   +              +         ";
+right_shift();std::cout << "                  +     +  +  +  +  + +       ";
+right_shift();std::cout << "                    +  +  +  +  +  +          ";
+
+scroll_down(25-4-12-1);
+
+
+}

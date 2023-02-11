@@ -5229,4 +5229,91 @@ while(j<lessons.size & i<4)
 	{
 {		
 Выполненное:
-создать интерфейс основной функции
+создать интерфейс основной функции-------------------  
+11.02.2023  
+Помолись за тех, кто тебе важен.
+Мой гражданский долг понимать, что происходит. 
+Нужно возращаться к своему прошлому, изучать свою историю и язык. 
+Полюби свой город.
+
+
+Курсы от Википедии
+Алексей Деменко ???
+Visual Studio
+Разрабатывать 
+Сайты исп. технологию ASPdot.net
+Разрабатывать облачные приложения
+Писать скрипты на Питоне
+Писать сервера на Java скрипте
+Приложения на  архитектура dot.net (C# Visual Basic и f#)
+Создавать приложения на C++
+Приложения для Windows 
+Разрабатывать приложения для операционных систем IOS, Android, Windows
+Может работать с движками Unity и Unreal
+Может на Линукс или на кроссплатформенные варианты
+
+Меня взволновали книги о путешествиях
+
+Общая функция
+
+
+LESSONS lessons();
+INTERFACE main_menu(5,base_function,text_menu);
+
+base_function(i)  for main menu
+{
+	LESSONS lessons();
+	case 1: lessons.start(0,13);
+		break;
+	case 2: lessons.start(13,22);
+		break;
+	case 3: std::cout << "Week 3 is developing\n";	
+		break;
+	case 4: std::cout << "Week 4 is developing\n";
+		break;
+}
+
+`
+
+
+aux_function(start_new,end_new)
+LESSONS start(int start_new, int end_new)
+
+
+switch(get_i)
+{
+	case 1: input_start_lesson(0);
+		input_end_lesson(13);
+		break;
+	case 2:input_start_lesson(13);
+		input_end_lesson(22);
+		break;
+
+
+}
+start = start_new;
+end = end_new;
+bool return_to_main_menu = false;
+while(i<end && i>= start && !return_to_main_menu)
+{
+	flow(i);
+	INTERFACE lesson_menu(4,base_function, strgin text_menu); //exit don't count
+	switch(lesson_menu.get_i)
+	{
+		case 1: ++i;
+			break;
+		case 2: break;
+		case 3: if(i>0)
+			{
+				--i;
+			}
+			else
+			{
+				std::cout << "Это первый урок\n";	
+			}
+		case 4:  display_text_...("Введите номер урока в диапазоне [" +
+			start_point + "," + end_point + ")",4,8,0);
+			input_number(i);
+		case 5 : i = end;
+	}
+}

@@ -35,14 +35,7 @@ void Working_Space::initialize()
 	
 	input(answer);
 	std::getchar();
-	if(answer == 1)
-	{
-		Working_Space::OS = "Windows";
-	}
-	else
-	{
-		Working_Space::OS = "Linux";
-	}
+	Working_Space::OS = (answer == 1 ? "Windows":"Linux");
 
 	display_text_in_page((std::string("Is your current browser ")
 				+ Working_Space::browser_command 

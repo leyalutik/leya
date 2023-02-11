@@ -5,13 +5,25 @@ class LESSONS
 {
 
 	public:
-		LESSONS(int32_t number_lessons_new);
-		LESSONS(int32_t number_lessons_new,const std::string& OS_new, const std::string& browser_command_new);
-		void flow(int32_t i);
-		void start(const int32_t start_number);	
+		LESSONS(const int32_t number_lessons_new);
+		LESSONS(const int32_t number_lessons_new,const std::string& OS_new, const std::string& browser_command_new);
+		void flow(const int32_t i);
+		void start(const int32_t start_new, const int32_t end_new);
+		void check(const int32_t);	
+		void menu();
+		void display_menu();
+		void base_function(const int32_t i);
+		void display_main_menu();
+		void base_main_function(const int32_t i);
+		void start_program();
+
 
 		Working_Space ws;
 		int32_t number_lessons;				
+		int32_t current_number;
+		int32_t START_LESSON = 0;
+		int32_t END_LESSON = 0;
+			
 		void display_preparations();
 		void lesson0();
 		void lesson1();

@@ -1,5 +1,10 @@
 #pragma once
 
+
+//FORMAT TEXT
+void display_text_in_page(std::string text, const int32_t rightshift, const int32_t number_upper_lines,const int32_t number_n_in_text);
+
+
 void picture_swan();
 //EDIT
 //---------------------------------------------------------

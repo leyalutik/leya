@@ -18,6 +18,21 @@
 #include "working_space.h"
 
 
+INTERFACE::INTERFACE(const int32_t number_options_new,
+		std::function<void(int)> base_function,//funсtion of actions for every option
+		const std::string& raw_menu)
+{
+	INTERFACE::number_options = number_options_new;
+	create_text_menu(raw_menu);
+
+	while(i < number_options)
+	{
+		INTERFACE::display_options();
+		INTERFACE::input();
+		base_function(i);
+
+	}
+}
 
 
 void INTERFACE::input() //input number option (positive and integer) (with check) 
@@ -51,7 +66,7 @@ void INTERFACE::input() //input number option (positive and integer) (with check
 
 void INTERFACE::display_options()
 {
-	display_text_in_page(text_menu,0,0,4+INTERFACE::number_options);
+	display_text_in_page(text_menu,0,0,4+INTERFACE::number_options+1);
 }
 void INTERFACE::create_text_menu(const std::string& raw_menu)// Just options with new string
 {
@@ -61,9 +76,9 @@ void INTERFACE::create_text_menu(const std::string& raw_menu)// Just options wit
 	while(std::getline(stream,str))
 	{
 		if(i == 0)
-		{	text_menu += scroll_down(4)
+		{	INTERFACE::text_menu += scroll_down(4)
 				+ right_shift(5) + str
-				+ scroll_down(1);
+				+ scroll_down(2);
 
 
 			++i;
@@ -71,12 +86,19 @@ void INTERFACE::create_text_menu(const std::string& raw_menu)// Just options wit
 		else
 		{
 			
-			text_menu += right_shift(4) + str 
+			INTERFACE::text_menu += right_shift(4) + str 
 				+ right_shift(4) + std::to_string(i)
 				+ scroll_down(1);
 			++i;
 		}
 	}
+
+	INTERFACE::text_menu += right_shift(4) + std::string("Exit") 
+				+ right_shift(4) + std::to_string(i)
+				+ scroll_down(1);
+
+
+		
 
 }
 

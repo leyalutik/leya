@@ -11,6 +11,19 @@
 #include <chrono>
 
 #include "edit.h"
+//FORMAT TEXT
+
+void display_text_in_page(std::string text, const int32_t rightshift, const int32_t number_upper_lines,const int32_t number_n_in_text) //if text contains more than one line, then number_lines > 0
+{
+	if(number_n_in_text < 0 || number_upper_lines < 0 || rightshift < 0)
+	{
+		throw std::runtime_error("Illegal value in function display_text_in_page()");
+	}
+	display_scroll_down(number_upper_lines);
+	display_right_shift(rightshift);
+	std::cout << text << "\n";
+	display_scroll_down(25-2-number_n_in_text - number_upper_lines);
+}
 
 void picture_swan()
 {

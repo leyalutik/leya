@@ -13,19 +13,19 @@
 #include "bricks.h"
 #include "edit.h"
 #include "parse_file.h"
-//FORMAT TEXT
 
-void display_text_in_page(std::string text, const int32_t rightshift, const int32_t number_upper_lines,const int32_t number_n_in_text) //if text contains more than one line, then number_lines > 0
+
+//CHECK if positive number
+void check(const int32_t i)
 {
-	if(number_n_in_text < 0 || number_upper_lines < 0 || rightshift < 0)
+	if(i<0)
 	{
 		throw std::runtime_error("Illegal value in function display_text_in_page()");
 	}
-	display_scroll_down(number_upper_lines);
-	display_right_shift(rightshift);
-	std::cout << text << "\n";
-	display_scroll_down(25-2-number_n_in_text - number_upper_lines);
+
+
 }
+
 
 //INPUT POSITIVE NUMBERS
 void input(int32_t& number_lesson)
