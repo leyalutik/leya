@@ -60,6 +60,13 @@ echo open PROTOCOL?
 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
 if %errorlevel%==1 echo ------------------- >> protocol.txt & echo %Date% >> protocol.txt & type important_words.txt >> protocol.txt & start "" C:\git\leya\protocol.txt || echo Something happens :)) && pause
 
+::OPEN BIBLIA
+::------------------------------------------------------------------
+echo open BIBLIA ?
+CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."
+if %errorlevel%==1 start "" %browser_command% "https://www.litres.ru/static/or4/view/or.html?baseurl=/download_book/439825/94146168/&art=439825&user=16415191&uilang=ru&catalit2&track_reading#back_0" || echo Something happens :)) && pause
+
+
 ::OPEN CURRENT PROGRAMS
 ::------------------------------------------------------
 cd C:\git\leya
@@ -69,7 +76,7 @@ if %errorlevel%==1  set indeficator_leya=1
 if %errorlevel%==2  set indeficator_leya=2
 if %indeficator_leya%==1 echo open program CHTENIE? 
 if %indeficator_leya%==1 CHOICE /T 9999 /C 12 /D 2 /M "Press 1 for Yes, 2 for No."  
-if %indeficator_leya%==1 if %errorlevel%==1 start "" dyn1\lesson.exe
+if %indeficator_leya%==1 if %errorlevel%==1 start "" dyn1\dyn.exe || start "" cmd 
 
 
 

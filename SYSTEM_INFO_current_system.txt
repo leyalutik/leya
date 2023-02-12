@@ -1,66 +1,69 @@
 
-Host Name:                 DESKTOP-DV9S09E
-OS Name:                   Майкрософт Windows 10 Домашняя для одного языка
+Host Name:                 PC
+OS Name:                   Microsoft Windows 10 Home Single Language
 OS Version:                10.0.19045 N/A Build 19045
 OS Manufacturer:           Microsoft Corporation
 OS Configuration:          Standalone Workstation
 OS Build Type:             Multiprocessor Free
-Registered Owner:          HP
+Registered Owner:          Директор
 Registered Organization:   
-Product ID:                00327-30560-68115-AAOEM
-Original Install Date:     03.09.2021, 18:07:18
-System Boot Time:          12.01.2023, 9:33:44
-System Manufacturer:       HP
-System Model:              260-a110ur
+Product ID:                00327-60000-00000-AA393
+Original Install Date:     07.11.2020, 18:07:56
+System Boot Time:          18.01.2023, 9:05:44
+System Manufacturer:       Gigabyte Technology Co., Ltd.
+System Model:              To be filled by O.E.M.
 System Type:               x64-based PC
 Processor(s):              1 Processor(s) Installed.
-                           [01]: Intel64 Family 6 Model 76 Stepping 4 GenuineIntel ~1601 Mhz
-BIOS Version:              AMI F.50, 05.05.2019
-Windows Directory:         C:\Windows
-System Directory:          C:\Windows\system32
+                           [01]: Intel64 Family 6 Model 94 Stepping 3 GenuineIntel ~3500 Mhz
+BIOS Version:              American Megatrends Inc. F2, 29.07.2015
+Windows Directory:         C:\WINDOWS
+System Directory:          C:\WINDOWS\system32
 Boot Device:               \Device\HarddiskVolume1
 System Locale:             ru;Russian
-Input Locale:              ru;Russian
+Input Locale:              en-us;English (United States)
 Time Zone:                 (UTC+03:00) Moscow, St. Petersburg
-Total Physical Memory:     3 991 MB
-Available Physical Memory: 745 MB
-Virtual Memory: Max Size:  5 176 MB
-Virtual Memory: Available: 819 MB
-Virtual Memory: In Use:    4 357 MB
+Total Physical Memory:     3 961 MB
+Available Physical Memory: 1 128 MB
+Virtual Memory: Max Size:  5 476 MB
+Virtual Memory: Available: 1 131 MB
+Virtual Memory: In Use:    4 345 MB
 Page File Location(s):     C:\pagefile.sys
 Domain:                    WORKGROUP
-Logon Server:              \\DESKTOP-DV9S09E
-Hotfix(s):                 18 Hotfix(s) Installed.
+Logon Server:              \\PC
+Hotfix(s):                 24 Hotfix(s) Installed.
                            [01]: KB5020872
-                           [02]: KB5000736
-                           [03]: KB5003791
-                           [04]: KB5012170
-                           [05]: KB5015684
-                           [06]: KB5022282
-                           [07]: KB5006753
-                           [08]: KB5007273
-                           [09]: KB5011352
-                           [10]: KB5011651
-                           [11]: KB5014032
-                           [12]: KB5014035
-                           [13]: KB5014671
-                           [14]: KB5015895
-                           [15]: KB5016705
-                           [16]: KB5018506
-                           [17]: KB5020372
-                           [18]: KB5005699
-Network Card(s):           2 NIC(s) Installed.
-                           [01]: Realtek RTL8723BE 802.11 bgn Wi-Fi Adapter
-                                 Connection Name: Беспроводная сеть
-                                 Status:          Media disconnected
-                           [02]: Realtek PCIe GbE Family Controller
-                                 Connection Name: Ethernet
+                           [02]: KB4577266
+                           [03]: KB4577586
+                           [04]: KB4580325
+                           [05]: KB4586864
+                           [06]: KB4589212
+                           [07]: KB4593175
+                           [08]: KB4598481
+                           [09]: KB5000736
+                           [10]: KB5012170
+                           [11]: KB5015684
+                           [12]: KB5022282
+                           [13]: KB5006753
+                           [14]: KB5007273
+                           [15]: KB5011352
+                           [16]: KB5011651
+                           [17]: KB5014032
+                           [18]: KB5014035
+                           [19]: KB5014671
+                           [20]: KB5015895
+                           [21]: KB5016705
+                           [22]: KB5018506
+                           [23]: KB5020372
+                           [24]: KB5005699
+Network Card(s):           1 NIC(s) Installed.
+                           [01]: Intel(R) Ethernet Connection (2) I219-V
+                                 Connection Name: Ethernet 2
                                  DHCP Enabled:    Yes
                                  DHCP Server:     192.168.1.1
                                  IP address(es)
-                                 [01]: 192.168.1.52
-                                 [02]: fe80::f44c:a1f:1d13:fd1a
+                                 [01]: 192.168.1.39
+                                 [02]: fe80::357f:fbd7:7cc0:afeb
 Hyper-V Requirements:      VM Monitor Mode Extensions: Yes
-                           Virtualization Enabled In Firmware: No
+                           Virtualization Enabled In Firmware: Yes
                            Second Level Address Translation: Yes
                            Data Execution Prevention Available: Yes
