@@ -22,6 +22,9 @@ echo End this day... Tomorrow I will continue.  ||  echo Something happens :)) &
 echo Before you starting
 echo Copy file "end_day.bat" to directory "Desktop" 
 
+pause
+echo Fin in Vipolnennoe in file protocol.txt
+pause
 
 :: GIT PUSH  and SSH-connection
 ::-------------------------------------------------------------------

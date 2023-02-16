@@ -118,7 +118,7 @@ void LESSONS::base_main_function(const int32_t i)
 {
 	switch(i)
 	{
-		case 1: LESSONS::start(0,13);
+		case 1: LESSONS::start(0,15);
 			std::getchar();
 			break;
 		case 2: display_text_in_page("Week 2 is developing",4,8,0);
@@ -520,10 +520,37 @@ void  LESSONS::lesson5()
 	std::getchar();
 
 }
-void  LESSONS::lesson6()
+void LESSONS::lesson6()
 {
 
+
 	display_text_in_page((std::string("Task 6\n\n") 
+				+ right_shift(4) + std::string("\"Пары слов. Чётные числа.\" (расширение сферического зрения)\n")
+				+ right_shift(4) + std::string("Подготовка:\n")
+				+ right_shift(5) + std::string("Время - 3 раза.\n")
+				+ right_shift(4) + std::string("Описание задания:\n")
+				+ right_shift(5) + std::string("Запускайте программу.\n\n")
+				+ right_shift(4) + std::string("Техника Мандарина\n")
+				+ right_shift(4) + std::string("Полетели!\n")
+			     ),7,3,10);
+
+	std::getchar();	
+
+
+	display_text_in_page((std::string("Упражнение 6 завершено.\n\n")
+				+ right_shift(4) + std::string(" У вас всё получилось!\n")
+				+ right_shift(4) + std::string("        Молодец!\n")
+			     ),4,8,4);
+
+	std::getchar();
+
+
+
+}
+void  LESSONS::lesson7()
+{
+
+	display_text_in_page((std::string("Task 7\n\n") 
 				+ right_shift(4) + std::string("\"Зеленая точка\".(упражнение на концентрацию).\n")
 				+ right_shift(4) + std::string("Подготовка:\n")
 				+ right_shift(5) + std::string("Программа Скорочтение. Тренажёр >> Зелёная точка.\n")
@@ -537,7 +564,7 @@ void  LESSONS::lesson6()
 	std::getchar();	
 
 
-	display_text_in_page((std::string("Упражнение 6 завершено.\n\n")
+	display_text_in_page((std::string("Упражнение 7 завершено.\n\n")
 				+ right_shift(4) + std::string(" У вас всё получилось!\n")
 				+ right_shift(4) + std::string("        Молодец!\n")
 			     ),4,8,4);
@@ -545,11 +572,41 @@ void  LESSONS::lesson6()
 	std::getchar();
 
 }
-	
-void  LESSONS::lesson7()
+void LESSONS::lesson8()
+{
+
+	display_text_in_page((std::string("Task 8\n\n") 
+				+ right_shift(4) + std::string("\"Запомни число\".(упражнение на внимательность).\n")
+				+ right_shift(4) + std::string("Подготовка:\n")
+				+ right_shift(5) + std::string("Программа Скорочтение. Тренажёр >> Зелёная точка.\n")
+				+ right_shift(5) + std::string("Время - 3 раза.\n")
+				+ right_shift(4) + std::string("Описание задания:\n")
+				+ right_shift(5) + std::string("Запустите программу.\n\n")
+				+ right_shift(4) + std::string("Техника Мандарина\n")
+				+ right_shift(4) + std::string("Начинайте!\n")
+			     ),7,3,11);
+
+	std::getchar();	
+
+
+	display_text_in_page((std::string("Упражнение 8 завершено.\n\n")
+				+ right_shift(4) + std::string(" У вас всё получилось!\n")
+				+ right_shift(4) + std::string("        Молодец!\n")
+			     ),4,8,4);
+
+	std::getchar();
+
+
+
+
+
+
+
+}
+void  LESSONS::lesson9()
 {
 	
-	display_text_in_page((std::string("Task 7\n\n") 
+	display_text_in_page((std::string("Task 9\n\n") 
 				+ right_shift(4) + std::string("Упражнение на память. Запомнить предмет.\n")
 				+ right_shift(4) + std::string("Подготовка:\n")
 				+ right_shift(5) + std::string("Любой предмет.\n")
@@ -594,7 +651,7 @@ void  LESSONS::lesson7()
 	}
 
 
-	display_text_in_page((std::string("Упражнение 7 завершено.\n\n")
+	display_text_in_page((std::string("Упражнение 9 завершено.\n\n")
 				+ right_shift(4) + std::string(" У вас всё получилось!\n")
 				+ right_shift(4) + std::string("        Молодец!\n")
 			     ),4,8,4);
@@ -602,10 +659,10 @@ void  LESSONS::lesson7()
 	std::getchar();
 
 }
-void  LESSONS::lesson8()
+void  LESSONS::lesson10()
 {
 	
-	display_text_in_page((std::string("Task 8\n\n") 
+	display_text_in_page((std::string("Task 10\n\n") 
 				+ right_shift(4) + std::string("Замечаем неодинаковость в крайних буквах.\n")
 				+ right_shift(4) + std::string("Подготовка:\n")
 				+ right_shift(5) + std::string("Программа Скорочтение. Тренажёр >> Поле зрения.\n")
@@ -619,7 +676,7 @@ void  LESSONS::lesson8()
 	std::getchar();	
 
 
-	display_text_in_page((std::string("Упражнение 8 завершено.\n\n")
+	display_text_in_page((std::string("Упражнение 10 завершено.\n\n")
 				+ right_shift(4) + std::string(" У вас всё получилось!\n")
 				+ right_shift(4) + std::string("        Молодец!\n")
 			     ),4,8,4);
@@ -628,10 +685,10 @@ void  LESSONS::lesson8()
 
 
 }
-void  LESSONS::lesson9()
+void  LESSONS::lesson11()
 {
 	
-	display_text_in_page((std::string("Task 9\n\n") 
+	display_text_in_page((std::string("Task 11\n\n") 
 				+ right_shift(4) + std::string("Запоминаем художественную открытку.\n")
 				+ right_shift(4) + std::string("Подготовка:\n")
 				+ right_shift(5) + std::string("Сайт с картинками.\n")
@@ -649,7 +706,7 @@ void  LESSONS::lesson9()
 	std::getchar();	
 
 
-	display_text_in_page((std::string("Упражнение 9 завершено.\n\n")
+	display_text_in_page((std::string("Упражнение 11 завершено.\n\n")
 				+ right_shift(4) + std::string(" У вас всё получилось!\n")
 				+ right_shift(4) + std::string("        Молодец!\n")
 			     ),4,8,4);
@@ -658,9 +715,9 @@ void  LESSONS::lesson9()
 
 
 }
-void  LESSONS::lesson10()
+void  LESSONS::lesson12()
 {
-	display_text_in_page((std::string("Task 10\n\n") 
+	display_text_in_page((std::string("Task 12\n\n") 
 				+ right_shift(4) + std::string("Таблица Шульте.\n")
 				+ right_shift(4) + std::string("Подготовка:\n")
 				+ right_shift(5) + std::string("Программа Скорочтение.\n")
@@ -675,7 +732,7 @@ void  LESSONS::lesson10()
 	std::getchar();	
 
 
-	display_text_in_page((std::string("Упражнение 10 завершено.\n\n")
+	display_text_in_page((std::string("Упражнение 12 завершено.\n\n")
 				+ right_shift(4) + std::string(" У вас всё получилось!\n")
 				+ right_shift(4) + std::string("        Молодец!\n")
 			     ),4,8,4);
@@ -685,9 +742,9 @@ void  LESSONS::lesson10()
 }
 
 
-void  LESSONS::lesson11()
+void  LESSONS::lesson13()
 {
-	display_text_in_page((std::string("Task 11\n\n") 
+	display_text_in_page((std::string("Task 13\n\n") 
 				+ right_shift(4) + std::string("Выделить главную мысль в тексте.\n")
 				+ right_shift(4) + std::string("Подготовка:\n")
 				+ right_shift(5) + std::string("Маленькая статья (90 слов).\n")
@@ -717,7 +774,7 @@ void  LESSONS::lesson11()
 	}
 
 
-	display_text_in_page((std::string("Упражнение 11 завершено.\n\n")
+	display_text_in_page((std::string("Упражнение 13 завершено.\n\n")
 				+ right_shift(4) + std::string(" У вас всё получилось!\n")
 				+ right_shift(4) + std::string("        Молодец!\n")
 			     ),4,8,4);
@@ -726,10 +783,10 @@ void  LESSONS::lesson11()
 
 }
 
-void  LESSONS::lesson12()
+void  LESSONS::lesson14()
 {
 
-	display_text_in_page((std::string("Task 12\n\n") 
+	display_text_in_page((std::string("Task 14\n\n") 
 				+ right_shift(4) + std::string("Чтение литературы.\n")
 				+ right_shift(4) + std::string("Подготовка:\n")
 				+ right_shift(5) + std::string("Научно-популярная литература,\n")
@@ -746,7 +803,7 @@ void  LESSONS::lesson12()
 	std::getchar();	
 
 
-	display_text_in_page((std::string("Упражнение 12 завершено.\n\n")
+	display_text_in_page((std::string("Упражнение 14 завершено.\n\n")
 				+ right_shift(4) + std::string(" У вас всё получилось!\n")
 				+ right_shift(4) + std::string("        Молодец!\n")
 			     ),4,8,4);
@@ -754,7 +811,7 @@ void  LESSONS::lesson12()
 	std::getchar();
 }
 /*
-void lesson13()
+void lesson15()
 {
 	std:: cout << "\tРасширяем поле зрения.\n";
 	std::cout << "\t\tТаймер - 3 раза.\n";
@@ -770,7 +827,7 @@ void lesson13()
 	std::cout << "\n\n\n\n\n";
 	std::cout << "\n\n\n\n\n";
 }
-void lesson14()
+void lesson16()
 {
 	std:: cout << "\tОграничиваем количество фиксаций на строчке.\n";
 	std:: cout << "\t\tПодготовка:\n";
@@ -792,7 +849,7 @@ void lesson14()
 	std::cout << "\n\n\n\n\n";
 	std::cout << "\n\n\n\n\n";
 }
-void lesson15()
+void lesson17()
 {
 	std:: cout << "\tПоиск несоответствующих пар.\n";
 	std:: cout << "\t\tПодготовка:\n";
@@ -811,7 +868,7 @@ void lesson15()
 	std::cout << "\n\n\n\n\n";
 }
 
-void lesson16()
+void lesson18()
 {
 	std:: cout << "\tЧтение сложного текста без регрессии.\n";
 	std:: cout << "\t\tПодготовка:\n";
@@ -830,7 +887,7 @@ void lesson16()
 	std::cout << "\n\n\n\n\n";
 	std::cout << "\n\n\n\n\n";
 }
-void lesson17()
+void lesson19()
 {
 	std:: cout << "\tЧтение вслух.\n";
 	std:: cout << "\t\tПодготовка:\n";
@@ -852,7 +909,7 @@ void lesson17()
 	std::cout << "\n\n\n\n\n";
 }
 
-void lesson18()
+void lesson19()
 {
 	std:: cout << "\tЧтение столбиков с шаблоном 1.\n";
 	std:: cout << "\t\tПодготовка:\n";
@@ -874,7 +931,7 @@ void lesson18()
 	std::cout << "\n\n\n\n\n";
 	std::cout << "\n\n\n\n\n";
 }
-void lesson19()
+void lesson20()
 {
 	std:: cout << "\tПоиск несоответствующих пар.\n";
 	std:: cout << "\t\tПодготовка:\n";
@@ -892,7 +949,7 @@ void lesson19()
 	std::cout << "\n\n\n\n\n";
 	std::cout << "\n\n\n\n\n";
 }
-void lesson20()
+void lesson21()
 {
 	std:: cout << "\tИщем в тексте определённые слова.\n";
 	std:: cout << "\t\tПодготовка:\n";
