@@ -1,3 +1,10 @@
+Команды клавиатуры
+
+ctrl+backspace.  change language
+fn-Tab. - main menu
+alt-tibe. - find smth												
+
+
 Поиск файла папки на компьютере
 	dir /S | find /I "file or directory"
 	/S - раскрыть список всех директорий и папок
